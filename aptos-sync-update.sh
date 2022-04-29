@@ -2,6 +2,8 @@
 cd $HOME
 systemctl stop aptosd
 
+rm -rf /opt/aptos/data/db/
+
 if grep -Fxq 'state_sync:' $HOME/.aptos/config/public_full_node.yaml
 then
     echo "State_sync parameter found, no need to update. "
