@@ -23,7 +23,7 @@ else
     sleep 2
 fi
 
-echo "Starting update genesis and waypoint in config file..."
+echo "Starting update Genesis and Waypoint in config file..."
 #sed -i.bak 's@/full/path/to/waypoint.txt@/root/.aptos/waypoint.txt@g' $HOME/.aptos/config/public_full_node.yaml
 sed -i "s/genesis_file_location: .*/genesis_file_location: \"\/opt\/aptos\/etc\/genesis.blob\"/" $HOME/.aptos/config/public_full_node.yaml
 sed -i "s/from_file: .*/from_file: \"\/opt\/aptos\/etc\/waypoint.txt\"/" $HOME/.aptos/config/public_full_node.yaml
