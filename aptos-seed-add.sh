@@ -29,7 +29,7 @@ wget -O $HOME/seeds.yaml https://raw.githubusercontent.com/Pa1amar/aptos/main/se
 echo 'Done'
 sleep 2
 
-echo 'Stopping aptos node...'
+echo 'Starting aptos node...'
 sudo systemctl restart aptosd
 echo 'Done'
 sleep 2
