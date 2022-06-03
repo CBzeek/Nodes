@@ -9,17 +9,17 @@ sudo apt install screen -y && screen -S aptos
 wget -q https://github.com/CBzeek/Nodes/raw/main/aptos/devnet/aptos-devnet.sh && chmod +x aptos-devnet.sh && sudo /bin/bash aptos-devnet.sh
 ```
 
-## **Get chain_id, epoch and ledger_version:**
+## **Check chain_id, epoch and ledger_version:**
 ```
 curl --request GET --url $(wget -qO- eth0.me):8080/ --header 'Content-Type: applicaticlearon/json' && echo ''
 ```
 
-## **Get metrics:**
+## **Check metrics:**
 ```
 curl 127.0.0.1:9101/metrics 2> /dev/null | grep aptos_state_sync_version
 ```
 
-## **Get logs:**
+## **Check logs:**
 ```
 journalctl -u aptosd -f
 ```
@@ -28,7 +28,7 @@ journalctl -u aptosd -f
 ```
 systemctl restart aptosd
 ```
-## Checking node
+## Check node
 [Aptos devnet explorer](https://explorer.devnet.aptos.dev/)
 
 [Aptos Node Informer by Serhii Pimenov](https://aptos-node.info/)
