@@ -1,9 +1,27 @@
-# Aptos DevNet
+# *Aptos DevNet*
 #
 #
-Some basic Git commands are:
+*Prepare for install commands:*
 `
-git status
-git add
-git commit
+sudo apt install screen -y && screen -S aptos
+`
+#
+Prepare for install commands:
+`
+sudo apt install screen -y && screen -S aptos
+`
+#
+Prepare for install commands:
+`
+sudo apt install screen -y && screen -S aptos
+`
+#
+Prepare for install commands:
+`
+sudo apt install screen -y && screen -S aptos
+`
+#
+Prepare for install commands:
+`
+sudo apt install screen -y && screen -S aptos
 `
