@@ -5,7 +5,7 @@ echo '### Stopping subspace service'
 echo ''
 sudo systemctl stop subspaced subspaced-farmer 
 
-echo '### Erase chain data'
+echo '### Erasing plot'
 echo ''
 subspace-farmer wipe
 sleep 2
