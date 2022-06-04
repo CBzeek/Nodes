@@ -34,7 +34,7 @@ After=network.target
 [Service]
 User=$USER
 Type=simple
-ExecStart=$(which subspace-node) --chain gemini-1 --execution wasm --keep-blocks 1024 --pruning archive --validator --name $SUBSPACE_NODENAME
+ExecStart=$(which subspace-node) --chain gemini-1 --execution wasm --pruning archive --validator --name $SUBSPACE_NODENAME
 Restart=on-failure
 LimitNOFILE=65535
 
