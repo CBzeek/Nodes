@@ -15,7 +15,7 @@ sleep 2
 echo '### Starting subspace node service'
 echo ''
 sudo systemctl restart subspaced
-sleep 4
+sleep 10
 
 echo '### Starting subspace farmer service'
 echo ''
