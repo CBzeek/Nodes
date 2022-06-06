@@ -26,5 +26,3 @@ sleep 10
 echo '### Starting subspace farmer service'
 echo ''
 sudo systemctl restart subspaced-farmer
-
-
