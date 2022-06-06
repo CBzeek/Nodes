@@ -5,6 +5,14 @@ echo '### Stopping subspace service'
 echo ''
 sudo systemctl stop subspaced subspaced-farmer 
 
+echo '### Restart systemd'
+echo ''
+sudo systemctl restart systemd-journald
+sudo systemctl daemon-reload
+sudo systemctl enable subspaced subspaced-farmer
+
+echo '### Download new Subspace release'
+echo ''
 wget -O subspace-node https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-05/subspace-node-ubuntu-x86_64-gemini-1b-2022-june-05
 wget -O subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-05/subspace-farmer-ubuntu-x86_64-gemini-1b-2022-june-05
 chmod +x subspace-node subspace-farmer
