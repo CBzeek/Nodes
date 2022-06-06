@@ -5,6 +5,12 @@ echo '### Stopping subspace service'
 echo ''
 sudo systemctl stop subspaced subspaced-farmer 
 
+echo '### Restart systemd'
+echo ''
+sudo systemctl restart systemd-journald
+sudo systemctl daemon-reload
+sudo systemctl enable subspaced subspaced-farmer
+
 echo '### Erasing plots'
 echo ''
 subspace-farmer wipe
