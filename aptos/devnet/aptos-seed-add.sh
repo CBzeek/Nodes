@@ -24,7 +24,7 @@ else
 fi
 
 echo 'Add seeds to configuration file...'
-wget -O $HOME/seeds.yaml https://raw.githubusercontent.com/Pa1amar/aptos/main/seeds.yaml
+wget -O $HOME/seeds.yaml https://github.com/CBzeek/Nodes/raw/main/aptos/devnet/seeds.yaml
 /usr/local/bin/yq ea -i 'select(fileIndex==0).full_node_networks[0].seeds = select(fileIndex==1).seeds | select(fileIndex==0)' $HOME/.aptos/config/public_full_node.yaml $HOME/seeds.yaml
 echo 'Done'
 sleep 2
