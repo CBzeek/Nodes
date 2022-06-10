@@ -84,7 +84,7 @@ sleep 2
 
 #Configuring aptos node
 echo '### Configuring aptos node...'
-wget -O seeds.yaml https://github.com/CBzeek/Nodes/raw/main/seeds.yaml
+wget -O seeds.yaml https://github.com/CBzeek/Nodes/raw/main/aptos/devnet/seeds.yaml
 PRIVKEY=$(cat ~/.aptos/key/private-key.txt)
 PEER=$(sed -n 2p ~/.aptos/config/peer-info.yaml | sed 's/.$//')
 sed -i.bak "s/genesis_file_location: .*/genesis_file_location: \"\/opt\/aptos\/data\/genesis.blob\"/" $HOME/.aptos/config/public_full_node.yaml
