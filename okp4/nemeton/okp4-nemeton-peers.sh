@@ -9,8 +9,7 @@ if [ -d $HOME/.okp4d/config ]; then
     cd $HOME
     backup_dir=$HOME/okp4d_backup_$(date +%F--%R)
     mkdir $backup_dir
-    cp $HOME/.okp4d/* $backup_dir
-    cp -r $HOME/.okp4d/config $backup_dir
+    rsync -av --exclude='data' --exclude='wasm' $HOME/.okp4d/ $backup_dir
 else
     echo ''
 fi
