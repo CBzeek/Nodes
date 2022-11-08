@@ -35,7 +35,6 @@ wget -O /var/sui/genesis.blob https://github.com/MystenLabs/sui-genesis/raw/main
 
 #Restart service 
 echo ''
-echo '### Starting sui node service'
+echo -e "\e[1m\e[32m### Starting$PROJECT_NAME service... \e[0m" && sleep 1
 echo ''
 systemctl restart suid
-
