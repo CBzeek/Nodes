@@ -21,9 +21,11 @@ echo ''
 echo -e "\e[1m\e[32m### Updating $PROJECT_NAME binaries and genesis... \e[0m" && sleep 1
 echo ''
 #wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.14.1/sui-node
-wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.15.0/sui-node
+#wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.15.0/sui-node
+wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.15.1/sui-node
 #wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.14.1/sui
-wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.15.0/sui
+#wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.15.0/sui
+wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.15.1/sui
 
 chmod +x sui-node
 chmod +x sui
