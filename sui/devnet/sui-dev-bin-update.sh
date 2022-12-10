@@ -25,7 +25,8 @@ echo ''
 #wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.15.1/sui-node
 #wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.15.2/sui-node
 #wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.16.0/sui-node
-wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.17.0/sui-node
+#wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.17.0/sui-node
+wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.18.0/sui-node
 
 
 #wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.14.1/sui
@@ -33,7 +34,8 @@ wget -O sui-node https://github.com/MystenLabs/sui/releases/download/devnet-0.17
 #wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.15.1/sui
 #wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.15.2/sui
 #wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.16.0/sui
-wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.17.0/sui
+#wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.17.0/sui
+wget -O sui https://github.com/MystenLabs/sui/releases/download/devnet-0.18.0/sui
 
 
 chmod +x sui-node
