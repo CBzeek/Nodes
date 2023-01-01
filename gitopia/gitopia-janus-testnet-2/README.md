@@ -1,11 +1,11 @@
-#Gitopia Node
+# Gitopia Node
 
-##Check logs
+## Check logs
 ```
 sudo journalctl -u gitopiad -f --no-hostname -o cat
 ```
 
-##Check synchronization
+## Check synchronization
 ```
 gitopiad status 2>&1 | jq .SyncInfo.catching_up
 ```
