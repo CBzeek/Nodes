@@ -1,7 +1,7 @@
 #Gitopia Node
 
 ##Check logs
-````
+```
 sudo journalctl -u gitopiad -f --no-hostname -o cat
 ```
 
