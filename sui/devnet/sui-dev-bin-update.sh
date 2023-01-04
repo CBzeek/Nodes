@@ -43,3 +43,5 @@ echo ''
 echo -e "\e[1m\e[32m### Starting $PROJECT_NAME service... \e[0m" && sleep 1
 echo ''
 systemctl restart suid
+
+sui -V
