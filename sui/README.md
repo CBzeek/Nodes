@@ -7,5 +7,5 @@ source <(curl -s 'https://raw.githubusercontent.com/CBzeek/Nodes/main/sui/devnet
 
 ## Sui devnet network clear
 ```
-source <(curl -s 'https://github.com/CBzeek/Nodes/raw/main/sui/devnet/sui-dev-net-clear.sh')
+source <(curl -s 'https://raw.githubusercontent.com/CBzeek/Nodes/main/sui/devnet/sui-dev-net-clear.sh')
 ```
