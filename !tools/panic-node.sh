@@ -18,8 +18,6 @@ tar -xzvf node_exporter-0.18.1.linux-amd64.tar.gz
 sudo cp node_exporter-0.18.1.linux-amd64/node_exporter /usr/local/bin/
 sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
 sudo rm node_exporter-0.18.1.linux-amd64 -rf
-sudo nano /etc/systemd/system/node_exporter.service
-
 
 #Creating config and start Node Exporter:
 echo '#############################################################'
