@@ -6,13 +6,13 @@ PROJECT_NAME="lavad"
 echo ''
 echo -e "\e[1m\e[32m### Stopping ${PROJECT_NAME} service... \e[0m" && sleep 1
 echo ''
-sudo systemctl stop ${PROJECT_NAME}
+sudo systemctl stop lavad
 
 
 echo ''
 echo -e "\e[1m\e[32m### Updating ${PROJECT_NAME} to version v0.4.3... \e[0m" && sleep 1
 echo ''
-rm -rf $(which ${PROJECT_NAME})
+rm -rf $(which lavad)
 source ~/.bash_profile
 
 cd || return
@@ -21,7 +21,7 @@ git clone https://github.com/lavanet/lava
 cd lava || return
 git checkout v0.4.3
 make install
-${PROJECT_NAME} version
+lavad version
 
 sudo tee /etc/systemd/system/lavad.service > /dev/null << EOF
 [Unit]
@@ -42,4 +42,4 @@ echo ''
 echo -e "\e[1m\e[32m### Starting $PROJECT_NAME service... \e[0m" && sleep 1
 echo ''
 sudo systemctl daemon-reload
-sudo systemctl start ${PROJECT_NAME}
+sudo systemctl start lavad
