@@ -64,7 +64,6 @@ sudo systemctl enable marsd
 # Set node configuration
 marsd config chain-id ares-1
 marsd config keyring-backend test
-marsd config node tcp://localhost:45657
 
 # Initialize the node
 marsd init $MONIKER --chain-id ares-1
@@ -86,11 +85,6 @@ sed -i \
   -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
   $HOME/.mars/config/app.toml
-
-# Set custom ports
-#sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:45658\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:45657\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:45060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:45656\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":45660\"%" $HOME/.mars/config/config.toml
-#sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:45317\"%; s%^address = \":8080\"%address = \":45080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:45090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:45091\"%; s%^address = \"0.0.0.0:8545\"%address = \"0.0.0.0:45545\"%; s%^ws-address = \"0.0.0.0:8546\"%ws-address = \"0.0.0.0:45546\"%" $HOME/.mars/config/app.toml
-
 
 #Download latest chain snapshot
 curl -L https://snapshots.kjnodes.com/mars-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.mars
