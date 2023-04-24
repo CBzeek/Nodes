@@ -2,7 +2,7 @@
 
 ## Nibiru Node ITN-1 install
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/nibiru/itn-1/nibiru.sh')
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/nibiru/itn-1/nibiru.sh')
 
 ```
 
