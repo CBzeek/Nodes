@@ -2,17 +2,17 @@
 
 ## Prepare new server
 ```
-source <(wget -O- https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh)
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
 ```
 
 ## Install PANIC by Simply VC to server
 ```
-source <(wget -O- https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/panic-server.sh)
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/panic-server.sh')
 ```
 
 ## Install PANIC by Simply VC to node
 ```
-source <(wget -O- https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/panic-node.sh)
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/panic-node.sh')
 ```
 
 
