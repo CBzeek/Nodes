@@ -7,7 +7,7 @@ cd $HOME
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Install dependencies... \e[0m" && sleep 1
 echo ''
-source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
 
 
 echo '###########################################################################################'
