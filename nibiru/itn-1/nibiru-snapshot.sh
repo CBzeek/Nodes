@@ -1,4 +1,7 @@
 #!/bin/bash
+
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
+
 cd $HOME
 
 PROJECT_NAME="nibid"
