@@ -20,6 +20,12 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/nibiru/i
 ```
 
 
+## Nibiru Node ITN-1 create validator
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/nibiru/itn-1/nibiru-validator.sh')
+```
+
+
 ## Nibiru Node testnet-2 binaries update
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/nibiru/testnet-2/nibiru-update.sh')
