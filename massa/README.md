@@ -5,3 +5,7 @@
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/massa/test-21/massa-autorolls.sh')
 ```
 
+## Massa Node - TEST.21.X - Auto Rolls Delete
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/massa/test-21/massa-autorolls-del.sh')
+```
