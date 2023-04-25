@@ -9,4 +9,4 @@ echo ''
 rm /root/rollsup.sh
 rm /etc/cron.d/massarolls
 rm /root/rolls.log
-
+rm $HOME/mspasswd
