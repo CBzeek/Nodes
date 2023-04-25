@@ -35,10 +35,10 @@ EOF
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Creating $PROJECT_NAME node auto rolls cron.d task... \e[0m" && sleep 1
 echo ''
-#printf "SHELL=/bin/bash
-#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-#*/3 * * * * root /bin/bash /root/rollsup.sh > /dev/null 2>&1
-#" > /etc/cron.d/massarolls
+printf "SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+*/3 * * * * root /bin/bash /root/rollsup.sh > /dev/null 2>&1
+" > /etc/cron.d/massarolls
 
 
 echo '###########################################################################################'
@@ -47,3 +47,12 @@ echo ''
 sudo tee $HOME/mspasswd > /dev/null <<EOF
 $1
 EOF
+
+
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Creating auto rolls log.. \e[0m" && sleep 1
+echo ''
+sudo tee $HOME/rolls.log > /dev/null <<EOF
+Лог файл создан удачно.
+EOF
+
