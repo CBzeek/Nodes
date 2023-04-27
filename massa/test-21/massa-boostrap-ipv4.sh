@@ -15,10 +15,11 @@ echo -e "\e[1m\e[32m### Updating $PROJECT_NAME node boostrap options... \e[0m" &
 echo ''
 if grep -Fxq 'bootstrap_protocol' $HOME/massa/massa-node/config/config.toml
 then
-    echo "bootstrap_protocol parameter found, no need to update."
+    echo "bootstrap_protocol parameter found, no need to update..."
+    echo ''
 else
-    echo "bootstrap_protocol parameter not found, update needed."
-    echo "Starting update..."
+    echo "bootstrap_protocol parameter not found, starting update..."
+    echo ''
 
 sudo tee $HOME/massa/massa-node/config/config.toml >> /dev/null <<EOF
 
@@ -28,7 +29,8 @@ bootstrap_protocol = "IPv4"
 
 EOF
 
-echo "Config successfully updated."
+echo "Config successfully updated..."
+echo ''
 fi
 
 
