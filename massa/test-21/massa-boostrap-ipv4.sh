@@ -14,7 +14,7 @@ else
     echo '###########################################################################################'
     echo -e "\e[1m\e[32m### Stoping $PROJECT_NAME node... \e[0m" && sleep 1
     echo ''
-#    sudo systemctl stop massad
+    sudo systemctl stop massad
     cp $HOME/massa/massa-node/config/config.toml $HOME/massa/massa-node/config/config.toml.backup
     
     echo "bootstrap_protocol parameter not found, starting update..."
@@ -34,7 +34,7 @@ echo ''
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Starting $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
-#sudo systemctl restart massad
+sudo systemctl restart massad
 fi
 
 
