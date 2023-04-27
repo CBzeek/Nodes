@@ -6,8 +6,9 @@ cd $HOME
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Stoping $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
-#sudo systemctl stop massad
+sudo systemctl stop massad
 cp $HOME/massa/massa-node/config/config.toml $HOME/massa/massa-node/config/config.toml.backup
+
 
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Updating $PROJECT_NAME node boostrap options... \e[0m" && sleep 1
@@ -34,7 +35,7 @@ fi
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Starting $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
-#sudo systemctl restart massad
+sudo systemctl restart massad
 
 
 
