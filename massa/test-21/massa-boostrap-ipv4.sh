@@ -21,7 +21,7 @@ else
     echo "bootstrap_protocol parameter not found, starting update..."
     echo ''
 
-sudo tee -a $HOME/massa/massa-node/config/config.toml >> /dev/null <<EOF
+sudo tee -a $HOME/massa/massa-node/config/config.toml > /dev/null <<EOF
 
 [bootstrap]
 # force the bootstrap protocol to use: "IPv4", "IPv6", or "Both". Defaults to using both protocols.
