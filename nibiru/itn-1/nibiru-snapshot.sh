@@ -19,6 +19,7 @@ sudo systemctl stop nibid
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Updating $PROJECT_NAME snapshot... \e[0m" && sleep 1
 echo ''
+rm -rf $HOME/.nibid/data/application.db && sleep 5
 cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state.json.backup
 rm -rf $HOME/.nibid/data
 
