@@ -4,12 +4,6 @@ PROJECT_NAME="nibid"
 cd $HOME
 
 echo '###########################################################################################'
-echo -e "\e[1m\e[32m### Erasing data... \e[0m" && sleep 1
-echo ''
-rm -rf $HOME/.nibid/data/application.db && sleep 5
-
-
-echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Install dependencies... \e[0m" && sleep 1
 echo ''
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
@@ -19,6 +13,12 @@ echo '##########################################################################
 echo -e "\e[1m\e[32m### Stopping $PROJECT_NAME service... \e[0m" && sleep 1
 echo ''
 sudo systemctl stop nibid
+
+
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Erasing data... \e[0m" && sleep 1
+echo ''
+rm -rf $HOME/.nibid/data/application.db && sleep 5
 
 
 echo '###########################################################################################'
