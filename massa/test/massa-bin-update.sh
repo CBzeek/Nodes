@@ -28,6 +28,7 @@ echo -e "\e[1m\e[32m### Updating $PROJECT_NAME binaries to version ${VERSION}...
 echo ''
 wget -O "massa_${VERSION}_release_linux.tar.gz" "https://github.com/massalabs/massa/releases/download/${VERSION}/massa_${VERSION}_release_linux.tar.gz"
 
+tar zxvf "massa_${VERSION}_release_linux.tar.gz"
 
 chmod +x massa-client
 chmod +x massa-node
