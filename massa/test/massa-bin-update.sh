@@ -36,5 +36,3 @@ echo '##########################################################################
 echo -e "\e[1m\e[32m### Stopping $PROJECT_NAME service... \e[0m" && sleep 1
 echo ''
 sudo systemctl restart massad
-
-massa_node_info
