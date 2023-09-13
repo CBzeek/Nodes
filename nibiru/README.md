@@ -1,5 +1,12 @@
 #  Nibiru Node
 
+## Nibiru Node ITN-2 install
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/nibiru/itn-2/nibiru.sh')
+
+```
+
+
 ## Nibiru Node ITN-1 install
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/nibiru/itn-1/nibiru.sh')
