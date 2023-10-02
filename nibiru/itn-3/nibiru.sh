@@ -26,31 +26,18 @@ if [ ! $VALIDATOR ]; then
     echo 'export VALIDATOR='\"${VALIDATOR}\" >> $HOME/.bash_profile
 fi
 
-echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
-source $HOME/.bash_profile
-
+# Clone project repository
 cd $HOME
+rm -rf $GIT_FOLDER
+git clone $GIT
+cd $GIT_FOLDER
+git checkout $BRANCH
 
-curl -s https://get.nibiru.fi/@${BRANCH}! | bash
+# Build binaries
+make build
 
-$BINARY init "$VALIDATOR" --chain-id $CHAIN_ID --home $HOME/.nibid
 
-curl -s https://rpc.itn-3.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
-
-# Add seeds
-sed -i 's|seeds =.*|seeds = "'$(curl -s https://networks.itn2.nibiru.fi/$CHAIN_ID/seeds)'"|g' $HOME/.nibid/config/config.toml
-
-# Set minimum gas price
-sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025unibi\"|" $HOME/.nibid/config/app.toml
-
-# Set pruning
-sed -i \
-  -e 's|^pruning *=.*|pruning = "custom"|' \
-  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
-  -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
-  -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
-  $HOME/.nibid/config/app.toml
-
+# Create service
 echo "[Unit]
 Description=$NODE Node
 After=network.target
@@ -65,12 +52,36 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target" > $HOME/$BINARY.service
 sudo mv $HOME/$BINARY.service /etc/systemd/system
-sudo tee <<EOF >/dev/null /etc/systemd/journald.conf
-Storage=persistent
-EOF
-echo -e '\n\e[42mRunning a service\e[0m\n' && sleep 1
+
 sudo systemctl restart systemd-journald
 sudo systemctl daemon-reload
+
+# Set node configuration
+$BINARY config chain-id $CHAIN_ID
+$BINARY config keyring-backend test
+
+# Initialize the node
+$BINARY init $VALIDATOR --chain-id $CHAIN_ID
+
+# Download genesis and addrbook
+curl -s https://rpc.itn-3.nibiru.fi/genesis | jq -r .result.genesis > $HOME/.nibid/config/genesis.json
+#curl -Ls https://snapshots.kjnodes.com/nibiru-testnet/genesis.json > $HOME/.nibid/config/genesis.json
+#curl -Ls https://snapshots.kjnodes.com/nibiru-testnet/addrbook.json > $HOME/.nibid/config/addrbook.json
+
+# Add seeds
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@nibiru-testnet.rpc.kjnodes.com:13959\"|" $HOME/.nibid/config/config.toml
+
+# Set minimum gas price
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0.025unibi\"|" $HOME/.nibid/config/app.toml
+
+# Set pruning
+sed -i \
+  -e 's|^pruning *=.*|pruning = "custom"|' \
+  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
+  -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
+  -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
+  $HOME/.nibid/config/app.toml
+
 sudo systemctl enable $BINARY
 sudo systemctl restart $BINARY
 
