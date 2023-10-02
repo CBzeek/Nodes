@@ -27,14 +27,7 @@ if [ ! $VALIDATOR ]; then
 fi
 
 # Clone project repository
-cd $HOME
-rm -rf $GIT_FOLDER
-git clone $GIT
-cd $GIT_FOLDER
-git checkout $BRANCH
-
-# Build binaries
-make build
+curl -s https://get.nibiru.fi/@${BRANCH}! | bash
 
 
 # Create service
