@@ -37,7 +37,7 @@ evmosd config chain-id $CHAIN_ID
 evmosd config node tcp://localhost:$RPC_PORT
 evmosd config keyring-backend os
 
-#install reliase
+#install release
 wget https://github.com/0glabs/0g-evmos/releases/download/v1.0.0-testnet/genesis.json -O $HOME/.evmosd/config/genesis.json
 
 #add peers and seeds
