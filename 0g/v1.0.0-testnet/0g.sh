@@ -67,7 +67,14 @@ EOF
 sudo systemctl daemon-reload && \
 sudo systemctl enable ogd && \
 sudo systemctl restart ogd && \
-sudo journalctl -u ogd -f -o cat
+#sudo journalctl -u ogd -f -o cat
 
 
+#create wallet
+evmosd keys add $WALLET_NAME
+
+read -p "Press Enter to continue..."
+
+#get EVM
+echo "0x$(evmosd debug addr $(evmosd keys show $WALLET_NAME -a) | grep hex | awk '{print $3}')"
 
