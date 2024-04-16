@@ -23,7 +23,8 @@ make install
 evmosd version
 
 #vars
-echo 'export MONIKER="KNodes"' >> ~/.bash_profile
+read -p "Enter node moniker: " MONIKER
+echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
 echo 'export CHAIN_ID="zgtendermint_9000-1"' >> ~/.bash_profile
 echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 echo 'export RPC_PORT="26657"' >> ~/.bash_profile
