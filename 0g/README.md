@@ -6,4 +6,10 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.
 
 ```
 
+sudo systemctl restart ogd
+
+sudo journalctl -u ogd -f -o cat
+
+evmosd status | jq .SyncInfo
+
 
