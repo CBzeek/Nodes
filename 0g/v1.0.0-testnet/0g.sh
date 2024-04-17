@@ -4,9 +4,13 @@ PROJECT_NAME="0G"
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Setting $PROJECT_NAME node moniker... \e[0m" && sleep 1
 echo ''
-#vars
-read -p "Enter node moniker: " MONIKER
-echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
+
+if [ ! $MONIKER ]; then
+    read -p "Enter node moniker: " MONIKER
+    echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
+fi
+#read -p "Enter node moniker: " MONIKER
+#echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
 echo 'export CHAIN_ID="zgtendermint_9000-1"' >> ~/.bash_profile
 echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 echo 'export RPC_PORT="26657"' >> ~/.bash_profile
