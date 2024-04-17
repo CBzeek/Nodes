@@ -1,5 +1,10 @@
 #!/bin/bash
+PROJECT_NAME="0G"
 
+
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Installing dependencies... \e[0m" && sleep 1
+echo ''
 #update
 sudo apt update && \
 sudo apt install curl git jq build-essential gcc unzip wget lz4 -y
@@ -15,6 +20,10 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
 source ~/.bash_profile && \
 go version
 
+
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Installing $PROJECT_NAME node... \e[0m" && sleep 1
+echo ''
 #install binary 
 git clone https://github.com/0glabs/0g-evmos.git
 cd 0g-evmos
@@ -37,8 +46,18 @@ evmosd config chain-id $CHAIN_ID
 evmosd config node tcp://localhost:$RPC_PORT
 evmosd config keyring-backend os
 
-#install release
+#get genesis
 wget https://github.com/0glabs/0g-evmos/releases/download/v1.0.0-testnet/genesis.json -O $HOME/.evmosd/config/genesis.json
+
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
+echo ''
+#shapshot
+wget https://rpc-zero-gravity-testnet.trusted-point.com/latest_snapshot.tar.lz4
+cp $HOME/.evmosd/data/priv_validator_state.json $HOME/.evmosd/priv_validator_state.json.backup
+evmosd tendermint unsafe-reset-all --home $HOME/.evmosd --keep-addr-book
+lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.evmosd
+mv $HOME/.evmosd/priv_validator_state.json.backup $HOME/.evmosd/data/priv_validator_state.json
 
 #add peers and seeds
 PEERS="1248487ea585730cdf5d3c32e0c2a43ad0cda973@peer-zero-gravity-testnet.trusted-point.com:26326" && \
@@ -48,6 +67,10 @@ sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persisten
 #set gas
 sed -i "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.00252aevmos\"/" $HOME/.evmosd/config/app.toml
 
+
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Setting $PROJECT_NAME node service... \e[0m" && sleep 1
+echo ''
 #service file
 sudo tee /etc/systemd/system/ogd.service > /dev/null <<EOF
 [Unit]
@@ -63,13 +86,18 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Starting $PROJECT_NAME node... \e[0m" && sleep 1
+echo ''
 #start node
 sudo systemctl daemon-reload && \
 sudo systemctl enable ogd && \
 sudo systemctl restart ogd && \
 #sudo journalctl -u ogd -f -o cat
 
-
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Creating $PROJECT_NAME node wallet... \e[0m" && sleep 1
+echo ''
 #create wallet
 evmosd keys add $WALLET_NAME
 
