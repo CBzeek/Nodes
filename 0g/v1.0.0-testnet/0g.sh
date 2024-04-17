@@ -99,17 +99,17 @@ echo ''
 #start node
 sudo systemctl daemon-reload && \
 sudo systemctl enable ogd && \
-sudo systemctl restart ogd && \
-#sudo journalctl -u ogd -f -o cat
+sudo systemctl restart ogd
+
 
 echo '###########################################################################################'
-echo -e "\e[1m\e[32m### Creating $PROJECT_NAME node wallet... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Creating $PROJECT_NAME node comsos wallet... \e[0m" && sleep 1
 echo ''
 #create wallet
 evmosd keys add $WALLET_NAME
 
-read -p "Press Enter to continue..."
-
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address... \e[0m" && sleep 1
+echo ''
 #get EVM
 echo "0x$(evmosd debug addr $(evmosd keys show $WALLET_NAME -a) | grep hex | awk '{print $3}')"
-
