@@ -1,6 +1,17 @@
 #!/bin/bash
 PROJECT_NAME="0G"
 
+echo '###########################################################################################'
+echo -e "\e[1m\e[32m### Setting $PROJECT_NAME node moniker... \e[0m" && sleep 1
+echo ''
+#vars
+read -p "Enter node moniker: " MONIKER
+echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
+echo 'export CHAIN_ID="zgtendermint_9000-1"' >> ~/.bash_profile
+echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
+echo 'export RPC_PORT="26657"' >> ~/.bash_profile
+source $HOME/.bash_profile
+
 
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Installing dependencies... \e[0m" && sleep 1
@@ -30,14 +41,6 @@ cd 0g-evmos
 git checkout v1.0.0-testnet
 make install
 evmosd version
-
-#vars
-read -p "Enter node moniker: " MONIKER
-echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
-echo 'export CHAIN_ID="zgtendermint_9000-1"' >> ~/.bash_profile
-echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
-echo 'export RPC_PORT="26657"' >> ~/.bash_profile
-source $HOME/.bash_profile
 
 #init node
 cd $HOME
