@@ -1,11 +1,11 @@
 #!/bin/bash
 PROJECT_NAME="0G"
 
-echo '###########################################################################################'
-echo -e "\e[1m\e[32m### Setting $PROJECT_NAME node moniker... \e[0m" && sleep 1
-echo ''
 
 if [ ! $MONIKER ]; then
+    echo '###########################################################################################'
+    echo -e "\e[1m\e[32m### Setting $PROJECT_NAME node moniker... \e[0m" && sleep 1
+    echo ''
     read -p "Enter node moniker: " MONIKER
     echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
 fi
