@@ -3,25 +3,21 @@
 ## Prepare
 ```
 sudo apt install screen -y && screen -Rd 0g
-
 ```
 
 ## Install
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g.sh')
-
 ```
 
 ## Snapshot
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g-snapshot.sh')
-
 ```
 
 ## Create validator
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g-validator.sh')
-
 ```
 
 
