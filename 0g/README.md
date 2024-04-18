@@ -1,18 +1,18 @@
-#  0g Node
+#  0g Node - v1.0.0-testnet
 
-## 0g Node v1.0.0-testnet install
+## Install
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g.sh')
 
 ```
 
-## 0g Node v1.0.0-testnet snapshot
+## Snapshot
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g-snapshot.sh')
 
 ```
 
-## 0g Node v1.0.0-testnet create validator
+## Create validator
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g-validator.sh')
 
