@@ -1,6 +1,6 @@
 #  0g Node - v1.0.0-testnet
 
-## Prepare
+## Screen
 ```
 sudo apt install screen -y && screen -Rd 0g
 ```
