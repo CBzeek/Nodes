@@ -93,6 +93,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 
+
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Starting $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
@@ -105,8 +106,22 @@ sudo systemctl restart ogd
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Creating $PROJECT_NAME node comsos wallet... \e[0m" && sleep 1
 echo ''
-#create wallet
-evmosd keys add $WALLET_NAME
+echo "Select option:"
+echo "1 - Create a new wallet"
+echo "2 - Import an existing wallet"
+read -p "Enter option: " OPTION
+case $OPTION in.
+    2)  #Import wallet
+        evmosd keys add $WALLET_NAME 
+        ;;
+    *)  #Create wallet
+        evmosd keys add $WALLET_NAME
+        ;;
+esac
+
+
+
+
 
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address... \e[0m" && sleep 1
