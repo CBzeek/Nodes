@@ -112,15 +112,12 @@ echo "2 - Import an existing wallet"
 read -p "Enter option: " OPTION
 case $OPTION in.
     2)  #Import wallet
-        evmosd keys add $WALLET_NAME 
+        evmosd keys add $WALLET_NAME --recover
         ;;
     *)  #Create wallet
         evmosd keys add $WALLET_NAME
         ;;
 esac
-
-
-
 
 
 echo '###########################################################################################'
