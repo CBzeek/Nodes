@@ -122,7 +122,7 @@ echo -e "\e[1m\e[32mSelect option:"
 echo "1 - Create a new wallet"
 echo "2 - Import an existing wallet"
 read -p -e "\e[1m\e[32mEnter option: " OPTION
-case $OPTION in.
+case $OPTION in
     2)  #Import wallet
         evmosd keys add $WALLET_NAME --recover
         ;;
