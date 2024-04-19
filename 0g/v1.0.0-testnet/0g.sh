@@ -3,9 +3,10 @@ PROJECT_NAME="0G"
 
 
 if [ ! $MONIKER ]; then
-    echo '###########################################################################################'
+    echo ""
+    echo -e "\e[1m\e[32m###########################################################################################"
     echo -e "\e[1m\e[32m### Setting $PROJECT_NAME node moniker... \e[0m" && sleep 1
-    echo ''
+    echo ""
     read -p "Enter node moniker: " MONIKER
     echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
 fi
@@ -17,9 +18,10 @@ echo 'export RPC_PORT="26657"' >> ~/.bash_profile
 source $HOME/.bash_profile
 
 
-echo '###########################################################################################'
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Installing dependencies... \e[0m" && sleep 1
-echo ''
+echo ""
 #update
 sudo apt update && \
 sudo apt install curl git jq build-essential gcc unzip wget lz4 -y
@@ -36,15 +38,17 @@ source ~/.bash_profile && \
 go version
 
 
-echo '###########################################################################################'
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Installing $PROJECT_NAME node... \e[0m" && sleep 1
-echo ''
+echo ""
 #install binary 
 git clone https://github.com/0glabs/0g-evmos.git
 cd 0g-evmos
 git checkout v1.0.0-testnet
 make install
 evmosd version
+
 
 #init node
 cd $HOME
@@ -53,12 +57,15 @@ evmosd config chain-id $CHAIN_ID
 evmosd config node tcp://localhost:$RPC_PORT
 evmosd config keyring-backend os
 
+
 #get genesis
 wget https://github.com/0glabs/0g-evmos/releases/download/v1.0.0-testnet/genesis.json -O $HOME/.evmosd/config/genesis.json
 
-echo '###########################################################################################'
+
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
-echo ''
+echo ""
 #shapshot
 wget https://rpc-zero-gravity-testnet.trusted-point.com/latest_snapshot.tar.lz4
 cp $HOME/.evmosd/data/priv_validator_state.json $HOME/.evmosd/priv_validator_state.json.backup
@@ -66,18 +73,21 @@ evmosd tendermint unsafe-reset-all --home $HOME/.evmosd --keep-addr-book
 lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.evmosd
 mv $HOME/.evmosd/priv_validator_state.json.backup $HOME/.evmosd/data/priv_validator_state.json
 
+
 #add peers and seeds
 PEERS="1248487ea585730cdf5d3c32e0c2a43ad0cda973@peer-zero-gravity-testnet.trusted-point.com:26326" && \
 SEEDS="8c01665f88896bca44e8902a30e4278bed08033f@54.241.167.190:26656,b288e8b37f4b0dbd9a03e8ce926cd9c801aacf27@54.176.175.48:26656,8e20e8e88d504e67c7a3a58c2ea31d965aa2a890@54.193.250.204:26656,e50ac888b35175bfd4f999697bdeb5b7b52bfc06@54.215.187.94:26656" && \
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.evmosd/config/config.toml
 
+
 #set gas
 sed -i "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.00252aevmos\"/" $HOME/.evmosd/config/app.toml
 
 
-echo '###########################################################################################'
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Setting $PROJECT_NAME node service... \e[0m" && sleep 1
-echo ''
+echo ""
 #service file
 sudo tee /etc/systemd/system/ogd.service > /dev/null <<EOF
 [Unit]
@@ -94,22 +104,24 @@ WantedBy=multi-user.target
 EOF
 
 
-echo '###########################################################################################'
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Starting $PROJECT_NAME node... \e[0m" && sleep 1
-echo ''
+echo ""
 #start node
 sudo systemctl daemon-reload && \
 sudo systemctl enable ogd && \
 sudo systemctl restart ogd
 
 
-echo '###########################################################################################'
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Creating $PROJECT_NAME node comsos wallet... \e[0m" && sleep 1
-echo ''
-echo "Select option:"
+echo ""
+echo -e "\e[1m\e[32mSelect option:"
 echo "1 - Create a new wallet"
 echo "2 - Import an existing wallet"
-read -p "Enter option: " OPTION
+read -p -e "\e[1m\e[32mEnter option: " OPTION
 case $OPTION in.
     2)  #Import wallet
         evmosd keys add $WALLET_NAME --recover
@@ -120,8 +132,9 @@ case $OPTION in.
 esac
 
 
-echo '###########################################################################################'
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address... \e[0m" && sleep 1
-echo ''
+echo ""
 #get EVM
 echo "0x$(evmosd debug addr $(evmosd keys show $WALLET_NAME -a) | grep hex | awk '{print $3}')"
