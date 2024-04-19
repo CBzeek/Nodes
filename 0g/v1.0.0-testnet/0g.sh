@@ -1,7 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="0G"
 
-
 if [ ! $MONIKER ]; then
     echo ""
     echo -e "\e[1m\e[32m###########################################################################################"
@@ -59,7 +58,10 @@ evmosd config keyring-backend os
 
 
 #get genesis
-wget https://github.com/0glabs/0g-evmos/releases/download/v1.0.0-testnet/genesis.json -O $HOME/.evmosd/config/genesis.json
+wget -O $HOME/.evmosd/config/genesis.json https://github.com/0glabs/0g-evmos/releases/download/v1.0.0-testnet/genesis.json 
+
+#get address book
+wget -O $HOME/.evmosd/config/addrbook.json https://rpc-zero-gravity-testnet.trusted-point.com/addrbook.json
 
 
 echo ""
@@ -67,11 +69,12 @@ echo -e "\e[1m\e[32m############################################################
 echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
 echo ""
 #shapshot
-wget https://rpc-zero-gravity-testnet.trusted-point.com/latest_snapshot.tar.lz4
+wget -O latest_snapshot.tar.lz4 https://rpc-zero-gravity-testnet.trusted-point.com/latest_snapshot.tar.lz4 
 cp $HOME/.evmosd/data/priv_validator_state.json $HOME/.evmosd/priv_validator_state.json.backup
 evmosd tendermint unsafe-reset-all --home $HOME/.evmosd --keep-addr-book
 lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.evmosd
 mv $HOME/.evmosd/priv_validator_state.json.backup $HOME/.evmosd/data/priv_validator_state.json
+rm -f ./latest_snapshot.tar.lz4
 
 
 #add peers and seeds
@@ -118,10 +121,10 @@ echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Creating $PROJECT_NAME node comsos wallet... \e[0m" && sleep 1
 echo ""
-echo -e "\e[1m\e[32mSelect option:"
+echo "Select option:"
 echo "1 - Create a new wallet"
 echo "2 - Import an existing wallet"
-read -p "\e[1m\e[32mEnter option: " OPTION
+read -p "Enter option: " OPTION
 case $OPTION in
     2)  #Import wallet
         evmosd keys add $WALLET_NAME --recover
