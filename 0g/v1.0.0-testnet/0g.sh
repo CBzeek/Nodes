@@ -141,3 +141,4 @@ echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address... \e[0m" && slee
 echo ""
 #get EVM
 echo "0x$(evmosd debug addr $(evmosd keys show $WALLET_NAME -a) | grep hex | awk '{print $3}')"
+echo ""
