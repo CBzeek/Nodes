@@ -64,7 +64,9 @@ evmosd config keyring-backend os
 
 
 #get genesis
-wget -O $HOME/.evmosd/config/genesis.json https://github.com/0glabs/0g-evmos/releases/download/v1.0.0-testnet/genesis.json 
+#wget -O $HOME/.evmosd/config/genesis.json https://github.com/0glabs/0g-evmos/releases/download/v1.0.0-testnet/genesis.json 
+wget -O $HOME/.evmosd/config/genesis.json https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/genesis.json
+
 
 #get address book
 wget -O $HOME/.evmosd/config/addrbook.json https://rpc-zero-gravity-testnet.trusted-point.com/addrbook.json
