@@ -42,10 +42,16 @@ echo -e "\e[1m\e[32m############################################################
 echo -e "\e[1m\e[32m### Installing $PROJECT_NAME node... \e[0m" && sleep 1
 echo ""
 #install binary 
-git clone https://github.com/0glabs/0g-evmos.git
-cd 0g-evmos
-git checkout v1.0.0-testnet
-make install
+#git clone https://github.com/0glabs/0g-evmos.git
+#cd 0g-evmos
+#git checkout v1.0.0-testnet
+#make install
+#evmosd version
+
+#install binary 
+wget https://rpc-zero-gravity-testnet.trusted-point.com/evmosd
+chmod +x ./evmosd
+mv ./evmosd /usr/local/bin/
 evmosd version
 
 
