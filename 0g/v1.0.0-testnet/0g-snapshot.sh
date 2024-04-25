@@ -25,5 +25,5 @@ rm -f ./latest_snapshot.tar.lz4
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Restarting $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
-sudo systemctl restart ogd && sudo journalctl -u ogd -f -o cat
+sudo systemctl restart ogd
 
