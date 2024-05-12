@@ -16,4 +16,4 @@
   --details="" \
   --gas=auto \
   --gas-adjustment=1.4
-  -y
+  
