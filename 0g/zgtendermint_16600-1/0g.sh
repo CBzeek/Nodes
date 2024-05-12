@@ -141,7 +141,7 @@ echo ""
 #start node
 sudo systemctl daemon-reload && \
 sudo systemctl enable ogd && \
-sudo systemctl restart ogd && sudo journalctl -u ogd -f -o cat
+sudo systemctl start ogd && sudo journalctl -u ogd -f -o cat
 
 
 echo ""
