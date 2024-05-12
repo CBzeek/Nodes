@@ -54,10 +54,10 @@ cd $HOME
 0gchaind config keyring-backend os
 
 #get genesis
-wget -O $HOME/.0gchain/config https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json
+wget -O $HOME/.0gchain/config/genesis.json https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json
 
 #get addrbook
-wget -O $HOME/.0gchain/config https://snapshots.liveraven.net/snapshots/testnet/zero-gravity/addrbook.json
+wget -O $HOME/.0gchain/config/addrbook.json https://snapshots.liveraven.net/snapshots/testnet/zero-gravity/addrbook.json
 #curl -Ls https://snapshots.liveraven.net/snapshots/testnet/zero-gravity/addrbook.json > $HOME/.0gchain/config/addrbook.json
 
 
