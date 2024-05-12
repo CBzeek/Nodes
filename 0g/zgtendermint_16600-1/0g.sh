@@ -167,6 +167,9 @@ echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address... \e[0m" && sleep 1
 echo ""
+#get EVM address
+echo "0x$(0gchaind debug addr $(0gchaind keys show $WALLET_NAME -a) | grep hex | awk '{print $3}')"
+
 #get EVM privatekey
-0gchaind keys unsafe-export-eth-key $WALLET_NAME
+#0gchaind keys unsafe-export-eth-key $WALLET_NAME
 echo ""
