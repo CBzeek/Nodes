@@ -1,4 +1,4 @@
-#  0g Node - v1.0.0-testnet
+#  0g Node - zgtendermint_16600-1
 
 ## Screen
 ```
@@ -7,12 +7,12 @@ sudo apt install screen -y && screen -Rd 0g
 
 ## Install
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-1/0g.sh')
 ```
 
 ## Snapshot
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g-snapshot.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-1/0g-snapshot.sh')
 ```
 
 ## Address Book
@@ -20,28 +20,28 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g-addrbook.sh')
 ```
 
-
 ## Create validator
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g-validator.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-1/0g-validator.sh')
 ```
 
-
-
-
-
-
-
+0gchaind keys show $WALLET_NAME --bech val -a
 
 sudo systemctl restart ogd
 
 sudo journalctl -u ogd -f -o cat
 
-evmosd status | jq .SyncInfo
+0gchaind status | jq .sync_info
 
 echo "0x$(evmosd debug addr $(evmosd keys show $WALLET_NAME -a) | grep hex | awk '{print $3}')"
 
-evmosd q bank balances $(evmosd keys show $WALLET_NAME -a)
+0gchaind q bank balances $(0gchaind keys show $WALLET_NAME -a)
+
+0gchaind tx staking delegate YOUR_VALIDATOR_ADDRESS 100000ua0gi --from $WALLET_NAME --gas=auto --gas-adjustment=1.4 -y
+
+
+
+
 
 
 Устанавливаем addrbook.json
