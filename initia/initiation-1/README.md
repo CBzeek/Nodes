@@ -9,7 +9,7 @@ sudo apt install screen -y && screen -Rd initia
 
 ## Install
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/initiation-1/initia.sh')
 ```
 
 ## Snapshot
