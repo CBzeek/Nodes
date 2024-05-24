@@ -72,18 +72,18 @@ sed -i \
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.15uinit,0.01uusdc\"/" $HOME/.initia/config/app.toml
 
 
-echo ""
-echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
-echo ""
+#echo ""
+#echo -e "\e[1m\e[32m###########################################################################################"
+#echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
+#echo ""
 #shapshot
-cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
-initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
-#rm -rf $HOME/.initia/data
-#curl -L https://snapshots.kzvn.xyz/initia/initiation-1_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
-curl -L https://snapshots-testnet.nodejumper.io/initia-testnet/initia-testnet_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.initia
-mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
-rm -f ./initia-testnet_latest.tar.lz4
+#cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
+#initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
+##rm -rf $HOME/.initia/data
+##curl -L https://snapshots.kzvn.xyz/initia/initiation-1_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
+#curl -L https://snapshots-testnet.nodejumper.io/initia-testnet/initia-testnet_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.initia
+#mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
+#rm -f ./initia-testnet_latest.tar.lz4
 
 
 
