@@ -14,7 +14,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/i
 
 ## Snapshot
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/initiation-1/snapshot.sh')
 ```
 
 ## Address Book
