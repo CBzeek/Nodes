@@ -30,5 +30,5 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/i
 
 ## Create validator
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/initiation-1/validator.sh')
 ```
