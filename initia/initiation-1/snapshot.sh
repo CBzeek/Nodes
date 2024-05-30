@@ -26,7 +26,7 @@ initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
 wget -O latest_snapshot.tar.lz4 https://storage.crouton.digital/testnet/initia/snapshots/initia_latest.tar.lz4
 lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.initia
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
-rm -f ./initia-testnet_latest.tar.lz4
+rm -f ./latest_snapshot.tar.lz4
 
 
 echo ''
