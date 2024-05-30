@@ -21,7 +21,9 @@ initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
 #curl -L https://snapshots-testnet.nodejumper.io/initia-testnet/initia-testnet_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.initia
 #curl -L https://snapshots.kjnodes.com/initia-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
 #curl -L https://initia-testnet-snapshots.f5nodes.com/initiation-1_468826.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
-curl -L https://files3.blacknodes.net/initiatestnet/initiation-1_475946.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
+#curl -L https://files3.blacknodes.net/initiatestnet/initiation-1_475946.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
+wget -O latest_snapshot.tar.lz4 https://files3.blacknodes.net/initiatestnet/initiation-1_475946.tar.lz4
+lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.initia
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
 rm -f ./initia-testnet_latest.tar.lz4
 
