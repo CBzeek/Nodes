@@ -20,6 +20,7 @@ initiad tx mstaking create-validator \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
   --from=$WALLET_NAME \
+  --gas-prices=0.15uinit \
+  --gas-adjustment=1.5 \
   --gas=auto \
-  --gas-adjustment=1.4 \
   --yes
