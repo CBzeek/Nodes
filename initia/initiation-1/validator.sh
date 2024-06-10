@@ -22,7 +22,4 @@ initiad tx mstaking create-validator \
   --from=$WALLET_NAME \
   --gas=2000000 \
   --fees=500000move/944f8dd8dc49f96c25fea9849f16436dcfa6d564eec802f3ef7f8b3ea85368ff \
-#  --gas-prices=0.15uinit \
-#  --gas-adjustment=1.5 \
-#  --gas=auto \
   --yes
