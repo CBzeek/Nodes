@@ -14,6 +14,8 @@ echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sle
 echo ''
 
 #shapshot
+rm -rf $HOME/.initia/data/application.db 
+sleep 1
 cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup
 initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
 #rm -rf $HOME/.initia/data
