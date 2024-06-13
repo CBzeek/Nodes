@@ -17,6 +17,11 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/i
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/initiation-1/snapshot.sh')
 ```
 
+## Turn off indexer
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/initiation-1/indexer.sh')
+```
+
 ## Address Book
 ```
 source <(wget -qO- '')
