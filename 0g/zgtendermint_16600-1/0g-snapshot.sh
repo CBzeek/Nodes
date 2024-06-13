@@ -9,6 +9,8 @@ sudo systemctl stop ogd
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
 echo ''
+rm -rf $HOME/.0gchain/data/application.db 
+sleep 1
 cp $HOME/.0gchain/data/priv_validator_state.json $HOME/.0gchain/priv_validator_state.json.backup
 #0gchaind tendermint unsafe-reset-all --home $HOME/.0gchain --keep-addr-book
 rm -rf $HOME/.0gchain/data
