@@ -25,6 +25,13 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-1/0g-validator.sh')
 ```
 
+## Backup private key
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-1/0g-backup.sh')
+```
+
+
+
 0gchaind keys show $WALLET_NAME --bech val -a
 
 sudo systemctl restart ogd
