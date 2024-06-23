@@ -3,7 +3,7 @@ PROJECT_NAME="0G"
 PROJECT_FOLDER=".0gchain"
 BACKUP_DIR=$HOME/backup_$(date +%F--%R)
 
-echo '###########################################################################################'
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" && sleep 1
 echo ''
 
