@@ -7,7 +7,5 @@ echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" 
 echo ''
 
 cd $HOME
-mkdir $BACKUP_DIR/config
-
-#rsync -av --exclude='data' --exclude='wasm' $HOME/.okp4d/ $BACKUP_DIR
-#rsync -av $HOME/.0gchain/ --exclude='data' $HOME/backup
+mkdir -p $BACKUP_DIR/.0gchain/config/
+cp -r $HOME/.0gchain/config/priv_validator_key.json $BACKUP_DIR/.0gchain/config/
