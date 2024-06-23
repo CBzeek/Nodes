@@ -10,4 +10,4 @@ echo ''
 cd $HOME
 mkdir -p $BACKUP_DIR/$PROJECT_FOLDER/config/
 cp -r $HOME/$PROJECT_FOLDER/config/priv_validator_key.json $BACKUP_DIR/$PROJECT_FOLDER/config/
-rsync -av --exclude='data' --exclude='config' $HOME/$PROJECT_FOLDER/ $BACKUP_DIR/$PROJECT_FOLDER/
+rsync -av --exclude='data' --exclude='config' --exclude='home' --exclude='state.db' $HOME/$PROJECT_FOLDER/ $BACKUP_DIR/$PROJECT_FOLDER/
