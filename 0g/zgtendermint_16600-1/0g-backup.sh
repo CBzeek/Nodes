@@ -1,5 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="0G"
+PROJECT_FOLDER=".0gchain"
 BACKUP_DIR=$HOME/backup_$(date +%F--%R)
 
 echo '###########################################################################################'
@@ -7,5 +8,5 @@ echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" 
 echo ''
 
 cd $HOME
-mkdir -p $BACKUP_DIR/.0gchain/config/
-cp -r $HOME/.0gchain/config/priv_validator_key.json $BACKUP_DIR/.0gchain/config/
+mkdir -p $BACKUP_DIR/$PROJECT_FOLDER/config/
+cp -r $HOME/$PROJECT_FOLDER/config/priv_validator_key.json $BACKUP_DIR/$PROJECT_FOLDER/config/
