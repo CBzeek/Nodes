@@ -37,3 +37,9 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/i
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/initiation-1/validator.sh')
 ```
+
+
+## Backup
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/initia/initiation-1/backup.sh')
+```
