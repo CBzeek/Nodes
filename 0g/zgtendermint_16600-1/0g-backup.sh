@@ -1,6 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="0G"
-BACKUP_DIR=$HOME/${PROJECT_NAME}_backup_$(date +%F--%R)
+BACKUP_DIR=$HOME/backup_${PROJECT_NAME}_$(date +%F--%R)
 
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" && sleep 1
