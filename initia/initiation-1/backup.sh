@@ -1,7 +1,7 @@
 #!/bin/bash
 PROJECT_NAME="Initia"
 PROJECT_FOLDER=".initia"
-BACKUP_DIR=$HOME/backup_$(date +%F--%R)/initia
+BACKUP_DIR=$HOME/backup_$(date +%F--%R)/initia/
 
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" && sleep 1
