@@ -1,6 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="0G"
-PROJECT_FOLDER="0gchain"
+PROJECT_FOLDER=".0gchain"
 BACKUP_DIR=$HOME/backup_$(date +%F--%R)
 
 echo -e "\e[1m\e[32m###########################################################################################"
@@ -9,7 +9,7 @@ echo ''
 
 cd $HOME
 mkdir -p $BACKUP_DIR/$PROJECT_FOLDER/config/
-cp -r $HOME/$PROJECT_FOLDER/config/priv_validator_key.json $BACKUP_DIR/$PROJECT_FOLDER/config/
-rsync -av --exclude='data' --exclude='config' $HOME/$PROJECT_FOLDER/ $BACKUP_DIR/$PROJECT_FOLDER/
+cp -r $HOME/$PROJECT_FOLDER/config/priv_validator_key.json $BACKUP_DIR/$PROJECT_NAME/config/
+rsync -av --exclude='data' --exclude='config' $HOME/$PROJECT_FOLDER/ $BACKUP_DIR/$PROJECT_NAME/
 
 
