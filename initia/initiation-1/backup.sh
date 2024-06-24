@@ -1,6 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="Initia"
-PROJECT_FOLDER=".initia"
+PROJECT_FOLDER="initia"
 BACKUP_DIR=$HOME/backup_$(date +%F--%R)
 
 echo -e "\e[1m\e[32m###########################################################################################"
