@@ -5,6 +5,7 @@ BACKUP_DIR=$HOME/backup_$(date +%F--%H-%M)/0G/
 
 sudo apt install rsync -y
 
+echo ''
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" && sleep 1
 echo ''
