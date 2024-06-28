@@ -1,4 +1,4 @@
-#  0g Node - zgtendermint_16600-1
+#  0g Node - zgtendermint_16600-2
 
 ## Screen
 ```
@@ -7,7 +7,7 @@ sudo apt install screen -y && screen -Rd 0g
 
 ## Install
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-1/0g.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/0g.sh')
 ```
 
 ## Snapshot
