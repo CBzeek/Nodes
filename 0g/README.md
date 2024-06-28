@@ -17,17 +17,17 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgten
 
 ## Snapshot
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-1/0g-snapshot.sh')
+source <(wget -qO- '')
 ```
 
 ## Address Book
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/v1.0.0-testnet/0g-addrbook.sh')
+source <(wget -qO- '')
 ```
 
 ## Create validator
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-1/0g-validator.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/0g-validator.sh')
 ```
 
 ## Backup private key
