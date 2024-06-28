@@ -7,7 +7,7 @@ sudo apt install screen -y && screen -Rd 0g
 
 ## Install
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/0g.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/install.sh')
 ```
 
 ## Seeds, Peers
@@ -27,7 +27,7 @@ source <(wget -qO- '')
 
 ## Create validator
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/0g-validator.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/validator.sh')
 ```
 
 ## Backup private key
