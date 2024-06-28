@@ -32,6 +32,12 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgten
 
 
 
+
+
+
+
+
+## Other
 0gchaind keys show $WALLET_NAME --bech val -a
 
 sudo systemctl restart ogd
