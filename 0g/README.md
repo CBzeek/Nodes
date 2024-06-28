@@ -10,6 +10,11 @@ sudo apt install screen -y && screen -Rd 0g
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/0g.sh')
 ```
 
+## Seeds, Peers
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/peers.sh')
+```
+
 ## Snapshot
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-1/0g-snapshot.sh')
