@@ -58,7 +58,12 @@ source $HOME/.bash_profile
 #init node
 cd $HOME
 0gchaind config chain-id $CHAIN_ID
-0gchaind config keyring-backend os
+if [ -n "$1" ] && [ $1 = "test" ]
+then
+    0gchaind config keyring-backend test
+else
+    0gchaind config keyring-backend os
+fi
 0gchaind config node tcp://localhost:$RPC_PORT
 0gchaind init $MONIKER --chain-id $CHAIN_ID
 
