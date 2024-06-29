@@ -12,7 +12,10 @@ sudo systemctl stop ogd && sudo systemctl disable ogd
 cd $HOME
 rm -rf $HOME/backup-update
 mkdir -p $HOME/backup-update/config
-mkdir -p $HOME/backup-update/keyring-test
+if [ -n "$1" ] && [ $1 = "test" ]
+then
+    mkdir -p $HOME/backup-update/keyring-test
+fi
 cp $HOME/.0gchain/config/priv_validator_key.json $HOME/backup-update/config
 cp $HOME/.0gchain/keyring-test/* $HOME/backup-update/keyring-test
 cp $HOME/.0gchain/* $HOME/backup-update
@@ -42,7 +45,11 @@ sudo systemctl stop ogd
 # Backup your priv_validator_key.json file
 cd $HOME
 cp $HOME/backup-update/config/priv_validator_key.json $HOME/.0gchain/config
-cp $HOME/backup-update/keyring-test/* $HOME/.0gchain/keyring-test
+if [ -n "$1" ] && [ $1 = "test" ]
+then
+    mkdir -p $HOME/.0gchain/keyring-test
+    cp $HOME/backup-update/keyring-test/* $HOME/.0gchain/keyring-test
+fi
 cp $HOME/backup-update/* $HOME/.0gchain
 
 #rm -rf $HOME/backup-update
