@@ -9,11 +9,18 @@ if [ ! $MONIKER ]; then
     read -p "Enter node moniker: " MONIKER
     echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
 fi
-#read -p "Enter node moniker: " MONIKER
-#echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
-echo 'export CHAIN_ID="zgtendermint_16600-2"' >> ~/.bash_profile
-echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
-echo 'export RPC_PORT="26657"' >> ~/.bash_profile
+
+if [ ! $CHAIN_ID ]; then
+    echo 'export CHAIN_ID="zgtendermint_16600-2"' >> ~/.bash_profile
+fi
+
+if [ ! $WALLET_NAME ]; then
+    echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
+fi
+
+if [ ! $RPC_PORT ]; then
+    echo 'export RPC_PORT="26657"' >> ~/.bash_profile
+fi
 source $HOME/.bash_profile
 
 
@@ -51,7 +58,7 @@ source $HOME/.bash_profile
 #init node
 cd $HOME
 0gchaind config chain-id $CHAIN_ID
-0gchaind config keyring-backend test
+0gchaind config keyring-backend os
 0gchaind config node tcp://localhost:$RPC_PORT
 0gchaind init $MONIKER --chain-id $CHAIN_ID
 
