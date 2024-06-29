@@ -45,7 +45,7 @@ cp $HOME/backup-update/config/priv_validator_key.json $HOME/.0gchain/config
 cp $HOME/backup-update/keyring-test/* $HOME/.0gchain/keyring-test
 cp $HOME/backup-update/* $HOME/.0gchain
 
-rm -rf $HOME/backup-update
+#rm -rf $HOME/backup-update
 
 # Restart 0g service
 sudo systemctl restart ogd
