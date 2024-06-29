@@ -24,7 +24,12 @@ sed -i 's/zgtendermint_16600-1/zgtendermint_16600-2/' $HOME/.bash_profile
 rm -rf $HOME/0g-chain/ $HOME/.0gchain
 
 # Install new node
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/install.sh')
+if [ -n "$1" ] && [ $1 = "test" ]
+then
+    source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/install.sh') test
+else
+    source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/install.sh')
+fi
 
 echo ''
 echo -e "\e[1m\e[32m###########################################################################################"
