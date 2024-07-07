@@ -23,7 +23,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgten
 
 ## Snapshot
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/snapshot.sh')
 ```
 
 ## Address Book
