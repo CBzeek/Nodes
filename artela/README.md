@@ -7,7 +7,7 @@ sudo apt install screen -y && screen -Rd artela
 
 ## Install
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/install.sh')
 ```
 
 ## Update Network
