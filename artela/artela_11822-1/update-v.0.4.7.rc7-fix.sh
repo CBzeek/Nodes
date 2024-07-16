@@ -27,8 +27,6 @@ rm artelad_0.4.7_rc7_Linux_amd64.tar.gz
 echo 'export LD_LIBRARY_PATH=/root/.artelad/libs:$LD_LIBRARY_PATH' >> ~/.bash_profile
 source ~/.bash_profile
 
-# update addrbook
-curl -s https://snapshots-testnet.nodejumper.io/artela-testnet/addrbook.json > $HOME/.artelad/config/addrbook.json
 
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Restarting $PROJECT_NAME node... \e[0m" && sleep 1
