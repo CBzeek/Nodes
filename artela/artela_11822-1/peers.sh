@@ -2,12 +2,12 @@
 PROJECT_NAME="Artela"
 PROJECT_BIN="artelad"
 
-echo '###########################################################################################'
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Stopping $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
 sudo systemctl stop $PROJECT_BIN
 
-echo '###########################################################################################'
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Updating $PROJECT_NAME node peers & seeds... \e[0m" && sleep 1
 echo ''
 #peers, seeds
@@ -16,7 +16,7 @@ SEEDS="211536ab1414b5b9a2a759694902ea619b29c8b1@47.251.14.47:26656,d89e10d917f6f
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.artelad/config/config.toml
 
 
-echo '###########################################################################################'
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Restarting $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
 sudo systemctl restart $PROJECT_BIN
