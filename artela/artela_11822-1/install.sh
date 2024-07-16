@@ -119,5 +119,6 @@ echo -e "\e[1m\e[32m### Starting $PROJECT_NAME node... \e[0m" && sleep 1
 echo ""
 #start node
 sudo systemctl daemon-reload
-sudo systemctl enable artelad.service
-sudo systemctl start artelad.service
+sudo systemctl enable artelad
+sudo systemctl start artelad
+
