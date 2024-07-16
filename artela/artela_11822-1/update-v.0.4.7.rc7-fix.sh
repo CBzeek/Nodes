@@ -33,5 +33,4 @@ curl -s https://snapshots-testnet.nodejumper.io/artela-testnet/addrbook.json > $
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Restarting $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
-sudo systemctl daemon-reload
 sudo systemctl start $PROJECT_BIN
