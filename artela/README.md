@@ -18,7 +18,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/a
 
 ## Seeds, Peers
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/peers.sh')
 ```
 
 ## Snapshot
