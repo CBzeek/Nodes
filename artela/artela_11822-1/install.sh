@@ -48,9 +48,19 @@ echo ""
 cd $HOME
 git clone https://github.com/artela-network/artela.git
 cd artela
-git checkout v0.4.7-rc6
+git checkout v0.4.7-rc7-fix-execution
+#git checkout v0.4.7-rc6
 make install
 source $HOME/.bash_profile
+
+# download aspect lib
+mkdir -p $HOME/.artelad/libs && cd $HOME/.artelad/libs
+curl -L https://github.com/artela-network/artela/releases/download/v0.4.7-rc7/artelad_0.4.7_rc7_Linux_amd64.tar.gz -o artelad_0.4.7_rc7_Linux_amd64.tar.gz
+tar -xvzf artelad_0.4.7_rc7_Linux_amd64.tar.gz
+rm artelad_0.4.7_rc7_Linux_amd64.tar.gz
+
+echo 'export LD_LIBRARY_PATH=/root/.artelad/libs:$LD_LIBRARY_PATH' >> ~/.bash_profile
+source ~/.bash_profile
 
 #init node
 cd $HOME
@@ -90,13 +100,7 @@ sed -E 's/^pool-size[[:space:]]*=[[:space:]]*[0-9]+$/apply-pool-size = 10\nquery
 #echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
 #echo ""
 #shapshot
-#curl "https://snapshots-testnet.nodejumper.io/artela-testnet/artela-testnet_latest.tar.lz4" | lz4 -dc - | tar -xf - -C "$HOME/.artelad"
-
-
-#cp $HOME/.0gchain/data/priv_validator_state.json $HOME/.0gchain/priv_validator_state.json.backup
-#rm -rf $HOME/.0gchain/data
-#curl -L http://snapshots.liveraven.net/snapshots/testnet/zero-gravity/zgtendermint_16600-1_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.0gchain
-#mv $HOME/.0gchain/priv_validator_state.json.backup $HOME/.0gchain/data/priv_validator_state.json
+curl "https://snapshots-testnet.nodejumper.io/artela-testnet/artela-testnet_latest.tar.lz4" | lz4 -dc - | tar -xf - -C "$HOME/.artelad"
 
 
 echo ""
