@@ -24,28 +24,11 @@ curl -L https://github.com/artela-network/artela/releases/download/v0.4.7-rc7/ar
 tar -xvzf artelad_0.4.7_rc7_Linux_amd64.tar.gz
 rm artelad_0.4.7_rc7_Linux_amd64.tar.gz
 
-# update systemd service to use lib path
-sudo systemctl stop artelad
+echo 'export LD_LIBRARY_PATH=/root/.artelad/libs:$LD_LIBRARY_PATH' >> ~/.bash_profile
+source ~/.bash_profile
 
 # update addrbook
 curl -s https://snapshots-testnet.nodejumper.io/artela-testnet/addrbook.json > $HOME/.artelad/config/addrbook.json
-
-# update service file
-sudo tee /etc/systemd/system/artelad.service > /dev/null << EOF
-[Unit]
-Description=Artela node service
-After=network-online.target
-[Service]
-User=$USER
-Environment="LD_LIBRARY_PATH=$HOME/.artelad/libs:\$LD_LIBRARY_PATH"
-ExecStart=$(which artelad) start
-Restart=on-failure
-RestartSec=10
-LimitNOFILE=65535
-[Install]
-WantedBy=multi-user.target
-EOF
-
 
 echo '###########################################################################################'
 echo -e "\e[1m\e[32m### Restarting $PROJECT_NAME node... \e[0m" && sleep 1
