@@ -114,6 +114,7 @@ Description=Artela node service
 After=network-online.target
 [Service]
 User=$USER
+Environment="LD_LIBRARY_PATH=$HOME/.artelad/libs:$LD_LIBRARY_PATH"
 ExecStart=$(which artelad) start
 Restart=on-failure
 RestartSec=10
