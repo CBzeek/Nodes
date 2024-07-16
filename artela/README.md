@@ -23,7 +23,7 @@ source <(wget -qO- '')
 
 ## Snapshot
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/snaphot.sh')
 ```
 
 ## Address Book
