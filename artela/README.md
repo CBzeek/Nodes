@@ -26,14 +26,9 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/a
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/snaphot.sh')
 ```
 
-## Address Book
-```
-source <(wget -qO- '')
-```
-
 ## Create validator
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/validator.sh')
 ```
 
 ## Backup private key
