@@ -23,6 +23,3 @@ artelad tx staking create-validator \
   --gas=auto \
   --gas-adjustment=1.5 \
   --yes
-
-
-#  --gas-prices=0.1uart \
