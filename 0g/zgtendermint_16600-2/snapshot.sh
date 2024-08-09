@@ -14,8 +14,9 @@ sleep 1
 cp $HOME/.0gchain/data/priv_validator_state.json $HOME/.0gchain/priv_validator_state.json.backup
 #0gchaind tendermint unsafe-reset-all --home $HOME/.0gchain --keep-addr-book
 rm -rf $HOME/.0gchain/data
+wget -O latest_snapshot.tar.lz4 https://vps4.josephtran.xyz/0g/0gchain_snapshot.lz4
+#wget -O latest_snapshot.tar.lz4 https://snapshots-testnet.nodejumper.io/0g-testnet/0g-testnet_latest.tar.lz4
 #wget -O latest_snapshot.tar.lz4 http://snapshots.liveraven.net/snapshots/testnet/zero-gravity/zgtendermint_16600-2_latest.tar.lz4
-wget -O latest_snapshot.tar.lz4 https://snapshots-testnet.nodejumper.io/0g-testnet/0g-testnet_latest.tar.lz4
 #wget -O latest_snapshot.tar.lz4 https://rpc-zero-gravity-testnet.trusted-point.com/latest_snapshot.tar.lz4
 lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.0gchain
 mv $HOME/.0gchain/priv_validator_state.json.backup $HOME/.0gchain/data/priv_validator_state.json
