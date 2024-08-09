@@ -1,12 +1,12 @@
 #!/bin/bash
 PROJECT_NAME="0G"
 
-echo '###########################################################################################'
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Stopping $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
 sudo systemctl stop ogd
 
-echo '###########################################################################################'
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
 echo ''
 rm -rf $HOME/.0gchain/data/application.db 
@@ -30,7 +30,7 @@ rm -f ./latest_snapshot.tar.lz4
 #mv $HOME/.evmosd/priv_validator_state.json.backup $HOME/.evmosd/data/priv_validator_state.json
 #rm -f ./latest_snapshot.tar.lz4
 
-echo '###########################################################################################'
+echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Restarting $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
 sudo systemctl restart ogd
