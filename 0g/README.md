@@ -12,7 +12,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgten
 
 ## Update Binary
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/install.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/update-bin.sh')
 ```
 
 
