@@ -6,7 +6,7 @@ echo -e "\e[1m\e[32m############################################################
 echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" && sleep 1
 echo ''
 # Stop and disable 0g service
-sudo systemctl stop ogd && sudo systemctl disable ogd
+sudo systemctl stop ogd
 
 # Backup your priv_validator_key.json file
 cd $HOME
