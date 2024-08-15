@@ -48,10 +48,3 @@ fi
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/snapshot.sh')
 
 
-echo ""
-echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Restarting $PROJECT_NAME node... \e[0m" && sleep 1
-echo ""
-#start node
-sudo systemctl restart ogd
-
