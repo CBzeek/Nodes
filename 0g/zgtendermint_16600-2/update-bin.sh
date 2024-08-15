@@ -39,7 +39,13 @@ else
 #    git clone -b v0.3.0 https://github.com/0glabs/0g-chain.git
 fi
 
+
+#check Version
 0gchaind version
+
+
+#update Snapshot
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/snapshot.sh')
 
 
 echo ""
