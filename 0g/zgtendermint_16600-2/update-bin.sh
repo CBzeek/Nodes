@@ -1,10 +1,31 @@
 #!/bin/bash
 PROJECT_NAME="0G"
 
+echo ''
+echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" && sleep 1
+echo ''
+# Stop and disable 0g service
+sudo systemctl stop ogd && sudo systemctl disable ogd
+
+# Backup your priv_validator_key.json file
+cd $HOME
+rm -rf $HOME/backup-update
+mkdir -p $HOME/backup-update/config
+if [ -n "$1" ] && [ $1 = "test" ]
+then
+    mkdir -p $HOME/backup-update/keyring-test
+fi
+cp $HOME/.0gchain/config/priv_validator_key.json $HOME/backup-update/config
+cp $HOME/.0gchain/keyring-test/* $HOME/backup-update/keyring-test
+cp $HOME/.0gchain/* $HOME/backup-update
+
+
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Updateing $PROJECT_NAME node to version v0.3.1... \e[0m" && sleep 1
 echo ""
+
 
 if [ -n "$1" ]
 then
