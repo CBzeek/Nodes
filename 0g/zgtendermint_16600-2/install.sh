@@ -49,7 +49,8 @@ echo -e "\e[1m\e[32m############################################################
 echo -e "\e[1m\e[32m### Installing $PROJECT_NAME node... \e[0m" && sleep 1
 echo ""
 #install binary 
-git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
+git clone -b v0.3.1 https://github.com/0glabs/0g-chain.git
+#git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
 cd 0g-chain
 make install
 0gchaind version
