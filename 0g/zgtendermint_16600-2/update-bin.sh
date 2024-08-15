@@ -5,22 +5,28 @@ echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Updateing $PROJECT_NAME node to version v0.3.1... \e[0m" && sleep 1
 echo ""
-# build new binary
-cd && rm -rf 0g-chain
-git clone https://github.com/0glabs/0g-chain
-cd 0g-chain
 
 if [ -n "$1" ]
 then
     if [ $1 = "v0.2.3" ]
     then
+        # build new binary
+        cd && rm -rf 0g-chain
+        git clone https://github.com/0glabs/0g-chain
+        cd 0g-chain
         git checkout v0.2.3
+        make install
 #        git clone -b v0.2.3 https://github.com/0glabs/0g-chain.git
     fi
 
     if [ $1 = "v0.2.5" ]
     then
+        # build new binary
+        cd && rm -rf 0g-chain
+        git clone https://github.com/0glabs/0g-chain
+        cd 0g-chain
         git checkout v0.2.5
+        make install
 #        git clone -b v0.2.5 https://github.com/0glabs/0g-chain.git
     fi
 
@@ -33,7 +39,6 @@ else
 #    git clone -b v0.3.0 https://github.com/0glabs/0g-chain.git
 fi
 
-make install
 0gchaind version
 
 
