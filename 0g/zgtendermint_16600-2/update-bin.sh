@@ -23,7 +23,7 @@ cp $HOME/.0gchain/* $HOME/backup-update
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Updateing $PROJECT_NAME node to version v0.3.1... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Updateing $PROJECT_NAME node to version v0.3.2... \e[0m" && sleep 1
 echo ""
 
 
@@ -52,7 +52,7 @@ then
     fi
 
 else
-    wget https://github.com/0glabs/0g-chain/releases/download/v0.3.1/0gchaind-linux-v0.3.2
+    wget https://github.com/0glabs/0g-chain/releases/download/v0.3.2/0gchaind-linux-v0.3.2
     sudo chmod +x ./0gchaind-linux-v0.3.2
     sudo mv ./0gchaind-linux-v0.3.2 $(which 0gchaind)
 #    git checkout v0.3.1
