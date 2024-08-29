@@ -61,6 +61,9 @@ fi
 0gchaind version
 
 
+#Restart node
+sudo systemctl restart ogd
+
 #update Snapshot
 #source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/snapshot.sh')
 
