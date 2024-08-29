@@ -38,7 +38,8 @@ then
     fi
 
 else
-    wget -O latest_snapshot.tar.lz4 https://snapshot.validatorvn.com/0g/data.tar.lz4
+    wget -O latest_snapshot.tar.lz4 http://snapshots.liveraven.net/snapshots/testnet/zero-gravity/zgtendermint_16600-2_latest.tar.lz4
+#    wget -O latest_snapshot.tar.lz4 https://snapshot.validatorvn.com/0g/data.tar.lz4
 fi
 
 lz4 -d -c ./latest_snapshot.tar.lz4 | tar -xf - -C $HOME/.0gchain
