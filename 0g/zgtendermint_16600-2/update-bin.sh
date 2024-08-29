@@ -54,7 +54,7 @@ then
 else
     wget https://github.com/0glabs/0g-chain/releases/download/v0.3.1/0gchaind-linux-v0.3.1
     sudo chmod +x ./0gchaind-linux-v0.3.1
-    sudo mv ./0gchaind-linux-v0.3.1 $(which 0gchaind)
+    sudo mv ./0gchaind-linux-v0.3.2 $(which 0gchaind)
 #    git checkout v0.3.1
 #    git clone -b v0.3.1 https://github.com/0glabs/0g-chain.git
 #    git clone -b v0.3.0 https://github.com/0glabs/0g-chain.git
