@@ -26,6 +26,8 @@ echo -e "\e[1m\e[32m############################################################
 echo -e "\e[1m\e[32m### Updateing $PROJECT_NAME node to version v0.3.2... \e[0m" && sleep 1
 echo ""
 
+#Delete old release
+rm -f 0gchaind-linux-v*
 
 if [ -n "$1" ]
 then
