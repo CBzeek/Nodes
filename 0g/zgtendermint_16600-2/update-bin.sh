@@ -29,11 +29,11 @@ echo ""
 
 if [ -n "$1" ]
 then
-    if [ $1 = "v0.3.2" ]
+    if [ $1 = "v0.3.1" ]
     then
-        wget https://github.com/0glabs/0g-chain/releases/download/v0.3.2/0gchaind-linux-v0.3.2
-        sudo chmod +x ./0gchaind-linux-v0.3.2
-        sudo mv ./0gchaind-linux-v0.3.2 $(which 0gchaind)
+        wget https://github.com/0glabs/0g-chain/releases/download/v0.3.1/0gchaind-linux-v0.3.1
+        sudo chmod +x ./0gchaind-linux-v0.3.1
+        sudo mv ./0gchaind-linux-v0.3.1 $(which 0gchaind)
     fi
 
     if [ $1 = "v0.2.5" ]
@@ -48,12 +48,9 @@ then
     fi
 
 else
-    wget https://github.com/0glabs/0g-chain/releases/download/v0.3.1/0gchaind-linux-v0.3.1
-    sudo chmod +x ./0gchaind-linux-v0.3.1
-    sudo mv ./0gchaind-linux-v0.3.1 $(which 0gchaind)
-#    git checkout v0.3.1
-#    git clone -b v0.3.1 https://github.com/0glabs/0g-chain.git
-#    git clone -b v0.3.0 https://github.com/0glabs/0g-chain.git
+    wget https://github.com/0glabs/0g-chain/releases/download/v0.3.2/0gchaind-linux-v0.3.2
+    sudo chmod +x ./0gchaind-linux-v0.3.2
+    sudo mv ./0gchaind-linux-v0.3.2 $(which 0gchaind)
 fi
 
 
