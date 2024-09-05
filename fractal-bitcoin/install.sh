@@ -48,13 +48,13 @@ cd bin
 ./bitcoin-wallet -wallet=wallet -legacy create
 ./bitcoin-wallet -wallet=/root/.bitcoin/wallets/wallet/wallet.dat -dumpfile=/root/.bitcoin/wallets/wallet/MyPK.dat dump
 
-echo ""
-echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Getting $PROJECT_NAME private key... \e[0m" && sleep 1
-echo ""
+#echo ""
+#echo -e "\e[1m\e[32m###########################################################################################"
+#echo -e "\e[1m\e[32m### Getting $PROJECT_NAME private key... \e[0m" && sleep 1
+#echo ""
 #get private key
-cd && awk -F 'checksum,' '/checksum/ {print "Wallet Private Key:" $2}' .bitcoin/wallets/wallet/MyPK.dat
-read -p "Don't remember to save private key!!! Press enter to continue..."
+#cd && awk -F 'checksum,' '/checksum/ {print "Wallet Private Key:" $2}' .bitcoin/wallets/wallet/MyPK.dat
+#read -p "Don't remember to save private key!!! Press enter to continue..."
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
