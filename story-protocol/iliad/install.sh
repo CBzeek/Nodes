@@ -7,6 +7,13 @@ DAEMON_HOME="$HOME/.story/story"
 DAEMON_NAME="story"
 CHAIN_ID="iliad"
 
+# Binary
+STORY_BIN="story-linux-amd64-0.9.11-2a25df1"
+GETH_BIN="geth-linux-amd64-0.9.2-ea9f0d2"
+
+# Go Verion
+VERSION=1.23.0
+
 # Minimum supported Ubuntu version
 min_version_number=2204
 
@@ -71,7 +78,6 @@ sudo apt install make unzip clang pkg-config lz4 libssl-dev build-essential git 
 
 # Install Go
 cd $HOME
-VERSION=1.23.0
 wget -O go.tar.gz https://go.dev/dl/go$VERSION.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz && rm go.tar.gz
 echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
@@ -85,26 +91,31 @@ echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Installing $PROJECT_NAME node... \e[0m" && sleep 1
 echo ""
+
+$STORY_BIN="story-linux-amd64-0.9.11-2a25df1"
+$GETH_BIN="geth-linux-amd64-0.9.2-ea9f0d2"
+
+
 # Install story
 cd $HOME
-rm -rf story-linux-amd64-0.9.11-2a25df1
-wget -O story-linux-amd64-0.9.11-2a25df1.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.9.11-2a25df1.tar.gz
-tar xvf story-linux-amd64-0.9.11-2a25df1.tar.gz
-sudo chmod +x story-linux-amd64-0.9.11-2a25df1/story
-sudo mv story-linux-amd64-0.9.11-2a25df1/story /usr/local/bin/
-rm -rf story-linux-amd64-0.9.11-2a25df1
-rm -f story-linux-amd64-0.9.11-2a25df1.tar.gz
+rm -rf $STORY_BIN
+wget -O $STORY_BIN.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/$STORY_BIN.tar.gz
+tar xvf $STORY_BIN.tar.gz
+sudo chmod +x $STORY_BIN/story
+sudo mv $STORY_BIN/story /usr/local/bin/
+rm -rf $STORY_BIN
+rm -f $STORY_BIN.tar.gz
 story version
 
 # Install story-geth
 cd $HOME
-rm -rf geth-linux-amd64-0.9.2-ea9f0d2
-wget -O geth-linux-amd64-0.9.2-ea9f0d2.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.2-ea9f0d2.tar.gz 
-tar xvf geth-linux-amd64-0.9.2-ea9f0d2.tar.gz
-sudo chmod +x geth-linux-amd64-0.9.2-ea9f0d2/geth
-sudo mv geth-linux-amd64-0.9.2-ea9f0d2/geth /usr/local/bin/story-geth
-rm -rf geth-linux-amd64-0.9.2-ea9f0d2
-rm -f geth-linux-amd64-0.9.2-ea9f0d2.tar.gz
+rm -rf $GETH_BIN
+wget -O $GETH_BIN.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/$GETH_BIN.tar.gz 
+tar xvf $GETH_BIN.tar.gz
+sudo chmod +x $GETH_BIN/geth
+sudo mv $GETH_BIN/geth /usr/local/bin/story-geth
+rm -rf $GETH_BIN
+rm -f $GETH_BIN.tar.gz
 
 # Init node
 $DAEMON_NAME init --network $CHAIN_ID --moniker "${VALIDATOR}"
