@@ -7,5 +7,5 @@ sudo apt install screen -y && screen -Rd story
 
 ## Install
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/install.sh')
 ```
