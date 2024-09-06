@@ -171,9 +171,10 @@ sleep 5
 #echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address and private key... \e[0m" && sleep 1
 #echo ""
 # Show EVM address and private key
+echo -e "\e[1m\e[32m###########################################################################################"
 $DAEMON_NAME validator export --export-evm-key | grep "EVM Public Key"
-echo "------------------------------------------------------"
+echo -e "\e[1m\e[32m###########################################################################################"
 cat $HOME/.story/story/config/private_key.txt | grep PRIVATE_KEY
-echo "------------------------------------------------------"
+echo -e "\e[1m\e[32m###########################################################################################"
 
 
