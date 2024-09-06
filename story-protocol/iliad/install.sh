@@ -93,6 +93,7 @@ tar xvf story-linux-amd64-0.9.11-2a25df1.tar.gz
 sudo chmod +x story-linux-amd64-0.9.11-2a25df1/story
 sudo mv story-linux-amd64-0.9.11-2a25df1/story /usr/local/bin/
 rm -rf story-linux-amd64-0.9.11-2a25df1
+rm -f story-linux-amd64-0.9.11-2a25df1.tar.gz
 story version
 
 # Install story-geth
@@ -103,6 +104,7 @@ tar xvf geth-linux-amd64-0.9.2-ea9f0d2.tar.gz
 sudo chmod +x geth-linux-amd64-0.9.2-ea9f0d2/geth
 sudo mv geth-linux-amd64-0.9.2-ea9f0d2/geth /usr/local/bin/story-geth
 rm -rf geth-linux-amd64-0.9.2-ea9f0d2
+rm -f geth-linux-amd64-0.9.2-ea9f0d2.tar.gz
 
 # Init node
 $DAEMON_NAME init --network $CHAIN_ID --moniker "${VALIDATOR}"
