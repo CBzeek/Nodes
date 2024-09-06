@@ -29,7 +29,6 @@ bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
     source $HOME/.bash_profile
 fi
-sleep 1 && curl -s https://api.nodes.guru/logo.sh | bash && sleep 1
 
 # Get the Ubuntu version
 version=$(lsb_release -r | awk '{print $2}')
