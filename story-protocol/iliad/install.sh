@@ -69,7 +69,7 @@ cd $HOME
 sudo apt update
 sudo apt install make unzip clang pkg-config lz4 libssl-dev build-essential git jq ncdu bsdmainutils htop -y < "/dev/null"
 
-echo -e '\n\e[42mInstall Go\e[0m\n' && sleep 1
+# Install Go
 cd $HOME
 VERSION=1.23.0
 wget -O go.tar.gz https://go.dev/dl/go$VERSION.linux-amd64.tar.gz
