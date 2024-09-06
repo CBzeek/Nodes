@@ -26,14 +26,14 @@ version_number=$(echo $version | sed 's/\.//')
 min_version_number=2204
 
 # Compare the versions
-#if [ "$version_number" -lt "$min_version_number" ]; then
-#    echo -e "${RED}Current Ubuntu Version: "$version".${RESET}"
-#    echo "" && sleep 1
-#    echo -e "${RED}Required Ubuntu Version: 22.04.${RESET}"
-#    echo "" && sleep 1
-#    echo -e "${RED}Please use Ubuntu version 22.04 or higher.${RESET}"
-#    exit 1
-#fi	
+if [ "$version_number" -lt "$min_version_number" ]; then
+    echo -e "${RED}Current Ubuntu Version: "$version".${RESET}"
+    echo "" && sleep 1
+    echo -e "${RED}Required Ubuntu Version: 22.04.${RESET}"
+    echo "" && sleep 1
+    echo -e "${RED}Please use Ubuntu version 22.04 or higher.${RESET}"
+    exit 1
+fi	
 
 NODE="story"
 DAEMON_HOME="$HOME/.story/story"
