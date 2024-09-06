@@ -91,11 +91,6 @@ echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Installing $PROJECT_NAME node... \e[0m" && sleep 1
 echo ""
-
-$STORY_BIN="story-linux-amd64-0.9.11-2a25df1"
-$GETH_BIN="geth-linux-amd64-0.9.2-ea9f0d2"
-
-
 # Install story
 cd $HOME
 rm -rf $STORY_BIN
