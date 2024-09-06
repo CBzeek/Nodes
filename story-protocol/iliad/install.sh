@@ -87,22 +87,22 @@ echo -e "\e[1m\e[32m### Installing $PROJECT_NAME node... \e[0m" && sleep 1
 echo ""
 # Install story
 cd $HOME
-rm -rf story-linux-amd64
-wget -O story-linux-amd64.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.9.11-2a25df1.tar.gz
-tar xvf story-linux-amd64.tar.gz
-sudo chmod +x story-linux-amd64/story
-sudo mv story-linux-amd64/story /usr/local/bin/
-rm -rf story-linux-amd64
+rm -rf story-linux-amd64-0.9.11-2a25df1
+wget -O story-linux-amd64-0.9.11-2a25df1.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/story-public/story-linux-amd64-0.9.11-2a25df1.tar.gz
+tar xvf story-linux-amd64-0.9.11-2a25df1.tar.gz
+sudo chmod +x story-linux-amd64-0.9.11-2a25df1/story
+sudo mv story-linux-amd64-0.9.11-2a25df1/story /usr/local/bin/
+rm -rf story-linux-amd64-0.9.11-2a25df1
 story version
 
 # Install story-geth
 cd $HOME
-rm -rf geth-linux-amd64
-wget -O geth-linux-amd64.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.2-ea9f0d2.tar.gz 
-tar xvf geth-linux-amd64.tar.gz
-sudo chmod +x geth-linux-amd64/geth
-sudo mv geth-linux-amd64/geth /usr/local/bin/story-geth
-rm -rf geth-linux-amd64
+rm -rf geth-linux-amd64-0.9.2-ea9f0d2
+wget -O geth-linux-amd64-0.9.2-ea9f0d2.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/geth-linux-amd64-0.9.2-ea9f0d2.tar.gz 
+tar xvf geth-linux-amd64-0.9.2-ea9f0d2.tar.gz
+sudo chmod +x geth-linux-amd64-0.9.2-ea9f0d2/geth
+sudo mv geth-linux-amd64-0.9.2-ea9f0d2/geth /usr/local/bin/story-geth
+rm -rf geth-linux-amd64-0.9.2-ea9f0d2
 
 # Init node
 $DAEMON_NAME init --network $CHAIN_ID --moniker "${VALIDATOR}"
