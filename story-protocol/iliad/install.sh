@@ -174,17 +174,27 @@ sudo systemctl restart story-geth
 sleep 5
 
 
-#echo ""
-#echo -e "\e[1m\e[32m###########################################################################################"
-#echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address and private key... \e[0m" && sleep 1
-#echo ""
-# Show EVM address and private key
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address and private key... \e[0m" && sleep 1
+echo ""
+# Show EVM address, private key, validator public key
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### EVM Public Key"
 $DAEMON_NAME validator export --export-evm-key | grep "EVM Public Key"
 echo ""
+
 echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Private Key"
 cat $HOME/.story/story/config/private_key.txt | grep PRIVATE_KEY
 echo ""
+
+echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Validator Public Key"
+cat /root/.story/story/config/priv_validator_key.json | jq [.pub_key.value]
+echo ""
+
+
 
 
