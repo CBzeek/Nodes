@@ -10,6 +10,10 @@ source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/se
 source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-docker.sh')
 ```
 
+## UnInstall Docker from server
+```
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-docker-remove.sh')
+```
 
 ## Install PANIC by Simply VC to server
 ```
