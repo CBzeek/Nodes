@@ -18,6 +18,7 @@ read -p "Enter node moniker: " MONIKER
 read -p "Enter ETH address to receive/claim rewards: " REWARDS_ADDRESS
 read -p "Enter validator private key: " PRIVATE_KEY
 
+rm -rf $HOME/.elixir
 mkdir $HOME/.elixir && cd $HOME/.elixir
 
 sudo tee $HOME/.elixir/validator.env > /dev/null <<EOF
