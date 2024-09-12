@@ -7,7 +7,7 @@ source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/se
 
 ## Install Docker to server
 ```
-source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/docker.sh')
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-docker.sh')
 ```
 
 
