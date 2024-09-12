@@ -3,7 +3,7 @@ PROJECT_NAME="Elixir"
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Installing dependencies... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Install dependencies... \e[0m" && sleep 1
 echo ""
 #update
 #sudo apt update
@@ -12,7 +12,7 @@ echo ""
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Setting $PROJECT_NAME node params... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Set $PROJECT_NAME node params... \e[0m" && sleep 1
 echo ""
 read -p "Enter node moniker: " MONIKER
 read -p "Enter ETH address to receive/claim rewards: " REWARDS_ADDRESS
@@ -28,4 +28,21 @@ STRATEGY_EXECUTOR_BENEFICIARY=$REWARDS_ADDRESS
 SIGNER_PRIVATE_KEY=$PRIVATE_KEY
 EOF
 
+
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Get $PROJECT_NAME node docker image... \e[0m" && sleep 1
+echo ""
+docker pull elixirprotocol/validator:v3
+
+
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Start $PROJECT_NAME node ... \e[0m" && sleep 1
+echo ""
+docker run -d \
+  --env-file $HOME/.elixir/validator.env \
+  --name elixir \
+  -p 17690:17690 \
+  elixirprotocol/validator:v3
 
