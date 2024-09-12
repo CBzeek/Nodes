@@ -5,9 +5,8 @@ echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Install dependencies... \e[0m" && sleep 1
 echo ""
-#update
-#sudo apt update
-#sudo apt install curl git jq build-essential lz4 unzip tar mc chrony htop ncdu nload screen -y 
+sudo apt update
+sudo apt install curl git jq build-essential lz4 unzip tar mc chrony htop ncdu nload screen -y 
 
 
 echo ""
