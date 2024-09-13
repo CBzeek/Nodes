@@ -29,7 +29,7 @@ EOF
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Get $PROJECT_NAME node docker image... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Download $PROJECT_NAME node docker image... \e[0m" && sleep 1
 echo ""
 docker pull elixirprotocol/validator:v3
 
