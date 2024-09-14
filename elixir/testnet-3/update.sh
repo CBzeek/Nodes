@@ -29,7 +29,7 @@ docker run -d \
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Start $PROJECT_NAME node version... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Get $PROJECT_NAME node version... \e[0m" && sleep 1
 echo ""
 sleep 3
 curl -s 127.0.0.1:17690/metrics | jq | grep app_version
