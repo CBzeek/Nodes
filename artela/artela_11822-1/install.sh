@@ -46,11 +46,11 @@ echo -e "\e[1m\e[32m### Installing $PROJECT_NAME node... \e[0m" && sleep 1
 echo ""
 #install binary 
 cd $HOME
-git clone https://github.com/artela-network/artela.git
+
+cd && rm -rf artela
+git clone https://github.com/artela-network/artela
 cd artela
 git checkout v0.4.9-rc9
-#git checkout v0.4.7-rc7-fix-execution
-#git checkout v0.4.7-rc6
 make install
 source $HOME/.bash_profile
 
