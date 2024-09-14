@@ -14,15 +14,25 @@ echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Updating $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
+# make binary
+cd && rm -rf artela
+git clone https://github.com/artela-network/artela
+cd artela
+git checkout v0.4.9-rc9
+make install
+
 # download new binary
-wget https://github.com/artela-network/artela/releases/download/v0.4.9-rc9/artelad_0.4.9_rc9_Linux_amd64.tar.gz
-tar -xzvf artelad_0.4.9_rc9_Linux_amd64.tar.gz
-rm artelad_0.4.9_rc9_Linux_amd64.tar.gz
-mv -f ./artelad $(which artelad)
+#wget https://github.com/artela-network/artela/releases/download/v0.4.9-rc9/artelad_0.4.9_rc9_Linux_amd64.tar.gz
+#tar -xzvf artelad_0.4.9_rc9_Linux_amd64.tar.gz
+#rm artelad_0.4.9_rc9_Linux_amd64.tar.gz
+#mv -f ./artelad $(which artelad)
 
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Restart $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/snaphot.sh')
+sudo systemctl restart $PROJECT_BIN
+
+
+
