@@ -25,3 +25,10 @@ docker run -d \
   --name elixir \
   -p 17690:17690 \
   elixirprotocol/validator:v3
+
+
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Start $PROJECT_NAME node version... \e[0m" && sleep 1
+echo ""
+curl -s 127.0.0.1:17690/metrics | jq | grep app_version
