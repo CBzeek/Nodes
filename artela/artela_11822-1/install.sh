@@ -48,19 +48,20 @@ echo ""
 cd $HOME
 git clone https://github.com/artela-network/artela.git
 cd artela
-git checkout v0.4.7-rc7-fix-execution
+git checkout v0.4.9-rc9
+#git checkout v0.4.7-rc7-fix-execution
 #git checkout v0.4.7-rc6
 make install
 source $HOME/.bash_profile
 
 # download aspect lib
-mkdir -p $HOME/.artelad/libs && cd $HOME/.artelad/libs
-curl -L https://github.com/artela-network/artela/releases/download/v0.4.7-rc7/artelad_0.4.7_rc7_Linux_amd64.tar.gz -o artelad_0.4.7_rc7_Linux_amd64.tar.gz
-tar -xvzf artelad_0.4.7_rc7_Linux_amd64.tar.gz
-rm artelad_0.4.7_rc7_Linux_amd64.tar.gz
+#mkdir -p $HOME/.artelad/libs && cd $HOME/.artelad/libs
+#curl -L https://github.com/artela-network/artela/releases/download/v0.4.7-rc7/artelad_0.4.7_rc7_Linux_amd64.tar.gz -o artelad_0.4.7_rc7_Linux_amd64.tar.gz
+#tar -xvzf artelad_0.4.7_rc7_Linux_amd64.tar.gz
+#rm artelad_0.4.7_rc7_Linux_amd64.tar.gz
 
-echo 'export LD_LIBRARY_PATH=/root/.artelad/libs:$LD_LIBRARY_PATH' >> ~/.bash_profile
-source ~/.bash_profile
+#echo 'export LD_LIBRARY_PATH=/root/.artelad/libs:$LD_LIBRARY_PATH' >> ~/.bash_profile
+#source ~/.bash_profile
 
 #init node
 cd $HOME
