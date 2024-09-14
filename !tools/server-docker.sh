@@ -1,6 +1,14 @@
 #!/bin/bash
 cd $HOME
 
+echo ""
+echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Install dependencies... \e[0m" && sleep 1
+echo ""
+sudo apt update
+sudo apt install curl -y
+
+
 #Install Docker
 echo ''
 echo -e "\e[1m\e[32m###########################################################################################"
