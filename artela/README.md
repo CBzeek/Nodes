@@ -10,11 +10,10 @@ sudo apt install screen -y && screen -Rd artela
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/install.sh')
 ```
 
-## Update v0.4.7-rc7-fix-execution
+## Update v0.4.9-rc9
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/update-v.0.4.7.rc7-fix.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/update-v0.4.9-rc9.sh')
 ```
-
 
 ## Seeds, Peers
 ```
@@ -23,7 +22,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/a
 
 ## Snapshot
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/snaphot.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/artela/artela_11822-1/snapshot.sh')
 ```
 
 ## Create validator
