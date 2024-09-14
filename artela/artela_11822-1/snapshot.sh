@@ -15,7 +15,11 @@ rm -rf $HOME/.artelad/data/application.db
 sleep 1
 cp $HOME/.artelad/data/priv_validator_state.json $HOME/.artelad/priv_validator_state.json.backup
 artelad tendermint unsafe-reset-all --home $HOME/.artelad --keep-addr-book
-curl "https://snapshots-testnet.nodejumper.io/artela-testnet/artela-testnet_latest.tar.lz4" | lz4 -dc - | tar -xf - -C "$HOME/.artelad"
+
+SNAPSHOT=$(curl -s https://server-4.itrocket.net/testnet/artela/ | grep -o ">artela.*\.tar.lz4" | tr -d '>' | sed -n '$p')
+curl -o -L https://server-4.itrocket.net/testnet/artela/${SNAPSHOT} | lz4 -dc - | tar -xf - -C "$HOME/.artelad"
+
+#curl "https://snapshots-testnet.nodejumper.io/artela-testnet/artela-testnet_latest.tar.lz4" | lz4 -dc - | tar -xf - -C "$HOME/.artelad"
 mv $HOME/.artelad/priv_validator_state.json.backup $HOME/.artelad/data/priv_validator_state.json
 
 
