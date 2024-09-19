@@ -11,8 +11,10 @@ echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sle
 echo ''
 
 cd $HOME
-wget -O Story_snapshot.lz4 https://vps5.josephtran.xyz/Story/Story_snapshot.lz4
-wget -O Geth_snapshot.lz4 https://vps5.josephtran.xyz/Story/Geth_snapshot.lz4
+#wget -O Story_snapshot.lz4 https://vps5.josephtran.xyz/Story/Story_snapshot.lz4
+#wget -O Geth_snapshot.lz4 https://vps5.josephtran.xyz/Story/Geth_snapshot.lz4
+wget -O Story_snapshot.lz4 https://josephtran.co/story/Story_snapshot.lz4
+wget -O Geth_snapshot.lz4 https://josephtran.co/story/Geth_snapshot.lz4
 rm -rf ~/.story/story/data
 rm -rf ~/.story/geth/iliad/geth/chaindata
 mkdir -p $HOME/.story/story/data
