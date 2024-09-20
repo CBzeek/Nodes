@@ -14,3 +14,8 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-pr
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/snapshot.sh')
 ```
+
+## Update bin
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/update-bin.sh')
+```
