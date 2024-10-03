@@ -1,6 +1,5 @@
 #!/bin/bash
 PROJECT_NAME="Story Protocol"
-
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Stopping $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
@@ -10,6 +9,12 @@ echo -e "\e[1m\e[32m############################################################
 echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
 echo ''
 
+
+STORY_SNAP=$(curl -s https://server-3.itrocket.net/testnet/story/ | grep -oP '(?<=href=")[^"]*' | sed 's/.*\///' | grep story_2024 | awk 'NR == 4')
+GETH_SNAP=$(curl -s https://server-3.itrocket.net/testnet/story/ | grep -oP '(?<=href=")[^"]*' | sed 's/.*\///' | grep story_2024 | awk 'NR == 2')
+echo $STORY_SNAP
+echo $GETH_SNAP
+
 cd $HOME
 rm -rf ~/.story/story/data
 rm -rf ~/.story/geth/iliad/geth/chaindata
@@ -17,8 +22,8 @@ rm -rf ~/.story/geth/iliad/geth/chaindata
 #wget -O Geth_snapshot.lz4 https://vps5.josephtran.xyz/Story/Geth_snapshot.lz4
 #wget -O Story_snapshot.lz4 https://josephtran.co/story/Story_snapshot.lz4
 #wget -O Geth_snapshot.lz4 https://josephtran.co/story/Geth_snapshot.lz4
-wget -O Story_snapshot.lz4 https://server-3.itrocket.net/testnet/story/story_2024-10-03_1088960_snap.tar.lz4
-wget -O Geth_snapshot.lz4 https://server-3.itrocket.net/testnet/story/geth_story_2024-10-03_1088960_snap.tar.lz4
+wget -O Story_snapshot.lz4 https://server-3.itrocket.net/testnet/story/$STORY_SNAP
+wget -O Geth_snapshot.lz4 https://server-3.itrocket.net/testnet/story/$GETH_SNAP
 mkdir -p $HOME/.story/story/data
 lz4 -d -c ./Story_snapshot.lz4 | tar -xf - -C $HOME/.story/story/
 mkdir -p $HOME/.story/geth/iliad/geth/chaindata
