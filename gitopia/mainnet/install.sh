@@ -101,7 +101,7 @@ echo -e "\e[1m\e[32m### Setting $PROJECT_NAME node service... \e[0m" && sleep 1
 echo ""
 #service file
 # Create a service
-sudo tee /etc/systemd/system/gitopiad > /dev/null << EOF
+sudo tee /etc/systemd/system/gitopiad.service > /dev/null << EOF
 [Unit]
 Description=Gitopia node service
 After=network-online.target
