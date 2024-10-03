@@ -15,8 +15,10 @@ rm -rf ~/.story/story/data
 rm -rf ~/.story/geth/iliad/geth/chaindata
 #wget -O Story_snapshot.lz4 https://vps5.josephtran.xyz/Story/Story_snapshot.lz4
 #wget -O Geth_snapshot.lz4 https://vps5.josephtran.xyz/Story/Geth_snapshot.lz4
-wget -O Story_snapshot.lz4 https://josephtran.co/story/Story_snapshot.lz4
-wget -O Geth_snapshot.lz4 https://josephtran.co/story/Geth_snapshot.lz4
+#wget -O Story_snapshot.lz4 https://josephtran.co/story/Story_snapshot.lz4
+#wget -O Geth_snapshot.lz4 https://josephtran.co/story/Geth_snapshot.lz4
+wget -O Story_snapshot.lz4 https://server-3.itrocket.net/testnet/story/story_2024-10-03_1088960_snap.tar.lz4
+wget -O Geth_snapshot.lz4 https://server-3.itrocket.net/testnet/story/geth_story_2024-10-03_1088960_snap.tar.lz4
 mkdir -p $HOME/.story/story/data
 lz4 -d -c ./Story_snapshot.lz4 | tar -xf - -C $HOME/.story/story/
 mkdir -p $HOME/.story/geth/iliad/geth/chaindata
