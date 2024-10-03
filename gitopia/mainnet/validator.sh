@@ -17,9 +17,10 @@ $PROJECT_BIN tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=wallet \
-#--identity="" \
-#--website="" \
-#--details="" \
 --gas-adjustment=1.5 \
 --gas=auto \
 --yes 
+
+#--identity="" \
+#--website="" \
+#--details="" \
