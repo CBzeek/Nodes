@@ -13,4 +13,4 @@ echo ''
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Installing dependencies to server... \e[0m"
 echo '' && sleep 1
-sudo apt install curl mc git jq screen lz4 htop zip unzip wget -y
+sudo apt install curl mc git jq screen lz4 htop zip unzip wget rsync -y
