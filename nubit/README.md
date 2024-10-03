@@ -10,6 +10,11 @@ sudo apt install screen -y && screen -Rd nubit
 curl -sL1 https://nubit.sh | bash
 ```
 
+## Backup
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/nubit/backup.sh')
+```
+
 ## View Pubkey
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/nubit/pubkey.sh')
