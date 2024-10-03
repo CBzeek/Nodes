@@ -1,7 +1,7 @@
 #!/bin/bash
 PROJECT_NAME="Nubit"
 PROJECT_FOLDER=".nubit-light-nubit-alphatestnet-1"
-BACKUP_DIR=backup_$(date +%F--%H-%M)/
+BACKUP_DIR=backup_$(date +%F--%H-%M)
 
 sudo apt install rsync zip -y
 
