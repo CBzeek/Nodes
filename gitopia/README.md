@@ -19,3 +19,8 @@ sudo apt install screen -y && screen -Rd gitopia
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/gitopia/mainnet/install.sh')
 ```
+
+## Create Validator
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/gitopia/mainnet/validator.sh')
+```
