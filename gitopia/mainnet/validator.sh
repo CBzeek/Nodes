@@ -20,7 +20,6 @@ $PROJECT_BIN tx staking create-validator \
 #--identity=FFB0AA51A2DF5955 \
 #--website="" \
 #--details="I'm sexy and I know it😉" \
---gas-prices=0.0012ulore \
 --gas-adjustment=1.5 \
 --gas=auto \
 -y 
