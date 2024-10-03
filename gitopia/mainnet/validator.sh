@@ -8,7 +8,7 @@ echo -e "\e[1m\e[32m### Creating $PROJECT_NAME node validator... \e[0m" && sleep
 echo ''
 #create validator
 $PROJECT_BIN tx staking create-validator \
---amount=1000000ulore \
+--amount=100000ulore \
 --pubkey=$(gitopiad tendermint show-validator) \
 --moniker="$MONIKER" \
 --chain-id=$CHAIN_ID \
@@ -17,9 +17,9 @@ $PROJECT_BIN tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=wallet \
-#--identity=FFB0AA51A2DF5955 \
+#--identity="" \
 #--website="" \
-#--details="I'm sexy and I know it😉" \
+#--details="" \
 --gas-adjustment=1.5 \
 --gas=auto \
--y 
+--yes 
