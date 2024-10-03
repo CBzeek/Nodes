@@ -13,3 +13,5 @@ mkdir -p $BACKUP_DIR/nubit-light-nubit-alphatestnet-1/
 mkdir -p $BACKUP_DIR/nubit-node/
 rsync -av  $HOME/$PROJECT_FOLDER/keys $BACKUP_DIR/nubit-light-nubit-alphatestnet-1/
 cp $HOME/nubit-node/mnemonic.txt $BACKUP_DIR/nubit-node
+
+zip -r $BACKUP_DIR.zip $HOME/$BACKUP_DIR
