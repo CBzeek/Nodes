@@ -12,4 +12,4 @@ cd $HOME
 mkdir -p $BACKUP_DIR/nubit-light-nubit-alphatestnet-1/
 mkdir -p $BACKUP_DIR/nubit-node/
 rsync -av  $HOME/$PROJECT_FOLDER/keys $BACKUP_DIR/nubit-light-nubit-alphatestnet-1/keys
-cp -r $HOME/$PROJECT_FOLDER/nubit-node $BACKUP_DIR/nubit-node
+cp -r $HOME/nubit-node $BACKUP_DIR/nubit-node
