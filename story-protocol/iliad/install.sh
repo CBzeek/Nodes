@@ -174,6 +174,10 @@ sudo systemctl restart story-geth
 sleep 5
 
 
+#Backup
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/backup.sh')
+
+
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address and private key... \e[0m" && sleep 1
