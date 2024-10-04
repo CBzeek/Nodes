@@ -5,6 +5,11 @@ echo -e "\e[1m\e[32m### Stopping $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
 sudo systemctl stop story && sudo systemctl stop story-geth
 
+
+#Backup
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/backup.sh')
+
+
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
 echo ''
