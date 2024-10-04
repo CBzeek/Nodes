@@ -14,6 +14,10 @@ GETH_BIN="geth-linux-amd64-0.9.3-b224fdf"
 #GETH_BIN="geth-linux-amd64-0.9.2-ea9f0d2"
 
 
+#Backup
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/backup.sh')
+
+
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Stopping $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''
