@@ -1,7 +1,7 @@
 #!/bin/bash
 PROJECT_NAME="Story Protocol"
 PROJECT_DIR=".story"
-BACKUP_DIR=backup_$(date +%F--%H-%M-%S)
+BACKUP_DIR=backup_$(curl -s eth0.me)_$(date +%F--%H-%M-%S)
 
 sudo apt install zip -y
 
