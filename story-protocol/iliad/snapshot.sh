@@ -9,11 +9,14 @@ echo -e "\e[1m\e[32m############################################################
 echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
 echo ''
 
-
 STORY_SNAP=$(curl -s https://server-3.itrocket.net/testnet/story/ | grep -oP '(?<=href=")[^"]*' | sed 's/.*\///' | grep story_2024 | awk 'NR == 4')
 GETH_SNAP=$(curl -s https://server-3.itrocket.net/testnet/story/ | grep -oP '(?<=href=")[^"]*' | sed 's/.*\///' | grep story_2024 | awk 'NR == 2')
 echo $STORY_SNAP
 echo $GETH_SNAP
+
+rm -rf ~/.story/story/data/application.db 
+sleep 1
+cp ~/.story/story/data/priv_validator_state.json ~/.story/story/priv_validator_state.json.backup
 
 cd $HOME
 rm -rf ~/.story/story/data
@@ -31,6 +34,7 @@ lz4 -d -c ./Geth_snapshot.lz4 | tar -xf - -C $HOME/.story/geth/iliad/geth/
 rm -f ./Story_snapshot.lz4
 rm -f ./Geth_snapshot.lz4
 
+mv ~/.story/story/priv_validator_state.json.backup ~/.story/story/data/priv_validator_state.json
 
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Restarting $PROJECT_NAME node... \e[0m" && sleep 1
