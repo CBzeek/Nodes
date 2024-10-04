@@ -3,7 +3,7 @@ PROJECT_NAME="Story Protocol"
 PROJECT_DIR=".story"
 BACKUP_DIR=backup_$(date +%F--%H-%M-%S)
 
-sudo apt install rsync zip -y
+sudo apt install zip -y
 
 echo ''
 echo -e "\e[1m\e[32m###########################################################################################"
