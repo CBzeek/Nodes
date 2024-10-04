@@ -10,6 +10,11 @@ sudo apt install screen -y && screen -Rd story
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/install.sh')
 ```
 
+## Backup
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/backup.sh')
+```
+
 ## Snapshot
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/snapshot.sh')
