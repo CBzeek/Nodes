@@ -10,6 +10,12 @@ sudo apt install screen -y && screen -Rd 0g
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/install.sh')
 ```
 
+## Backup
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/backup.sh')
+```
+
+
 ## Update Binary
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/update-bin.sh')
