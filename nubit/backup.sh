@@ -1,6 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="Nubit"
-PROJECT_FOLDER=".nubit-light-nubit-alphatestnet-1"
+PROJECT_DIR=".nubit-light-nubit-alphatestnet-1"
 BACKUP_DIR=backup_$(date +%F--%H-%M-%S)
 
 sudo apt install rsync zip -y
@@ -13,7 +13,7 @@ echo ''
 cd $HOME
 mkdir -p $HOME/$BACKUP_DIR/nubit-light-nubit-alphatestnet-1/
 mkdir -p $HOME/$BACKUP_DIR/nubit-node/
-rsync -av  $HOME/$PROJECT_FOLDER/keys $HOME/$BACKUP_DIR/nubit-light-nubit-alphatestnet-1/
+rsync -av  $HOME/$PROJECT_DIR/keys $HOME/$BACKUP_DIR/nubit-light-nubit-alphatestnet-1/
 cp $HOME/nubit-node/mnemonic.txt $HOME/$BACKUP_DIR/nubit-node
 
 zip -r $BACKUP_DIR.zip $HOME/$BACKUP_DIR
