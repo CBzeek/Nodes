@@ -19,9 +19,9 @@ rm -f $HOME/$BACKUP_DIR/story/config/addrbook.json
 rm -f $HOME/$BACKUP_DIR/story/config/genesis.json
 rm -f $HOME/$BACKUP_DIR/story/config/*.toml
 
-cp $HOME/$PROJECT_FOLDER//story/data/priv_validator_state.json $HOME/$BACKUP_DIR/story/data/
+cp $HOME/$PROJECT_FOLDER/story/data/priv_validator_state.json $HOME/$BACKUP_DIR/story/data/
 
-cp $HOME/$BACKUP_DIR/geth/iliad/geth/jwtsecret $HOME/$BACKUP_DIR/geth/iliad/geth/
-cp $HOME/$BACKUP_DIR/geth/iliad/geth/nodekey $HOME/$BACKUP_DIR/geth/iliad/geth/
+cp $HOME/$PROJECT_FOLDER/geth/iliad/geth/jwtsecret $HOME/$BACKUP_DIR/geth/iliad/geth/
+cp $HOME/$PROJECT_FOLDER/geth/iliad/geth/nodekey $HOME/$BACKUP_DIR/geth/iliad/geth/
 
 zip -r $BACKUP_DIR.zip $HOME/$BACKUP_DIR
