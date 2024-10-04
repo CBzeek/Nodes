@@ -16,3 +16,4 @@ cp $HOME/$PROJECT_DIR/data/*.json $BACKUP_DIR/0gchain/data/
 rsync -av --exclude='data' --exclude='log' $HOME/$PROJECT_DIR/ $BACKUP_DIR/0gchain/
 
 zip -r $BACKUP_DIR.zip $HOME/$BACKUP_DIR
+
