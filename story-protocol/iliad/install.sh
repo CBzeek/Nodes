@@ -8,8 +8,9 @@ DAEMON_NAME="story"
 CHAIN_ID="iliad"
 
 # Binary
-STORY_BIN="story-linux-amd64-0.10.1-57567e5"
+STORY_BIN="story-linux-amd64-0.11.0-aac4bfe"
 GETH_BIN="geth-linux-amd64-0.9.3-b224fdf"
+#STORY_BIN="story-linux-amd64-0.10.1-57567e5"
 #STORY_BIN="story-linux-amd64-0.9.11-2a25df1"
 #GETH_BIN="geth-linux-amd64-0.9.2-ea9f0d2"
 
