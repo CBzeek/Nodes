@@ -8,10 +8,8 @@ echo ""
 # Clone Ritual's repository
 git clone https://github.com/ritual-net/infernet-container-starter
 cd infernet-container-starter
+sed -i 's/docker compose/docker-compose/' $HOME/infernet-container-starter/Makefile
 
 # Deploy container
-#project=hello-world make deploy-container
+project=hello-world make deploy-container
 
-
-# Detach
-#project=hello-world make deploy-container
