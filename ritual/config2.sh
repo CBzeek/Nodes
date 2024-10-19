@@ -26,7 +26,6 @@ sed -i '/sender \:=/c\sender \:= ${PRIVATE_KEY}' $HOME/infernet-container-starte
 sed -i '/RPC_URL \:=/c\RPC_URL \:= https://mainnet.base.org' $HOME/infernet-container-starter/projects/hello-world/contracts/Makefile
 
 # Change the node’s image to the latest version (today, this is 1.2.0 but be sure to check for the latest version).
-nano ~/infernet-container-starter/deploy/docker-compose.yaml
 sed -i '/infernet-node\:1.0.0/c\    image\: ritualnetwork\/infernet-node\:1.2.0' $HOME/infernet-container-starter/deploy/docker-compose.yaml
 
 
