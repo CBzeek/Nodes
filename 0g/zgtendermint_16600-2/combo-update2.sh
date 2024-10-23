@@ -1,11 +1,11 @@
 #!/bin/bash
 PROJECT_NAME="0G"
 
-echo ''
-echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Update $PROJECT_NAME node peers... \e[0m" && sleep 1
-echo ''
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/peers.sh')
+#echo ''
+#echo -e "\e[1m\e[32m###########################################################################################"
+#echo -e "\e[1m\e[32m### Update $PROJECT_NAME node peers... \e[0m" && sleep 1
+#echo ''
+#source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/peers.sh')
 
 
 echo ''
