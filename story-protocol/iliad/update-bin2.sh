@@ -9,10 +9,11 @@ CHAIN_ID="iliad"
 
 # Binary
 STORY_BIN="story-linux-amd64-0.11.0-aac4bfe"
-GETH_BIN="geth-linux-amd64-0.9.3-b224fdf"
+GETH_BIN="https://github.com/piplabs/story-geth/releases/download/v0.9.4/geth-linux-amd64"
 #STORY_BIN="story-linux-amd64-0.10.1-57567e5"
 #STORY_BIN="story-linux-amd64-0.10.0-9603826"
 #GETH_BIN="geth-linux-amd64-0.9.2-ea9f0d2"
+#GETH_BIN="geth-linux-amd64-0.9.3-b224fdf"
 
 
 #Backup
@@ -42,13 +43,18 @@ story version
 
 # Install story-geth
 cd $HOME
-rm -rf $GETH_BIN
-wget -O $GETH_BIN.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/$GETH_BIN.tar.gz 
-tar xvf $GETH_BIN.tar.gz
-sudo chmod +x $GETH_BIN/geth
-sudo mv $GETH_BIN/geth /usr/local/bin/story-geth
-rm -rf $GETH_BIN
-rm -f $GETH_BIN.tar.gz
+wget -O story-geth $GETH_BIN
+sudo chmod +x story-geth
+sudo mv story-geth /usr/local/bin/story-geth
+
+
+# rm -rf $GETH_BIN
+# wget -O $GETH_BIN.tar.gz https://story-geth-binaries.s3.us-west-1.amazonaws.com/geth-public/$GETH_BIN.tar.gz 
+# tar xvf $GETH_BIN.tar.gz
+# sudo chmod +x $GETH_BIN/geth
+# sudo mv $GETH_BIN/geth /usr/local/bin/story-geth
+# rm -rf $GETH_BIN
+# rm -f $GETH_BIN.tar.gz
 
 
 echo ""
