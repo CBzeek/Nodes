@@ -31,6 +31,13 @@ rm -f 0gchaind-linux-v*
 
 if [ -n "$1" ]
 then
+    if [ $1 = "v0.3.2" ]
+    then
+        wget https://github.com/0glabs/0g-chain/releases/download/v0.3.2/0gchaind-linux-v0.3.2
+        sudo chmod +x ./0gchaind-linux-v0.3.2
+        sudo mv ./0gchaind-linux-v0.3.2 $(which 0gchaind)
+    fi
+    
     if [ $1 = "v0.3.1" ]
     then
         wget https://github.com/0glabs/0g-chain/releases/download/v0.3.1/0gchaind-linux-v0.3.1
@@ -50,11 +57,10 @@ then
     fi
 
 else
-    wget https://github.com/0glabs/0g-chain/releases/download/v0.3.2/0gchaind-linux-v0.3.2
-    sudo chmod +x ./0gchaind-linux-v0.3.2
-    sudo mv ./0gchaind-linux-v0.3.2 $(which 0gchaind)
+    wget https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gchaind-linux-v0.4.0
+    sudo chmod +x ./0gchaind-linux-v0.4.0
+    sudo mv ./0gchaind-linux-v0.4.0 $(which 0gchaind)
 fi
-
 
 #check Version
 0gchaind version
