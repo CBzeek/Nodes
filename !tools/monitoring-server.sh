@@ -47,3 +47,16 @@ echo ''
 sudo systemctl daemon-reload
 sudo systemctl enable prometheusd
 sudo systemctl restart prometheusd
+
+
+echo ''
+echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Install Grafana to server... \e[0m" && sleep 1
+echo ''
+sudo apt-get install -y adduser libfontconfig1 musl
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise_11.3.0_amd64.deb
+sudo dpkg -i grafana-enterprise_11.3.0_amd64.deb
+rm grafana-enterprise_11.3.0_amd64.deb
+sudo systemctl daemon-reload
+sudo systemctl enable grafana-server
+sudo systemctl restart grafana-server
