@@ -15,6 +15,11 @@ source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/se
 source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-docker-remove.sh')
 ```
 
+## Install Node Exporter to server
+```
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/monitoring-node.sh')
+```
+
 ## Install PANIC by Simply VC to server
 ```
 source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/panic-server.sh')
