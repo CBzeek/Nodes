@@ -11,7 +11,7 @@ cd $HOME/infernet-container-starter
 sed -i '/infernet-node\:1.2.0/c\    image\: ritualnetwork\/infernet-node\:1.4.0' $HOME/infernet-container-starter/deploy/docker-compose.yaml
 
 # Stop container
-docker-compose -f infernet-container-starter/deploy/docker-compose.yaml down
+docker-compose -f $HOME/infernet-container-starter/deploy/docker-compose.yaml down
 
 # Restart docker container
 docker restart infernet-anvil
