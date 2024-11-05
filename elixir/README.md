@@ -1,13 +1,18 @@
 #  Elixir Node - Mainnet
 
+## Convert to Mainnet
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/mainnet/convert-to-mainnet.sh')
+```
+
 ## Screen
 ```
 sudo apt install screen -y && screen -Rd elixir
 ```
 
-## Convert to Mainnet
+## Install
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/mainnet/convert-to-mainnet.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/mainnet/install.sh')
 ```
 
 ## Backup
