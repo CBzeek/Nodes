@@ -15,10 +15,9 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/mainnet/backup.sh')
 ```
 
-
-
-
-
+#
+#
+#
 #  Elixir Node - Testnet-3
 
 ## Screen
