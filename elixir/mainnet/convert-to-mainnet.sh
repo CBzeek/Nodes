@@ -10,6 +10,7 @@ echo ""
 docker kill elixir
 docker rm elixir
 
+
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Get $PROJECT_NAME node docker image... \e[0m" && sleep 1
