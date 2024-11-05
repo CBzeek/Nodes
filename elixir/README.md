@@ -1,4 +1,36 @@
-#  Elixir Node
+#  Elixir Node - Mainnet
+
+## Screen
+```
+sudo apt install screen -y && screen -Rd elixir
+```
+
+## Convert to Mainnet
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/mainnet/convert-to-mainnet.sh')
+```
+
+
+## Install
+```
+
+```
+
+## Backup
+```
+
+```
+
+
+## Update
+```
+
+```
+
+
+
+
+#  Elixir Node - Testnet-3
 
 ## Screen
 ```
