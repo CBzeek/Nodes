@@ -19,7 +19,7 @@ read -p "Enter validator private key: " PRIVATE_KEY
 rm -rf $HOME/.elixir
 mkdir $HOME/.elixir && cd $HOME/.elixir
 
-sudo tee $HOME/.elixir/validator.env > /dev/null <<EOF
+sudo tee $HOME/.elixir/validator-mainnet.env > /dev/null <<EOF
 ENV=prod
 STRATEGY_EXECUTOR_DISPLAY_NAME=$MONIKER
 STRATEGY_EXECUTOR_BENEFICIARY=$REWARDS_ADDRESS
@@ -41,6 +41,6 @@ echo ""
 docker run -d \
   --env-file $HOME/.elixir/validator.env \
   --platform linux/amd64 \
-  --name elixir \
+  --name elixir-mainnet \
   -p 17690:17690 \
   elixirprotocol/validator
