@@ -16,7 +16,6 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 ```
 
 
-=================================
 
 #  Elixir Node - Testnet-3
 
