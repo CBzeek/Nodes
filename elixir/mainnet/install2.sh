@@ -39,8 +39,8 @@ echo -e "\e[1m\e[32m############################################################
 echo -e "\e[1m\e[32m### Start $PROJECT_NAME node ... \e[0m" && sleep 1
 echo ""
 docker run -d \
-  --env-file $HOME/.elixir/validator.env \
+  --env-file $HOME/.elixir/validator-mainnet.env \
   --platform linux/amd64 \
   --name elixir-mainnet \
-  -p 17690:17690 \
+  -p 17691:17691 \
   elixirprotocol/validator
