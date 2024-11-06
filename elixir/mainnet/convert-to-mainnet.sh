@@ -27,7 +27,7 @@ docker run -d \
   --env-file $HOME/.elixir/validator-mainnet.env \
   --platform linux/amd64 \
   --name elixir-mainnet \
-  -p 17690:17690 \
+  -p 27690:17690 \
   elixirprotocol/validator
 
   
