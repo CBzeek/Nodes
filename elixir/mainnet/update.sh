@@ -1,7 +1,7 @@
 #!/bin/bash
 PROJECT_NAME="Elixir"
 
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/elixir/testnet-3/backup.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/mainnet/backup.sh')
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
