@@ -14,4 +14,4 @@ cd $HOME
 mkdir -p $BACKUP_DIR/$PROJECT_DIR
 cp $HOME/$PROJECT_DIR/credentials.json $BACKUP_DIR/$PROJECT_DIR
 
-zip -r $BACKUP_DIR.zip $HOME/$BACKUP_DIR
+zip -r $BACKUP_DIR.zip $BACKUP_DIR
