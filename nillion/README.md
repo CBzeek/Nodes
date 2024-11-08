@@ -1,4 +1,4 @@
-# Nillion Node
+# Nillion Virefier Node
 
 ## Install
 ```
