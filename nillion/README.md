@@ -1,4 +1,4 @@
-# Nillion Virefier Node
+# Nillion Verifier Node
 
 ## Install
 ```
