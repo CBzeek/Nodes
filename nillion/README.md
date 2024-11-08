@@ -2,16 +2,15 @@
 
 ## Install
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/nillion/verifier/install.sh')
 ```
 
 ## Run Verifier
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/nillion/verifier/run.sh')
 ```
 
-
-## Update
+## Backup
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/nillion/verifier/backup.sh')
 ```
