@@ -1,6 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="Nillion"
-PROJECT_DIR="nillion"
+PROJECT_DIR="nillion/verifier"
 BACKUP_DIR=backup_$(curl -s eth0.me)_$(date +%F--%H-%M-%S)
 
 sudo apt install zip -y
