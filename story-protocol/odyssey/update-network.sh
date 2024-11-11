@@ -3,8 +3,6 @@ PROJECT_NAME="Story Protocol"
 
 # Node
 NODE="story"
-DAEMON_HOME="$HOME/.story/story"
-DAEMON_NAME="story"
 CHAIN_ID="odyssey"
 
 # Binary
@@ -78,7 +76,7 @@ sudo mv $HOME/story-geth /usr/local/bin/
 story-geth version
 
 # Init node
-$DAEMON_NAME init --network $CHAIN_ID --moniker "${VALIDATOR}"
+story init --network $CHAIN_ID --moniker "${VALIDATOR}"
 sleep 1
 
 rm $HOME/.story/story/config/node_key.json
@@ -154,7 +152,7 @@ echo ""
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### EVM Public Key"
-$DAEMON_NAME validator export --export-evm-key | grep "EVM Public Key"
+story validator export --export-evm-key | grep "EVM Public Key"
 echo ""
 
 echo -e "\e[1m\e[32m###########################################################################################"
