@@ -144,6 +144,10 @@ sleep 5
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/story-protocol/odyssey/backup.sh')
 
 
+#Snapshot
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/story-protocol/odyssey/snapshot.sh')
+
+
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Getting $PROJECT_NAME node EVM address and private key... \e[0m" && sleep 1
