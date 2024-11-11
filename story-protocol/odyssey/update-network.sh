@@ -49,7 +49,7 @@ mkdir -p $HOME/update-network
 cp $HOME/.story/story/config/node_key.json $HOME/update-network/node_key.json
 cp $HOME/.story/story/config/priv_validator_key.json $HOME/update-network/priv_validator_key.json
 
-#Backup
+#Backup iliad
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/backup.sh')
 
 #Delete old
@@ -140,8 +140,8 @@ sudo systemctl restart story-geth
 sleep 5
 
 
-#Backup - change to new
-#source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/backup.sh')
+#Backup odyssey
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/story-protocol/odyssey/backup.sh')
 
 
 echo ""
