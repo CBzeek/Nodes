@@ -11,7 +11,7 @@ echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" 
 echo ''
 
 cd $HOME
-mkdir -p $HOME/$BACKUP_DIR/geth/iliad/geth/
+mkdir -p $HOME/$BACKUP_DIR/$PROJECT_DIR/geth/iliad/geth/
 mkdir -p $HOME/$BACKUP_DIR/$PROJECT_DIR/story/config/ $HOME/$BACKUP_DIR/$PROJECT_DIR/story/data/
 
 cp -r $HOME/$PROJECT_DIR//story/config/ $HOME/$BACKUP_DIR/$PROJECT_DIR/story/
