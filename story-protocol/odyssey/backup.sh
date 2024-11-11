@@ -28,3 +28,5 @@ cp $HOME/$PROJECT_DIR/geth/$CHAIN_ID/geth/nodekey $HOME/$BACKUP_DIR/${PROJECT_DI
 
 cd $BACKUP_DIR
 zip -r $HOME/$BACKUP_DIR.zip ${PROJECT_DIR}-${CHAIN_ID}-backup
+
+cd $HOME
