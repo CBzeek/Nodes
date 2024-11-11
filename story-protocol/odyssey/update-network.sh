@@ -3,7 +3,6 @@ PROJECT_NAME="Story Protocol"
 
 # Node
 NODE="story"
-CHAIN_ID="odyssey"
 
 # Binary
 STORY_BIN="https://github.com/piplabs/story/releases/download/v0.12.1/story-linux-amd64"
@@ -76,7 +75,7 @@ sudo mv $HOME/story-geth /usr/local/bin/
 story-geth version
 
 # Init node
-story init --network $CHAIN_ID --moniker "${VALIDATOR}"
+story init --network odyssey --moniker "${VALIDATOR}"
 sleep 1
 
 rm $HOME/.story/story/config/node_key.json
@@ -145,7 +144,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 
 
 #Snapshot
-#source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/story-protocol/odyssey/snapshot.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/story-protocol/odyssey/snapshot.sh')
 
 
 echo ""
