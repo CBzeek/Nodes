@@ -53,9 +53,9 @@ cp $HOME/.story/story/config/priv_validator_key.json $HOME/update-network/priv_v
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/backup.sh')
 
 #Delete old
-rm -rf $HOME/.story
-rm /etc/systemd/system/story-geth.service
-rm /etc/systemd/system/story.service
+sudo rm -rf $HOME/.story
+sudo rm /etc/systemd/system/story-geth.service
+sudo rm /etc/systemd/system/story.service
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
