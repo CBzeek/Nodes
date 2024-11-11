@@ -15,9 +15,9 @@ mkdir -p $HOME/$BACKUP_DIR/geth/iliad/geth/
 mkdir -p $HOME/$BACKUP_DIR/$PROJECT_DIR/story/config/ $HOME/$BACKUP_DIR/$PROJECT_DIR/story/data/
 
 cp -r $HOME/$PROJECT_DIR//story/config/ $HOME/$BACKUP_DIR/$PROJECT_DIR/story/
-rm -f $HOME/$BACKUP_DIR/story/config/addrbook.json
-rm -f $HOME/$BACKUP_DIR/story/config/genesis.json
-rm -f $HOME/$BACKUP_DIR/story/config/*.toml
+rm -f $HOME/$BACKUP_DIR/$PROJECT_DIR/story/config/addrbook.json
+rm -f $HOME/$BACKUP_DIR/$PROJECT_DIR/story/config/genesis.json
+rm -f $HOME/$BACKUP_DIR/$PROJECT_DIR/story/config/*.toml
 
 cp $HOME/$PROJECT_DIR/story/data/priv_validator_state.json $HOME/$BACKUP_DIR/$PROJECT_DIR/story/data/
 
