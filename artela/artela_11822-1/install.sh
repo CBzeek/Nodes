@@ -71,10 +71,10 @@ artelad config node tcp://localhost:$RPC_PORT
 artelad init $MONIKER --chain-id $CHAIN_ID
 
 #get genesis
-curl -L https://snapshots-testnet.nodejumper.io/artela-testnet/genesis.json > $HOME/.artelad/config/genesis.json
+curl -L https://snapshots-testnet.nodejumper.io/artela/genesis.json > $HOME/.artelad/config/genesis.json
 
 #get addrbook
-curl -L https://snapshots-testnet.nodejumper.io/artela-testnet/addrbook.json > $HOME/.artelad/config/addrbook.json
+curl -L https://snapshots-testnet.nodejumper.io/artela/addrbook.json > $HOME/.artelad/config/addrbook.json
 
 #peers, seeds
 PEERS="5c9b1bc492aad27a0197a6d3ea3ec9296504e6fd@artela-testnet-peer.itrocket.net:30656,84f072e9154b3816ea6384de87d0dacea03e4195@213.199.61.46:30656,2503d2069bba21ca0366604ab87b53bed44949ed@157.173.207.232:3456,0e03c8834092c72fd70fada5f50d6f3781d5fb56@213.199.42.220:26656,cf88a302a7a9921367def8ed15ba414797b56468@62.169.26.97:3456,2f3b9357487f5bc603b36099e583d4fb22e8a065@156.67.31.31:23456,27abd947b1d8264178f8c04958bd40fe257ba52b@156.67.82.186:3456,1f09c918f39240cf204996cd1239eccdbb22a779@45.136.17.26:3456,6eb16383587830598578393c8c33b0415784f645@109.199.124.243:26656,647c0147fdeb92f0ecec499464f78f10bbde4205@38.242.139.66:26666,58514c1280eb7b0cc57881fa09f0a4d39a39e886@195.7.4.16:11856,3a5e376458bacb248650e924d9904ee0fdf46644@45.92.9.138:3456,c25185a411b5f5f653a4bf5410cb3af71ff6a53a@65.108.67.54:3456,3a3905cabaa5439f9a571f1f108c518ea696b4cf@195.7.6.6:11856,f994e822daa8bb8a21536ba2dbc09b8771afe2c5@89.117.148.223:3456,ee59c0f7f207da7f12671550393307e54de86feb@84.46.253.1:3456,8590ccf8fed731039e70e19132d20a0c2c50f17d@109.123.245.21:3456,b52689aa72b9cfd3cd882aca90e744b76fd8f168@92.42.106.203:37656,1b0cd81c4b06fd57f613c691dc93bae79b117a89@109.205.182.73:3456,44d058e60f233f842647f5a62fe139c8326648cf@185.209.229.62:3456,8d198deb0f48dd2e4d0f00b3d4fe1772413171fc@95.217.120.205:15856"
