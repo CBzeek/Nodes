@@ -13,7 +13,8 @@ echo ''
 
 cd $HOME
 mkdir -p $HOME/$BACKUP_DIR/${PROJECT_DIR}-backup/geth/$CHAIN_ID/geth/
-mkdir -p $HOME/$BACKUP_DIR/${PROJECT_DIR}-backup/story/config/ $HOME/$BACKUP_DIR/$PROJECT_DIR/story/data/
+mkdir -p $HOME/$BACKUP_DIR/${PROJECT_DIR}-backup/story/config/
+mkdir -p $HOME/$BACKUP_DIR/${PROJECT_DIR}-backup/story/data/
 
 cp -r $HOME/$PROJECT_DIR/story/config/ $HOME/$BACKUP_DIR/${PROJECT_DIR}-backup/story/
 rm -f $HOME/$BACKUP_DIR/${PROJECT_DIR}-backup/story/config/addrbook.json
