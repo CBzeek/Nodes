@@ -14,7 +14,7 @@ cd $HOME
 mkdir -p $HOME/$BACKUP_DIR/$PROJECT_DIR/geth/iliad/geth/
 mkdir -p $HOME/$BACKUP_DIR/$PROJECT_DIR/story/config/ $HOME/$BACKUP_DIR/$PROJECT_DIR/story/data/
 
-cp -r $HOME/$PROJECT_DIR//story/config/ $HOME/$BACKUP_DIR/$PROJECT_DIR/story/
+cp -r $HOME/$PROJECT_DIR/story/config/ $HOME/$BACKUP_DIR/$PROJECT_DIR/story/
 rm -f $HOME/$BACKUP_DIR/$PROJECT_DIR/story/config/addrbook.json
 rm -f $HOME/$BACKUP_DIR/$PROJECT_DIR/story/config/genesis.json
 rm -f $HOME/$BACKUP_DIR/$PROJECT_DIR/story/config/*.toml
