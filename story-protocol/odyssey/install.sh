@@ -4,7 +4,7 @@ PROJECT_NAME="Story Protocol"
 # Node
 NODE="story"
 DAEMON_HOME="$HOME/.story/story"
-#DAEMON_NAME="story"
+DAEMON_NAME="story"
 CHAIN_ID="odyssey"
 
 # Binary
