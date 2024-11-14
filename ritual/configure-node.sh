@@ -3,7 +3,7 @@ PROJECT_NAME="Ritual"
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Configure $PROJECT_NAME node... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Configure $PROJECT_NAME node setings... \e[0m" && sleep 1
 echo ""
 
 read -p "Enter your private key (example: 0x123....123): " PRIVATE_KEY
