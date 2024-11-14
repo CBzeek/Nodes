@@ -16,7 +16,6 @@ cp $HOME/infernet-container-starter/projects/hello-world/container/config.json $
 yq -i '.chain.rpc_url = "https://mainnet.base.org/"' $HOME/infernet-container-starter/deploy/config.json
 
 # Private Key
-PRIVATE_KEY="private-key-test"
 PRIV=$PRIVATE_KEY yq -i '.chain.wallet.private_key = strenv(PRIV)' $HOME/infernet-container-starter/deploy/config.json
 
 # Registry address
