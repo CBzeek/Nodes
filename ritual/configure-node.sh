@@ -6,7 +6,7 @@ echo -e "\e[1m\e[32m############################################################
 echo -e "\e[1m\e[32m### Configure $PROJECT_NAME node setings... \e[0m" && sleep 1
 echo ""
 
-read -p "Enter your private key (example: 0x123....123): " PRIVATE_KEY
+read -p "Enter your Private Key (example: 0x123....123): " PRIVATE_KEY
 
 # Backup config
 cp $HOME/infernet-container-starter/projects/hello-world/container/config.json $HOME/infernet-container-starter/projects/hello-world/container/config.json.bak
