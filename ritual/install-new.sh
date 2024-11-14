@@ -16,13 +16,15 @@ git clone https://github.com/ritual-net/infernet-container-starter
 cd infernet-container-starter
 sed -i 's/docker compose/docker-compose/' $HOME/infernet-container-starter/Makefile
 
+# Configure node
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/ritual/configure-node.sh')
+
 # Deploy container
-project=hello-world make deploy-container
+#project=hello-world make deploy-container
+docker-compose -f $HOME/infernet-container-starter/deploy/docker-compose.yaml up -d
 
 # Check docker
 docker container ls
 
-# Configure node
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/ritual/configure-node.sh')
 
 
