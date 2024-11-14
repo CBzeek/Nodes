@@ -9,9 +9,11 @@ echo ""
 read -p "Enter your private key (example: 0x123....123): " PRIVATE_KEY
 
 # Backup config
-cp $HOME/infernet-container-starter/deploy/config.json $HOME/infernet-container-starter/deploy/config.json.backup
-cp $HOME/infernet-container-starter/projects/hello-world/container/config.json $HOME/infernet-container-starter/projects/hello-world/container/config.json.backup
-cp $HOME/infernet-container-starter/deploy/docker-compose.yaml $HOME/infernet-container-starter/deploy/docker-compose.yaml.backup
+cp $HOME/infernet-container-starter/deploy/config.json $HOME/infernet-container-starter/deploy/config.json.bak
+cp $HOME/infernet-container-starter/projects/hello-world/container/config.json $HOME/infernet-container-starter/projects/hello-world/container/config.json.bak
+cp $HOME/infernet-container-starter/deploy/docker-compose.yaml $HOME/infernet-container-starter/deploy/docker-compose.yaml.bak
+cp $HOME/infernet-container-starter/projects/hello-world/contracts/script/Deploy.s.sol $HOME/infernet-container-starter/projects/hello-world/contracts/script/Deploy.s.sol.bak
+cp $HOME/infernet-container-starter/projects/hello-world/contracts/Makefile $HOME/infernet-container-starter/projects/hello-world/contracts/Makefile.bak
 
 # RPC
 yq -i '.chain.rpc_url = "https://mainnet.base.org/"' $HOME/infernet-container-starter/deploy/config.json
@@ -36,4 +38,11 @@ cp -f $HOME/infernet-container-starter/deploy/config.json $HOME/infernet-contain
 
 # Infernet node image version
 yq -i '.services.node.image = "ritualnetwork/infernet-node:1.4.0"' $HOME/infernet-container-starter/deploy/docker-compose.yaml
+
+# Deploy.s.sol
+sed -i "s/address registry *=.*/address registry = 0x3B1554f346DFe5c482Bb4BA31b880c1C18412170;/" $HOME/infernet-container-starter/projects/hello-world/contracts/script/Deploy.s.sol
+
+# Makefile
+sed -i "s/sender *:=.*/sender := ${PRIVATE_KEY}/" $HOME/infernet-container-starter/projects/hello-world/contracts/Makefile
+sed -i "s/RPC_URL *:=.*/RPC_URL := https:\/\/mainnet.base.org/" $HOME/infernet-container-starter/projects/hello-world/contracts/Makefile
 
