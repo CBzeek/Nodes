@@ -11,6 +11,7 @@ read -p "Enter your private key (example: 0x123....123): " PRIVATE_KEY
 # Backup config
 cp $HOME/infernet-container-starter/deploy/config.json $HOME/infernet-container-starter/deploy/config.json.backup
 cp $HOME/infernet-container-starter/projects/hello-world/container/config.json $HOME/infernet-container-starter/projects/hello-world/container/config.json.backup
+cp $HOME/infernet-container-starter/deploy/docker-compose.yaml $HOME/infernet-container-starter/deploy/docker-compose.yaml.backup
 
 # RPC
 yq -i '.chain.rpc_url = "https://mainnet.base.org/"' $HOME/infernet-container-starter/deploy/config.json
@@ -32,4 +33,7 @@ yq -i '.chain.snapshot_sync.sync_period = 30' $HOME/infernet-container-starter/d
 
 # Copy config
 cp -f $HOME/infernet-container-starter/deploy/config.json $HOME/infernet-container-starter/projects/hello-world/container/config.json
+
+# Infernet node image version
+yq -i '.services.node.image = "ritualnetwork/infernet-node:1.4.0"' $HOME/infernet-container-starter/deploy/docker-compose.yaml
 
