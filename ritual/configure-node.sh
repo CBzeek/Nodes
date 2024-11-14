@@ -32,6 +32,9 @@ yq -i '.chain.snapshot_sync.starting_sub_id = 160000' $HOME/infernet-container-s
 yq -i '.chain.snapshot_sync.batch_size = 800' $HOME/infernet-container-starter/projects/hello-world/container/config.json
 yq -i '.chain.snapshot_sync.sync_period = 30' $HOME/infernet-container-starter/projects/hello-world/container/config.json
 
+# Remove docker section
+yq -i 'del(.docker)' $HOME/infernet-container-starter/projects/hello-world/container/config.json
+
 # Copy config
 cp -f $HOME/infernet-container-starter/projects/hello-world/container/config.json $HOME/infernet-container-starter/deploy
 
