@@ -179,7 +179,7 @@ echo ""
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### EVM Public Key"
-$DAEMON_NAME validator export --export-evm-key | grep "EVM Public Key"
+story validator export --export-evm-key | grep "EVM Address"
 echo ""
 
 echo -e "\e[1m\e[32m###########################################################################################"
