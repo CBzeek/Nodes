@@ -33,7 +33,7 @@ yq -i '.chain.snapshot_sync.batch_size = 800' $HOME/infernet-container-starter/p
 yq -i '.chain.snapshot_sync.sync_period = 30' $HOME/infernet-container-starter/projects/hello-world/container/config.json
 
 # Copy config
-cp -f $HOME/infernet-container-starter/projects/hello-world/container/config.json $HOME/infernet-container-starter/deploy/config.json
+cp -f $HOME/infernet-container-starter/projects/hello-world/container/config.json $HOME/infernet-container-starter/deploy
 
 # Infernet node image version
 yq -i '.services.node.image = "ritualnetwork/infernet-node:1.4.0"' $HOME/infernet-container-starter/deploy/docker-compose.yaml
