@@ -7,20 +7,20 @@ sudo apt install screen -y && screen -Rd story
 
 ## Install
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/install.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/story-protocol/odyssey/install.sh')
 ```
 
 ## Backup
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/backup.sh')
+source <(wget -qO- '')
 ```
 
 ## Snapshot
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/snapshot.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/story-protocol/odyssey/snapshot.sh')
 ```
 
 ## Update bin
 ```
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/story-protocol/iliad/update-bin.sh')
+source <(wget -qO- '')
 ```
