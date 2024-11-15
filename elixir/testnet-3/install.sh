@@ -20,7 +20,7 @@ rm -rf $HOME/.elixir
 mkdir $HOME/.elixir && cd $HOME/.elixir
 
 sudo tee $HOME/.elixir/validator.env > /dev/null <<EOF
-ENV=testnet-3
+#ENV=testnet-3
 STRATEGY_EXECUTOR_DISPLAY_NAME=$MONIKER
 STRATEGY_EXECUTOR_BENEFICIARY=$REWARDS_ADDRESS
 SIGNER_PRIVATE_KEY=$PRIVATE_KEY
@@ -31,8 +31,8 @@ echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Download $PROJECT_NAME node docker image... \e[0m" && sleep 1
 echo ""
-docker pull elixirprotocol/validator:v3
-
+#docker pull elixirprotocol/validator:v3
+docker pull elixirprotocol/validator:testnet --platform linux/amd64
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
@@ -40,7 +40,8 @@ echo -e "\e[1m\e[32m### Start $PROJECT_NAME node ... \e[0m" && sleep 1
 echo ""
 docker run -d \
   --env-file $HOME/.elixir/validator.env \
+  --platform linux/amd64 \
   --name elixir \
+  --restart unless-stopped \
   -p 17690:17690 \
-  elixirprotocol/validator:v3
-
+  elixirprotocol/validator:testnet
