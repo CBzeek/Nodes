@@ -8,10 +8,4 @@ echo ""
 docker kill elixir-mainnet
 docker rm elixir-mainnet
 
-docker run -d \
-  --env-file $HOME/.elixir/validator-mainnet.env \
-  --platform linux/amd64 \
-  --name elixir-mainnet \
-  --restart unless-stopped \
-  -p 27690:17690 \
-  elixirprotocol/validator
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/mainnet/run.sh')
