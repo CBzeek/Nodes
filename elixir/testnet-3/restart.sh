@@ -10,7 +10,8 @@ docker rm elixir
 
 docker run -d \
   --env-file $HOME/.elixir/validator.env \
+  --platform linux/amd64 \
   --name elixir \
   --restart unless-stopped \
   -p 17690:17690 \
-  elixirprotocol/validator:v3
+  elixirprotocol/validator:testnet
