@@ -20,7 +20,7 @@ rm -rf $HOME/.elixir
 mkdir $HOME/.elixir && cd $HOME/.elixir
 
 sudo tee $HOME/.elixir/validator-mainnet.env > /dev/null <<EOF
-ENV=prod
+#ENV=prod
 STRATEGY_EXECUTOR_DISPLAY_NAME=$MONIKER
 STRATEGY_EXECUTOR_BENEFICIARY=$REWARDS_ADDRESS
 SIGNER_PRIVATE_KEY=$PRIVATE_KEY
