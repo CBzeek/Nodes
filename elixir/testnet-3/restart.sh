@@ -8,10 +8,4 @@ echo ""
 docker kill elixir
 docker rm elixir
 
-docker run -d \
-  --env-file $HOME/.elixir/validator.env \
-  --platform linux/amd64 \
-  --name elixir \
-  --restart unless-stopped \
-  -p 17690:17690 \
-  elixirprotocol/validator:testnet
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/testnet-3/run.sh')
