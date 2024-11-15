@@ -18,17 +18,4 @@ echo ""
 cp $HOME/.elixir/validator.env $HOME/.elixir/validator-mainnet.env
 sed -i 's/ENV=testnet-3/ENV=prod/' $HOME/.elixir/validator-mainnet.env
 
-
-echo ""
-echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Start $PROJECT_NAME node ... \e[0m" && sleep 1
-echo ""
-docker run -d \
-  --env-file $HOME/.elixir/validator-mainnet.env \
-  --platform linux/amd64 \
-  --name elixir-mainnet \
-  --restart unless-stopped \
-  -p 27690:17690 \
-  elixirprotocol/validator
-
-  
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/mainnet/run.sh')
