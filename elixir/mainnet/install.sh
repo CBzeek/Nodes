@@ -33,15 +33,4 @@ echo -e "\e[1m\e[32m### Download $PROJECT_NAME node docker image... \e[0m" && sl
 echo ""
 docker pull elixirprotocol/validator --platform linux/amd64
 
-
-echo ""
-echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Start $PROJECT_NAME node ... \e[0m" && sleep 1
-echo ""
-docker run -d \
-  --env-file $HOME/.elixir/validator-mainnet.env \
-  --platform linux/amd64 \
-  --name elixir-mainnet \
-  --restart unless-stopped \
-  -p 27690:17690 \
-  elixirprotocol/validator
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/elixir/mainnet/run.sh')
