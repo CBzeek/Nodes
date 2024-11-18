@@ -10,8 +10,5 @@ cd $HOME/infernet-container-starter
 # Change the node’s image to the latest version (today, this is 1.2.0 but be sure to check for the latest version).
 sed -i '/infernet-node\:1.2.0/c\    image\: ritualnetwork\/infernet-node\:1.4.0' $HOME/infernet-container-starter/deploy/docker-compose.yaml
 
-# Stop containers
-docker-compose -f $HOME/infernet-container-starter/deploy/docker-compose.yaml down
-
-# Start containers
-docker-compose -f $HOME/infernet-container-starter/deploy/docker-compose.yaml up -d
+# Restart
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/ritual/restart.sh')
