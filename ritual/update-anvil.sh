@@ -1,6 +1,14 @@
 #!/bin/bash
 PROJECT_NAME="Ritual"
 
+# Install software
+echo ''
+echo -e "\e[1m\e[32m###########################################################################################"
+echo -e "\e[1m\e[32m### Installing dependencies to server... \e[0m"
+echo '' && sleep 1
+sudo apt install snapd -y
+sudo snap install yq
+
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Configure $PROJECT_NAME node setings... \e[0m" && sleep 1
