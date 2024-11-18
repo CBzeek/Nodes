@@ -18,7 +18,7 @@ echo ""
 cp $HOME/infernet-container-starter/deploy/docker-compose.yaml $HOME/infernet-container-starter/deploy/docker-compose.yaml.bak
 
 # Infernet node image version
-yq -i '.services.infernet-anvil.command = "--host 0.0.0.0 --port 3000 --load-state infernet_deployed.json -b 1 --prune-history"' docker-compose.yaml
+yq -i '.services.infernet-anvil.command = "--host 0.0.0.0 --port 3000 --load-state infernet_deployed.json -b 1 --prune-history"' $HOME/infernet-container-starter/deploy/docker-compose.yaml
 
 # Restart
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/ritual/restart.sh')
