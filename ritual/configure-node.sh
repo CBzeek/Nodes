@@ -41,7 +41,7 @@ cp -f $HOME/infernet-container-starter/projects/hello-world/container/config.jso
 
 # Infernet node image version
 yq -i '.services.node.image = "ritualnetwork/infernet-node:1.4.0"' $HOME/infernet-container-starter/deploy/docker-compose.yaml
-#yq -i '.services.infernet-anvil.command = "--host 0.0.0.0 --port 3000 --load-state infernet_deployed.json -b 1 --prune-history"' docker-compose.yaml
+yq -i '.services.infernet-anvil.command = "--host 0.0.0.0 --port 3000 --load-state infernet_deployed.json -b 1 --prune-history"' docker-compose.yaml
 
 # Deploy.s.sol
 sed -i "s/address registry *=.*/address registry = 0x3B1554f346DFe5c482Bb4BA31b880c1C18412170;/" $HOME/infernet-container-starter/projects/hello-world/contracts/script/Deploy.s.sol
