@@ -24,7 +24,7 @@ sudo adduser xrdp ssl-cert
 cd /etc/xrdp
 sudo mv startwm.sh startwm.sh.bak
 
-sudo tee /etc/systemd/system/ogd.service > /dev/null <<EOF
+sudo tee startwm.sh > /dev/null <<EOF
 #!/bin/sh
 if [ -r /etc/default/locale ]; then
 . /etc/default/locale
