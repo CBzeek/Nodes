@@ -8,6 +8,9 @@ echo ""
 sudo apt update
 sudo apt install curl git jq mc screen lz4 htop -y
 
+# Install docker
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-docker.sh')
+
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Set $PROJECT_NAME node params... \e[0m" && sleep 1
