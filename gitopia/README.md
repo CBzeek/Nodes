@@ -24,3 +24,8 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 ```
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/gitopia/mainnet/validator.sh')
 ```
+
+## Snapshot
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/gitopia/mainnet/snapshot.sh')
+```
