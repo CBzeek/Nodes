@@ -14,5 +14,6 @@ cd $HOME
 mkdir -p $BACKUP_DIR/gitopia/data/
 cp $HOME/$PROJECT_DIR/data/*.json $BACKUP_DIR/gitopia/data/
 rsync -av --exclude='data' --exclude='log' $HOME/$PROJECT_DIR/ $BACKUP_DIR/gitopia/
+rm -f $BACKUP_DIR/gitopia/config/genesis.json
 
 zip -r $BACKUP_DIR.zip $HOME/$BACKUP_DIR
