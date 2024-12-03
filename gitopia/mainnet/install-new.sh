@@ -1,6 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="Gitopia"
-PROJECT_VERSION="v4.0.0"
+PROJECT_VERSION="v5.1.0"
 
 if [ ! $MONIKER ]; then
     echo ""
