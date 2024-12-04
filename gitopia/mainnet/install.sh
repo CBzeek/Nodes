@@ -2,6 +2,8 @@
 PROJECT_NAME="Gitopia"
 PROJECT_VERSION="v5.1.0"
 
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
+
 if [ ! $MONIKER ]; then
     echo ""
     echo -e "\e[1m\e[32m###########################################################################################"
