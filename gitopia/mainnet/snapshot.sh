@@ -16,7 +16,8 @@ sleep 1
 
 cp $HOME/.gitopia/data/priv_validator_state.json $HOME/.gitopia/priv_validator_state.json.backup
 gitopiad tendermint unsafe-reset-all --home $HOME/.gitopia --keep-addr-book
-curl https://snapshots.nodejumper.io/gitopia/gitopia_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.gitopia
+#curl https://snapshots.nodejumper.io/gitopia/gitopia_latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.gitopia
+curl -o - -L https://gitopia.snapshot.stavr.tech/gitopia-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.gitopia --strip-components 2
 mv $HOME/.gitopia/priv_validator_state.json.backup $HOME/.gitopia/data/priv_validator_state.json
 
 
