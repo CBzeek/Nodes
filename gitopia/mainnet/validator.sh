@@ -17,6 +17,7 @@ $PROJECT_BIN tx staking create-validator \
 --commission-max-change-rate=0.01 \
 --min-self-delegation=1 \
 --from=wallet \
+--gas-prices 0.0012ulore \
 --gas-adjustment=1.5 \
 --gas=auto \
 --yes 
