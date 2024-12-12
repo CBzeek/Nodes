@@ -1,6 +1,8 @@
 #!/bin/bash
 PROJECT_NAME="Ritual"
 
+docker-compose -f $HOME/infernet-container-starter/deploy/docker-compose.yaml down
+
 # Install software
 echo ''
 echo -e "\e[1m\e[32m###########################################################################################"
