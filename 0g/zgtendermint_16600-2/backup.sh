@@ -3,6 +3,10 @@ PROJECT_NAME="0G"
 PROJECT_DIR=".0gchain"
 BACKUP_DIR=backup_$(curl -s eth0.me)_$(date +%F--%H-%M-%S)
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 sudo apt install rsync zip -y
 
 echo ''
