@@ -1,6 +1,10 @@
 #!/bin/bash
 PROJECT_NAME="Story Protocol"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 # Node
 NODE="story"
 DAEMON_HOME="$HOME/.story/story"
