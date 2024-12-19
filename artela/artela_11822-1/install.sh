@@ -1,6 +1,10 @@
 #!/bin/bash
 PROJECT_NAME="Artela"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 if [ ! $MONIKER ]; then
     echo ""
     echo -e "\e[1m\e[32m###########################################################################################"
