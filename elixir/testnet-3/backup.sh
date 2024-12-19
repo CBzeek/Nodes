@@ -3,6 +3,10 @@ PROJECT_NAME="Elixir"
 PROJECT_DIR=".elixir"
 BACKUP_DIR=backup_$(curl -s eth0.me)_$(date +%F--%H-%M-%S)
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 sudo apt install zip -y
 
 echo ''
