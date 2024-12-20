@@ -3,6 +3,7 @@
 # Import Colors
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/server-colors.sh')
 
+echo ${B_GREEN}
 
 echo ''
 #echo -e '\e[1m\e[32m'
