@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
 cd $HOME
 
 #Ubuntu update and upgrade
