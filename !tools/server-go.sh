@@ -3,12 +3,6 @@
 # Import Colors
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
 
-#echo ""
-#echo -e "${B_GREEN}"
-#echo -e "${B_RED}"
-#echo -e "${NO_COLOR}"
-#echo "" && sleep 2
-
 if [ -n "$1" ]
 then
     VER="$1"
