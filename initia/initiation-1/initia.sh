@@ -104,7 +104,7 @@ After=network-online.target
 User=$USER
 ExecStart=$(which initiad) start
 Restart=on-failure
-RestartSec=10
+RestartSec=5
 LimitNOFILE=10000
 
 [Install]
