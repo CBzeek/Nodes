@@ -145,8 +145,8 @@ After=network-online.target
 User=$USER
 WorkingDirectory=$HOME/.story/story
 ExecStart=/usr/local/bin/story run
-Restart=always
-RestartSec=3
+Restart=on-failure
+RestartSec=5
 LimitNOFILE=infinity
 LimitNPROC=infinity
 
