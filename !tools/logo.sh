@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Import Colors
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/server-colors.sh')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
 
 echo ""
 echo -e "${B_GREEN}"
