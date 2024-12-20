@@ -22,7 +22,7 @@ fi
 echo ""
 echo -e "${B_GREEN}"
 echo -e "###########################################################################################"
-echo -e "### Install Go language to server..."
+echo -e "### Install Go language version $VER to server..."
 echo -e "${NO_COLOR}"
 echo "" && sleep 1
 
