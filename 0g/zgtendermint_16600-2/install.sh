@@ -144,8 +144,8 @@ After=network.target
 User=$USER
 Type=simple
 ExecStart=$(which 0gchaind) start --home $HOME/.0gchain
-Restart=always
-RestartSec=3
+Restart=on-failure
+RestartSec=5
 LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
