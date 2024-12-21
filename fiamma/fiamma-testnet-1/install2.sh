@@ -59,8 +59,10 @@ source $HOME/.bash_profile
 
 # Config node
 cd $HOME
-fiammad config chain-id $CHAIN_ID
-fiammad config keyring-backend test
+fiammad config set client chain-id $CHAIN_ID
+fiammad config set client keyring-backend test
+#fiammad config chain-id $CHAIN_ID
+#fiammad config keyring-backend test
 
 # Init node
 fiammad init $MONIKER --chain-id $CHAIN_ID
