@@ -29,7 +29,7 @@ while true; do
     BLOCKS_LEFT=0
   fi
 
-  echo -e "Node Height: ${B_GREEN}$NODE_HEIGHT${NO_COLOR} | RPC Height: ${B_YELLOW}$RPC_HEIGHT${NO_COLOR} | Blocks Left: ${RED}$BLOCKS_LEFT${NO_CLOLOR}"
+  echo -e "Node Height: ${B_GREEN}$NODE_HEIGHT${NO_COLOR} | RPC Height: ${B_YELLOW}$RPC_HEIGHT${NO_COLOR} | Blocks Left: ${B_RED}$BLOCKS_LEFT${NO_CLOLOR}"
 
   sleep 5
 done
