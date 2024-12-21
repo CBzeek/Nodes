@@ -22,12 +22,14 @@ sudo systemctl stop fiammad
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Downloading $PROJECT_NAME node snapshot... \e[0m" && sleep 1
 echo ''
+FIAMMA_SNAP=$(curl -s https://server-5.itrocket.net/testnet/fiamma/ | grep -oP '(?<=href=")[^"]*' | sed 's/.*\///' | grep fiamma | awk 'NR == 2')
+echo $FIAMMA_SNAP
 rm -rf $HOME/.fiamma/data/application.db 
 cp $HOME/.fiamma/data/priv_validator_state.json $HOME/.fiamma/priv_validator_state.json.backup
 fiammad tendermint unsafe-reset-all --home $HOME/.fiamma --keep-addr-book
-curl https://server-5.itrocket.net/testnet/fiamma/fiamma_2024-11-26_310597_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.fiamma
+curl https://server-5.itrocket.net/testnet/fiamma/$FIAMMA_SNAP | lz4 -dc - | tar -xf - -C $HOME/.fiamma
 mv $HOME/.fiamma/priv_validator_state.json.backup $HOME/.fiamma/data/priv_validator_state.json
-#rm -f ./latest_snapshot.tar.lz4
+rm -f ./latest_snapshot.tar.lz4
 
 
 
