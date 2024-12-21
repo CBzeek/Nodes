@@ -1,6 +1,8 @@
 # Online Color code generator
 https://ansi.gabebanks.net/
 
+# Docs 
+https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
 
 # Reset
 Color_Off='\033[0m'       # Text Reset
