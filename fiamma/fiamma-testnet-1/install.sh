@@ -16,9 +16,8 @@ if [ ! $MONIKER ]; then
     echo -e "###########################################################################################"
     echo -e "### Setting $PROJECT_NAME node moniker..."
     echo -e "${NO_COLOR}" && sleep 1
-    echo -e "${B_YELLOW}"
     read -p "Enter node moniker: " MONIKER
-    echo -e "${NO_COLOR}" && sleep 1
+    echo "" && sleep 1
     echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
 fi
 
@@ -29,10 +28,6 @@ fi
 if [ ! $WALLET_NAME ]; then
     echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
 fi
-
-if [ ! $RPC_PORT ]; then
-    echo 'export RPC_PORT="26657"' >> ~/.bash_profile
-fi
 source $HOME/.bash_profile
 
 
@@ -41,7 +36,7 @@ source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/se
 sudo apt install make bash gcc pkg-config openssl libssl-dev -y
 
 
-#install go
+# Install go
 cd $HOME
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/server-go.sh') 1.23.3
 
