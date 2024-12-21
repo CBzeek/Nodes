@@ -16,7 +16,7 @@ if [ ! $MONIKER ]; then
     echo -e "###########################################################################################"
     echo -e "### Setting $PROJECT_NAME node moniker..."
     echo -e "${NO_COLOR}" && sleep 1
-    echo -e "${B_YELLOW}
+    echo -e "${B_YELLOW}"
     read -p "Enter node moniker: " MONIKER
     echo -e "${NO_COLOR}" && sleep 1
     echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
