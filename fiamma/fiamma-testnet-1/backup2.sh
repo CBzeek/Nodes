@@ -31,9 +31,9 @@ rm -f $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/fiamma/config/addrbook
 rm -f $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/fiamma/config/genesis.json
 rm -f $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/fiamma/config/*.toml
 
-cp $HOME/$PROJECT_DIR/fiamma/data/priv_validator_state.json $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/fiamma/data/
+cp $HOME/$PROJECT_DIR/data/priv_validator_state.json $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/fiamma/data/
 
-cp $HOME/$PROJECT_DIR/fiamma/keyring-test/* $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/fiamma/keyring-test/
+cp $HOME/$PROJECT_DIR/keyring-test/* $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/fiamma/keyring-test/
 
 cd $BACKUP_DIR
 zip -r $HOME/$BACKUP_DIR.zip ${PROJECT_DIR}-${CHAIN_ID}-backup
