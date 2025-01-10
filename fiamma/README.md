@@ -12,7 +12,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 
 ## Backup
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/fiamma/fiamma-testnet-1/backup.sh')
 ```
 
 ## Snapshot
