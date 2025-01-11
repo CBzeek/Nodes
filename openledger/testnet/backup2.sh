@@ -2,7 +2,7 @@
 # Variables
 PROJECT_NAME="OpenLedger"
 PROJECT_DIR=".config/opl"
-CHAIN_ID="tesnet"
+CHAIN_ID="testnet"
 BACKUP_DIR=backup_$(curl -s eth0.me)_$(date +%F--%H-%M-%S)
 
 # Logo
@@ -22,9 +22,9 @@ echo -e "${NO_COLOR}" && sleep 1
 echo ""
 
 cd $HOME
-mkdir -p $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_NAME}/keystore/
+mkdir -p $HOME/$BACKUP_DIR/${PROJECT_NAME}-${CHAIN_ID}-backup/${PROJECT_DIR}/keystore/
 
-cp -r $HOME/$PROJECT_DIR/* $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_DIR}
+cp -r $HOME/$PROJECT_DIR/* $HOME/$BACKUP_DIR/${PROJECT_NAME}-${CHAIN_ID}-backup/${PROJECT_DIR}
 
 cd $BACKUP_DIR
 zip -r $HOME/$BACKUP_DIR.zip ${PROJECT_DIR}-${CHAIN_ID}-backup
