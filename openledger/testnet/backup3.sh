@@ -24,9 +24,9 @@ echo ""
 cd $HOME
 mkdir -p $HOME/$BACKUP_DIR/${PROJECT_NAME}-${CHAIN_ID}-backup/${PROJECT_DIR}/keystore/
 
-cp -r $HOME/$PROJECT_DIR/* $HOME/$BACKUP_DIR/${PROJECT_NAME}-${CHAIN_ID}-backup/${PROJECT_DIR}
+cp -ra $HOME/$PROJECT_DIR/* $HOME/$BACKUP_DIR/${PROJECT_NAME}-${CHAIN_ID}-backup/${PROJECT_DIR}
 
 cd $BACKUP_DIR
-zip -r $HOME/$BACKUP_DIR.zip ${PROJECT_DIR}-${CHAIN_ID}-backup
+zip -r $HOME/$BACKUP_DIR.zip ${PROJECT_NAME}-${CHAIN_ID}-backup
 
 cd $HOME
