@@ -11,7 +11,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 # Import Colors
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
 
-sudo apt install zip -y
+sudo apt install rsync zip -y
 
 
 echo ""
@@ -24,7 +24,7 @@ echo ""
 cd $HOME
 mkdir -p $HOME/$BACKUP_DIR/${PROJECT_NAME}-${CHAIN_ID}-backup/${PROJECT_DIR}/keystore/
 
-cp -ra $HOME/$PROJECT_DIR/* $HOME/$BACKUP_DIR/${PROJECT_NAME}-${CHAIN_ID}-backup/${PROJECT_DIR}
+rsync -av --exclude='data' --exclude='log' $HOME/$PROJECT_DIR/ $HOME/$BACKUP_DIR/${PROJECT_NAME}-${CHAIN_ID}-backup/${PROJECT_DIR}
 
 cd $BACKUP_DIR
 zip -r $HOME/$BACKUP_DIR.zip ${PROJECT_NAME}-${CHAIN_ID}-backup
