@@ -2,6 +2,10 @@
 PROJECT_NAME="0G"
 VERSION="v0.4.0"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 if [ ! $MONIKER ]; then
     echo ""
     echo -e "\e[1m\e[32m###########################################################################################"
@@ -140,7 +144,8 @@ After=network.target
 User=$USER
 Type=simple
 ExecStart=$(which 0gchaind) start --home $HOME/.0gchain
-Restart=10
+Restart=on-failure
+RestartSec=5
 LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target

@@ -1,5 +1,11 @@
 #!/bin/bash
 PROJECT_NAME="Story Protocol"
+
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
+
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Stopping $PROJECT_NAME node... \e[0m" && sleep 1
 echo ''

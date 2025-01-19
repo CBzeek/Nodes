@@ -3,6 +3,10 @@ PROJECT_NAME="Nubit"
 PROJECT_DIR=".nubit-light-nubit-alphatestnet-1"
 BACKUP_DIR=backup_$(date +%F--%H-%M-%S)
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 sudo apt install rsync zip -y
 
 echo ''

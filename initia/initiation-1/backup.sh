@@ -3,6 +3,10 @@ PROJECT_NAME="Initia"
 PROJECT_FOLDER=".initia"
 BACKUP_DIR=$HOME/backup_$(date +%F--%H-%M)/initia/
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 sudo apt install rsync -y
 
 echo ''

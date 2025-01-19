@@ -1,6 +1,10 @@
 #!/bin/bash
 PROJECT_NAME="0G"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 echo ''
 echo -e "\e[1m\e[32m###########################################################################################"
 echo -e "\e[1m\e[32m### Backup $PROJECT_NAME node configuration files... \e[0m" && sleep 1

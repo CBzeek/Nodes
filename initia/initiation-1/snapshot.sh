@@ -1,6 +1,9 @@
 #!/bin/bash
 PROJECT_NAME="Initia"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
 
 echo ''
 echo -e "\e[1m\e[32m###########################################################################################"

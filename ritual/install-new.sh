@@ -1,6 +1,10 @@
 #!/bin/bash
 PROJECT_NAME="Ritual"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 
 # Install denepdencies
 source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')

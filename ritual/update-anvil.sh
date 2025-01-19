@@ -1,6 +1,12 @@
 #!/bin/bash
 PROJECT_NAME="Ritual"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
+docker-compose -f $HOME/infernet-container-starter/deploy/docker-compose.yaml down
+
 # Install software
 echo ''
 echo -e "\e[1m\e[32m###########################################################################################"

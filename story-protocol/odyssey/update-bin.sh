@@ -1,6 +1,10 @@
 #!/bin/bash
 PROJECT_NAME="Story Protocol"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 
 # Node
 NODE="story"
@@ -8,7 +12,8 @@ NODE="story"
 
 # Binary
 STORY_BIN="https://github.com/piplabs/story/releases/download/v0.13.0/story-linux-amd64"
-GETH_BIN="https://github.com/piplabs/story-geth/releases/download/v0.10.1/geth-linux-amd64"
+GETH_BIN="https://github.com/piplabs/story-geth/releases/download/v0.11.0/geth-linux-amd64"
+#GETH_BIN="https://github.com/piplabs/story-geth/releases/download/v0.10.1/geth-linux-amd64"
 
 
 echo -e "\e[1m\e[32m###########################################################################################"

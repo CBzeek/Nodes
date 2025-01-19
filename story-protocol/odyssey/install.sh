@@ -1,6 +1,10 @@
 #!/bin/bash
 PROJECT_NAME="Story Protocol"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 # Node
 NODE="story"
 DAEMON_HOME="$HOME/.story/story"
@@ -141,8 +145,8 @@ After=network-online.target
 User=$USER
 WorkingDirectory=$HOME/.story/story
 ExecStart=/usr/local/bin/story run
-Restart=always
-RestartSec=3
+Restart=on-failure
+RestartSec=5
 LimitNOFILE=infinity
 LimitNPROC=infinity
 

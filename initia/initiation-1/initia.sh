@@ -1,6 +1,10 @@
 #!/bin/bash
 PROJECT_NAME="Initia"
 
+# Logo
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+
+
 if [ ! $MONIKER ]; then
     echo ""
     echo -e "\e[1m\e[32m###########################################################################################"
@@ -100,7 +104,7 @@ After=network-online.target
 User=$USER
 ExecStart=$(which initiad) start
 Restart=on-failure
-RestartSec=10
+RestartSec=5
 LimitNOFILE=10000
 
 [Install]
