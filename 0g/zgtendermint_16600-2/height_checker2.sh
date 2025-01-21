@@ -19,7 +19,7 @@ echo ''
 RPC_PORT=$(grep -m 1 -oP '^laddr = "\K[^"]+' "$HOME/$PROJECT_DIR/config/config.toml" | cut -d ':' -f 3)
 while true; do
   NODE_HEIGHT=$(curl -s localhost:$RPC_PORT/status | jq -r '.result.sync_info.latest_block_height')
-  RPC_HEIGHT=$(curl -s https://16600.rpc.thirdweb.com/status | jq -r '.result.sync_info.latest_block_height')
+  RPC_HEIGHT=$(curl -s https://og-testnet-rpc.itrocket.net/status | jq -r '.result.sync_info.latest_block_height')
 
   if ! [[ "$NODE_HEIGHT" =~ ^[0-9]+$ ]] || ! [[ "$RPC_HEIGHT" =~ ^[0-9]+$ ]]; then
     echo -e "${B_RED}"
