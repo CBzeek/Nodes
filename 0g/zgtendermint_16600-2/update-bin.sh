@@ -61,9 +61,12 @@ then
     fi
 
 else
-    wget https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gchaind-linux-v0.4.0
-    sudo chmod +x ./0gchaind-linux-v0.4.0
-    sudo mv ./0gchaind-linux-v0.4.0 $(which 0gchaind)
+    wget https://github.com/0glabs/0g-chain/releases/download/v0.5.0/0gchaind-linux-v0.5.0
+    sudo chmod +x ./0gchaind-linux-v0.5.0
+    sudo mv ./0gchaind-linux-v0.5.0 $(which 0gchaind)
+#    wget https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gchaind-linux-v0.4.0
+#    sudo chmod +x ./0gchaind-linux-v0.4.0
+#    sudo mv ./0gchaind-linux-v0.4.0 $(which 0gchaind)
 fi
 
 #check Version
