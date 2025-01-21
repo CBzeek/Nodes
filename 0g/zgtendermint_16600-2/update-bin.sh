@@ -16,10 +16,7 @@ sudo systemctl stop ogd
 cd $HOME
 rm -rf $HOME/backup-update
 mkdir -p $HOME/backup-update/config
-if [ -n "$1" ] && [ $1 = "test" ]
-then
-    mkdir -p $HOME/backup-update/keyring-test
-fi
+mkdir -p $HOME/backup-update/keyring-test
 cp $HOME/.0gchain/config/priv_validator_key.json $HOME/backup-update/config
 cp $HOME/.0gchain/keyring-test/* $HOME/backup-update/keyring-test
 cp $HOME/.0gchain/* $HOME/backup-update
@@ -27,7 +24,7 @@ cp $HOME/.0gchain/* $HOME/backup-update
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Updateing $PROJECT_NAME node to version v0.3.2... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Update $PROJECT_NAME node... \e[0m" && sleep 1
 echo ""
 
 #Delete old release
@@ -61,9 +58,12 @@ then
     fi
 
 else
-    wget https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gchaind-linux-v0.4.0
-    sudo chmod +x ./0gchaind-linux-v0.4.0
-    sudo mv ./0gchaind-linux-v0.4.0 $(which 0gchaind)
+    wget https://github.com/0glabs/0g-chain/releases/download/v0.5.0/0gchaind-linux-v0.5.0
+    sudo chmod +x ./0gchaind-linux-v0.5.0
+    sudo mv ./0gchaind-linux-v0.5.0 $(which 0gchaind)
+#    wget https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gchaind-linux-v0.4.0
+#    sudo chmod +x ./0gchaind-linux-v0.4.0
+#    sudo mv ./0gchaind-linux-v0.4.0 $(which 0gchaind)
 fi
 
 #check Version
