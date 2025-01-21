@@ -27,7 +27,7 @@ cp $HOME/.0gchain/* $HOME/backup-update
 
 echo ""
 echo -e "\e[1m\e[32m###########################################################################################"
-echo -e "\e[1m\e[32m### Updateing $PROJECT_NAME node to version v0.3.2... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m### Update $PROJECT_NAME node... \e[0m" && sleep 1
 echo ""
 
 #Delete old release
