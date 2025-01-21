@@ -15,6 +15,11 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgten
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/0g/zgtendermint_16600-2/backup.sh')
 ```
 
+## Height Checker
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/0g/zgtendermint_16600-2/height_checker.sh')
+```
+
 
 ## Update Binary
 ```
