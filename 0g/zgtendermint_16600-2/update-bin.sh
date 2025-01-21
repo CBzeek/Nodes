@@ -16,10 +16,7 @@ sudo systemctl stop ogd
 cd $HOME
 rm -rf $HOME/backup-update
 mkdir -p $HOME/backup-update/config
-if [ -n "$1" ] && [ $1 = "test" ]
-then
-    mkdir -p $HOME/backup-update/keyring-test
-fi
+mkdir -p $HOME/backup-update/keyring-test
 cp $HOME/.0gchain/config/priv_validator_key.json $HOME/backup-update/config
 cp $HOME/.0gchain/keyring-test/* $HOME/backup-update/keyring-test
 cp $HOME/.0gchain/* $HOME/backup-update
