@@ -119,7 +119,7 @@ while true; do
     4) stop_node ;;
     5) delete_node ;;
     6) break ;;
-    *) echo "Wrong choice. Repeat please." ;;
+    *) echo "Invalid option. Try again." ;;
   esac
 done
 
