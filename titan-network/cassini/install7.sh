@@ -54,7 +54,7 @@ docker_logs() {
   echo -e "### $PROJECT_NAME node logs..."
   echo -e "${NO_COLOR}" && sleep 1
   echo ""
-  docker logs $(docker ps -aq --filter "ancestor=nezha123/titan-edge")
+  docker logs -f $(docker ps -aq --filter "ancestor=nezha123/titan-edge")
 }
 
 
