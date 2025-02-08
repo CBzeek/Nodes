@@ -37,6 +37,7 @@ install_node() {
   docker rm $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
 
   read -p "Enter your HASH: " HASH
+  echo ""
 
   docker run --network=host -d -v "$HOME/.titanedge:$HOME/.titanedge" nezha123/titan-edge
   sleep 10
