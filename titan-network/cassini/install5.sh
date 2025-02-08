@@ -36,10 +36,6 @@ install_node() {
   docker stop $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
   docker rm $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
 
-  echo ""
-  echo -e "${B_GREEN}"
-  echo -e "###########################################################################################"
-  echo -e "${NO_COLOR}" && sleep 1
   read -p "Enter your HASH: " HASH
 
   docker run --network=host -d -v "$HOME/.titanedge:$HOME/.titanedge" nezha123/titan-edge
@@ -122,7 +118,7 @@ while true; do
     4) stop_node ;;
     5) delete_node ;;
     6) exit 0 ;;
-    *) echo "Неверный пункт. Повторите ввод." ;;
+    *) echo "Wrong choice. Repeat please." ;;
   esac
 done
 
