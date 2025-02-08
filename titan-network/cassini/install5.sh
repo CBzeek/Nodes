@@ -118,7 +118,7 @@ while true; do
     3) restart_node ;;
     4) stop_node ;;
     5) delete_node ;;
-    6) exit 0 ;;
+    6) break ;;
     *) echo "Wrong choice. Repeat please." ;;
   esac
 done
