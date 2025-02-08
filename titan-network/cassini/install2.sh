@@ -102,13 +102,16 @@ delete_node() {
 while true; do
   echo ""
   echo -e "${B_GREEN}"
+  echo -e "########################"
   echo -e "\nTitan Network Node Menu:"
+  echo -e "########################"
   echo "1. Install Node"
   echo "2. Check Node logs"
   echo "3. Restart Node"
   echo "4. Stop Node"
   echo "5. Delete Node"
   echo "6. Exit"
+  echo ""
   read -p "Choose an option: " choice
 
   case $choice in
