@@ -111,8 +111,8 @@ while true; do
   echo "4. Stop Node"
   echo "5. Delete Node"
   echo "6. Exit"
-  echo ""
-  read -p "${B_YELLOW}Choose an option: " choice
+  echo -e "${B_YELLOW}"
+  read -p "Choose an option: " choice
   echo -e "${NO_COLOR}"
 
   case $choice in
