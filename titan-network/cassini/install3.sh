@@ -103,8 +103,8 @@ while true; do
   echo ""
   echo -e "${B_GREEN}"
   echo -e "########################"
-  echo -e "\nTitan Network Node Menu:"
-  echo -e "########################"
+  echo -e "${B_YELLOW}Titan Network Node Menu:"
+  echo -e "${B_GREEN}########################"
   echo "1. Install Node"
   echo "2. Check Node logs"
   echo "3. Restart Node"
@@ -112,7 +112,8 @@ while true; do
   echo "5. Delete Node"
   echo "6. Exit"
   echo ""
-  read -p "Choose an option: " choice
+  read -p "${B_YELLOW}Choose an option: " choice
+  echo -e "${NO_COLOR}"
 
   case $choice in
     1) install_node ;;
