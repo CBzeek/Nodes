@@ -84,7 +84,7 @@ node_status() {
 ### Menu - Node points
 node_points() {
   print_header "$PROJECT_NAME node points..."
-  cd $HOME/.pipe && ./pop --points-route
+  cd $HOME/.pipe && ./pop --points
 }
 
 ### Menu - Node generate referral code
