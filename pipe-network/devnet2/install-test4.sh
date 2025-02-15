@@ -36,14 +36,7 @@ install_node() {
     sudo chmod +x /usr/local/bin/docker-compose
   fi
 
-  # echo ""
-  # echo -e "${B_GREEN}"
-  # echo -e "###########################################################################################"
-  # echo -e "### Installing $PROJECT_NAME node..."
-  # echo -e "${NO_COLOR}" && sleep 1
-  # echo ""
   print_header "Installing $PROJECT_NAME node..."
-
   docker stop $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
   docker rm $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
 
@@ -59,26 +52,13 @@ install_node() {
 
 ### Menu - Docker logs
 docker_logs() {
-  # echo ""
-  # echo -e "${B_GREEN}"
-  # echo -e "###########################################################################################"
-  # echo -e "### $PROJECT_NAME node logs..."
-  # echo -e "${NO_COLOR}" && sleep 1
-  # echo ""
   print_header "$PROJECT_NAME node logs..."
-  
   # docker logs -f $(docker ps -aq --filter "ancestor=nezha123/titan-edge")
 }
 
 
 ### Menu - Restart Node
 restart_node() {
-  # echo ""
-  # echo -e "${B_GREEN}"
-  # echo -e "###########################################################################################"
-  # echo -e "### Restarting $PROJECT_NAME node..."
-  # echo -e "${NO_COLOR}" && sleep 1
-  # echo ""
   print_header "Restarting $PROJECT_NAME node..."
   # docker restart $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
 }
@@ -86,12 +66,6 @@ restart_node() {
 
 ### Menu - Stop Node
 stop_node() {
-  # echo ""
-  # echo -e "${B_GREEN}"
-  # echo -e "###########################################################################################"
-  # echo -e "### Stopping $PROJECT_NAME node..."
-  # echo -e "${NO_COLOR}" && sleep 1
-  # echo ""
   print_header "Stopping $PROJECT_NAME node..."
   # docker stop $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
 }
@@ -99,12 +73,7 @@ stop_node() {
 
 ### Menu - Delete Node
 delete_node() {
-  # read -p "Do you really want to delete your node? (y/n): " confirm
-  # [[ "$confirm" != "y" ]] && return
   echo ""
-  # docker stop $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
-  # docker rm $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
-  # sudo rm -rf "$HOME/.titanedge"
 }
 
 
@@ -113,9 +82,9 @@ delete_node() {
 ################
 while true; do
   echo ""
-  echo -e "${B_GREEN}###########################"
-  echo -e "### ${B_YELLOW}$PROJECT_NAME Node Menu:"
-  echo -e "${B_GREEN}###########################"
+  echo -e "${B_GREEN}###############################"
+  echo -e "### ${B_YELLOW}$PROJECT_NAME Node Menu: ${B_GREEN}###"
+  echo -e "${B_GREEN}###############################"
   echo "1. Install Node"
   echo "2. Check Node logs"
   echo "3. Restart Node"
@@ -128,11 +97,11 @@ while true; do
 
   case $choice in
     1) install_node ;;
-    2) docker_logs ;;
+    2) node_logs ;;
     3) restart_node ;;
     4) stop_node ;;
     5) delete_node ;;
     6) break ;;
-    *) echo "Invalid option. Try again." ;;
+    *) echo "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
 done
