@@ -22,7 +22,8 @@ print_header() {
 install_node() {
   # Install denepdencies
   source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
-  sudo apt install iptables make gcc automake autoconf nvme-cli libssl-dev libleveldb-dev tar clang bsdmainutils ncdu openssl -y
+  # sudo apt install iptables make gcc automake autoconf nvme-cli libssl-dev libleveldb-dev tar clang bsdmainutils ncdu openssl -y
+  sudo apt install curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev tar clang bsdmainutils ncdu unzip libleveldb-dev lz4 screen bc fail2ban -y
   
   print_header "Installing $PROJECT_NAME node..."
 
