@@ -42,33 +42,33 @@ install_node() {
 
   read -p "Enter the amount of max-disk, in GB: " DISK
 
-  # Create systemd service file
-  sudo tee /etc/systemd/system/popd.service > /dev/null << EOF
-  [Unit]
-  Description=Pipe Network Node Service
-  After=network.target
-  Wants=network-online.target
-  
-  [Service]
-  User=$USER
-  ExecStart=$HOME/.pipe/pop \
-      --ram $RAM \
-      --pubKey $SOLANA_ADDRESS \
-      --max-disk $DISK \
-      --cache-dir $HOME/.pipe/download_cache \
-      --no-prompt
-  Restart=always
-  RestartSec=5
-  LimitNOFILE=65536
-  LimitNPROC=4096
-  StandardOutput=journal
-  StandardError=journal
-  SyslogIdentifier=pop-node
-  WorkingDirectory=/var/lib/pop
-  
-  [Install]
-  WantedBy=multi-user.target
-  EOF
+# Create systemd service file
+sudo tee /etc/systemd/system/popd.service > /dev/null << EOF
+[Unit]
+Description=Pipe Network Node Service
+After=network.target
+Wants=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$HOME/.pipe/pop \
+    --ram $RAM \
+    --pubKey $SOLANA_ADDRESS \
+    --max-disk $DISK \
+    --cache-dir $HOME/.pipe/download_cache \
+    --no-prompt
+Restart=always
+RestartSec=5
+LimitNOFILE=65536
+LimitNPROC=4096
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pop-node
+WorkingDirectory=/var/lib/pop
+
+[Install]
+WantedBy=multi-user.target
+EOF
 
   sudo systemctl daemon-reload
   sudo systemctl enable popd
