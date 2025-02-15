@@ -22,7 +22,7 @@ print_header() {
 install_node() {
   # Install denepdencies
   source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
-  sudo apt install iptables make gcc nano automake autoconf nvme-cli libssl-dev libleveldb-dev tar clang bsdmainutils ncdu -y
+  sudo apt install iptables make gcc automake autoconf nvme-cli libssl-dev libleveldb-dev tar clang bsdmainutils ncdu openssl -y
   
   print_header "Installing $PROJECT_NAME node..."
 
