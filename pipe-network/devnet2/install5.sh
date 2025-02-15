@@ -12,7 +12,7 @@ print_header() {
   echo ""
   echo -e "${B_GREEN}"
   echo -e "###########################################################################################"
-  echo -e "### {B_YELLOW}$1"
+  echo -e "### ${B_YELLOW}$1"
   echo -e "${NO_COLOR}" && sleep 1
   echo ""
 }
