@@ -165,6 +165,6 @@ while true; do
     8) stop_node ;;
     9) delete_node ;;
     0) break ;;
-    *) echo "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
+    *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
 done
