@@ -64,7 +64,7 @@ LimitNPROC=4096
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=pop-node
-WorkingDirectory=/var/lib/pop
+WorkingDirectory=$HOME/.pipe
 
 [Install]
 WantedBy=multi-user.target
