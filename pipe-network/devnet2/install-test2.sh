@@ -101,7 +101,7 @@ stop_node() {
 delete_node() {
   # read -p "Do you really want to delete your node? (y/n): " confirm
   # [[ "$confirm" != "y" ]] && return
-  
+  echo ""
   # docker stop $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
   # docker rm $(docker ps -aq --filter "ancestor=nezha123/titan-edge") &>/dev/null
   # sudo rm -rf "$HOME/.titanedge"
