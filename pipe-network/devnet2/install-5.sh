@@ -127,8 +127,9 @@ node_delete() {
   print_header "Deleting $PROJECT_NAME node..."
   sudo systemctl disable popd.service
   sudo systemctl stop popd.service
+  cd $HOME
   sudo rm -rf $HOME/.pipe
-  exit
+  break
 }
 
 
@@ -161,9 +162,9 @@ while true; do
     4) node_points ;;
     5) node_generate_referral ;;
     6) node_singup_by_referral ;; 
-    7) restart_node ;;
-    8) stop_node ;;
-    9) delete_node ;;
+    7) node_restart ;;
+    8) node_stop ;;
+    9) node_delete ;;
     0) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
