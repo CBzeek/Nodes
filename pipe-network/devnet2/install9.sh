@@ -22,6 +22,7 @@ print_header() {
 install_node() {
   # Install denepdencies
   source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
+  sudo apt install iptables make gcc nano automake autoconf nvme-cli libssl-dev libleveldb-dev tar clang bsdmainutils ncdu -y
   
   print_header "Installing $PROJECT_NAME node..."
 
@@ -127,6 +128,7 @@ node_delete() {
   sudo systemctl disable popd.service
   sudo systemctl stop popd.service
   sudo rm -rf $HOME/.pipe
+  break
 }
 
 
