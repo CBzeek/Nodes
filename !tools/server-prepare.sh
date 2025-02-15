@@ -3,15 +3,6 @@
 # Import Colors
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
 
-print_header() {
-  echo ""
-  echo -e "${B_GREEN}"
-  echo -e "###########################################################################################"
-  echo -e "### ${B_YELLOW}$1"
-  echo -e "${NO_COLOR}" && sleep 1
-  echo ""
-}
-
 cd $HOME
 
 #Ubuntu update and upgrade
