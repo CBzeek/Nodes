@@ -128,7 +128,7 @@ node_delete() {
   sudo systemctl disable popd.service
   sudo systemctl stop popd.service
   sudo rm -rf $HOME/.pipe
-  break
+  exit
 }
 
 
