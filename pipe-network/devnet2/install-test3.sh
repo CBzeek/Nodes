@@ -12,7 +12,7 @@ print_header() {
   echo ""
   echo -e "${B_GREEN}"
   echo -e "###########################################################################################"
-  echo -e "### $1"
+  echo -e "### {B_YELLOW}$1"
   echo -e "${NO_COLOR}" && sleep 1
   echo ""
 }
@@ -113,9 +113,9 @@ delete_node() {
 ################
 while true; do
   echo ""
-  echo -e "${B_GREEN}########################"
-  echo -e "${B_YELLOW}$PROJECT_NAME Node Menu:"
-  echo -e "${B_GREEN}########################"
+  echo -e "${B_GREEN}###########################"
+  echo -e "### ${B_YELLOW}$PROJECT_NAME Node Menu:"
+  echo -e "${B_GREEN}###########################"
   echo "1. Install Node"
   echo "2. Check Node logs"
   echo "3. Restart Node"
