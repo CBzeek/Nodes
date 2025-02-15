@@ -43,7 +43,7 @@ install_node() {
   read -p "Enter the amount of max-disk, in GB: " DISK
 
   # Create systemd service file
-  sudo tee /etc/systemd/system/popd.service << 'EOF'
+  sudo tee /etc/systemd/system/popd.service > /dev/null << EOF
   [Unit]
   Description=Pipe Network Node Service
   After=network.target
