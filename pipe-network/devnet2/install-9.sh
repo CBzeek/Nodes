@@ -8,16 +8,6 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 # Import Colors
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
 
-print_header() {
-  echo ""
-  echo -e "${B_GREEN}###########################################################################################"
-  echo -e "### ${B_YELLOW}$1"
-  echo -e "${B_GREEN}###########################################################################################"
-  echo -e "${NO_COLOR}" && sleep 1
-  echo ""
-}
-
-
 ### Menu - Install Node
 install_node() {
   # Install denepdencies
