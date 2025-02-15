@@ -157,8 +157,8 @@ while true; do
     2) node_logs ;;
     3) node_status ;;
     4) node_points ;;
-    5) node_generate_referral() ;;
-    6) node_singup_by_referral() ;; 
+    5) node_generate_referral ;;
+    6) node_singup_by_referral ;; 
     7) restart_node ;;
     8) stop_node ;;
     9) delete_node ;;
