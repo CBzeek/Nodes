@@ -106,9 +106,9 @@ node_singup_by_referral() {
 
 ### Menu - Update Node
 node_update() {
-  print_header "Restarting $PROJECT_NAME node..."
   node_stop
 
+  print_header "Updatig $PROJECT_NAME node..."
   cd $HOME/.pipe
   wget -O pop "https://dl.pipecdn.app/$VERSION/pop"
   chmod +x pop
