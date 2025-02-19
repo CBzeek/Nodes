@@ -1,6 +1,7 @@
 #!/bin/bash
 # Variables
 PROJECT_NAME="Pipe Network"
+VERSION="v0.2.8"
 
 # Logo
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
@@ -22,7 +23,8 @@ install_node() {
   cd $HOME/.pipe
 
   # download the compiled pop binary
-  curl -L -o pop "https://dl.pipecdn.app/v0.2.5/pop"
+  wget -O pop "https://dl.pipecdn.app/$VERSION/pop"
+  #curl -L -o pop "https://dl.pipecdn.app/v0.2.5/pop"
   
   # assign executable permission to pop binary
   chmod +x pop
@@ -101,6 +103,20 @@ node_singup_by_referral() {
   cd $HOME/.pipe && ./pop --signup-by-referral-route $REF_CODE
 }
 
+
+### Menu - Update Node
+node_update() {
+  print_header "Restarting $PROJECT_NAME node..."
+  node_stop
+
+  cd $HOME/.pipe
+  wget -O pop "https://dl.pipecdn.app/$VERSION/pop"
+  chmod +x pop
+
+  node_restart
+}
+
+
 ### Menu - Restart Node
 node_restart() {
   print_header "Restarting $PROJECT_NAME node..."
@@ -137,10 +153,11 @@ while true; do
   echo "4. Check Node point"
   echo "5. Genegate referral code"
   echo "6. Singup by referral code"
-  echo "7. Restart Node"  
-  echo "8. Stop Node"
-  echo "9. Delete Node"
-  echo "0. Exit"
+  echo "7. Update Node"  
+  echo "8. Restart Node"  
+  echo "9. Stop Node"
+  echo "0. Delete Node"
+  echo "E. Exit"
   echo -e "${B_YELLOW}"
   read -p "Choose an option: " choice
   echo -e "${NO_COLOR}"
@@ -152,10 +169,11 @@ while true; do
     4) node_points ;;
     5) node_generate_referral ;;
     6) node_singup_by_referral ;; 
-    7) node_restart ;;
-    8) node_stop ;;
-    9) node_delete ;;
-    0) break ;;
+    7) node_update ;;
+    8) node_restart ;;
+    9) node_stop ;;
+    0) node_delete ;;
+    E) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
 done
