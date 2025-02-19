@@ -156,11 +156,12 @@ while true; do
   echo "4. Check Node point"
   echo "5. Genegate referral code"
   echo "6. Singup by referral code"
-  echo "7. Update Node"  
-  echo "8. Restart Node"  
-  echo "9. Stop Node"
-  echo "0. Delete Node"
+  echo "7. Restart Node"  
+  echo "8. Stop Node"
+  echo "9. Delete Node"
+  echo "0. Update Node"  
   echo "e. Exit"
+  
   echo -e "${B_YELLOW}"
   read -p "Choose an option: " choice
   echo -e "${NO_COLOR}"
@@ -172,10 +173,10 @@ while true; do
     4) node_points ;;
     5) node_generate_referral ;;
     6) node_singup_by_referral ;; 
-    7) node_update ;;
-    8) node_restart ;;
-    9) node_stop ;;
-    0) node_delete ;;
+    7) node_restart ;;
+    8) node_stop ;;
+    9) node_delete ;;
+    0) node_update ;;
     e) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
