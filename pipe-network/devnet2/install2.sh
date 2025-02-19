@@ -157,7 +157,7 @@ while true; do
   echo "8. Restart Node"  
   echo "9. Stop Node"
   echo "0. Delete Node"
-  echo "E. Exit"
+  echo "e. Exit"
   echo -e "${B_YELLOW}"
   read -p "Choose an option: " choice
   echo -e "${NO_COLOR}"
@@ -173,7 +173,7 @@ while true; do
     8) node_restart ;;
     9) node_stop ;;
     0) node_delete ;;
-    E) break ;;
+    e) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
 done
