@@ -108,9 +108,12 @@ node_singup_by_referral() {
 node_update() {
   node_stop
 
+  LINK=$(curl -s 'https://docs.pipe.network/devnet-2' | grep -oE 'https://dl.pipecdn.app/v[0-9]+\.[0-9]+\.[0-9]+/pop' | head -n 1)
+
   print_header "Updating $PROJECT_NAME node..."
   cd $HOME/.pipe
-  wget -O pop "https://dl.pipecdn.app/$VERSION/pop"
+  wget -O pop $LINK
+  # wget -O pop "https://dl.pipecdn.app/$VERSION/pop"
   chmod +x pop
 
   node_restart
