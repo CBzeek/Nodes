@@ -4,7 +4,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 
 # Variables
 PROJECT_NAME="Gitopia"
-PROJECT_DIR=".fiamma"
+PROJECT_DIR=".gitopia"
 
 echo ''
 echo -e "${B_GREEN}"
