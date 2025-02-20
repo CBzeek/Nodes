@@ -12,6 +12,9 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 print_header "Installing $PROJECT_NAME node..."
 
 # Install denepdencies
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
+
+# Install denepdencies
 sudo apt install build-essential gcc pkg-config libssl-dev git-all -y
 sudo apt install -y protobuf-compiler
 
