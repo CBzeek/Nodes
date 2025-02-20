@@ -20,8 +20,6 @@ rustup target add riscv32i-unknown-none-elf
 
 source "$HOME/.cargo/env"
 
-sudo apt install screen -y && screen -Rd nexus5
-
 curl https://cli.nexus.xyz/ | sh
 
 
