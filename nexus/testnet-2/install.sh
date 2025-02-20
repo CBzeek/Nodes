@@ -12,7 +12,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 print_header "Installing $PROJECT_NAME node..."
 
 # Install denepdencies
-sudo apt install build-essential pkg-config libssl-dev git-all -y
+sudo apt install build-essential gcc pkg-config libssl-dev git-all -y
 sudo apt install -y protobuf-compiler
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
