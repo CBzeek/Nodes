@@ -6,12 +6,8 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 PROJECT_NAME="Gitopia"
 PROJECT_DIR=".gitopia"
 
-echo ''
-echo -e "${B_GREEN}"
-echo -e "###########################################################################################"
-echo -e "### $PROJECT_NAME node height checker..."
-echo -e "${NO_COLOR}"
-echo ''
+
+print_header "$PROJECT_NAME node height checker..."
 
 RPC_PORT=$(grep -m 1 -oP '^laddr = "\K[^"]+' "$HOME/$PROJECT_DIR/config/config.toml" | cut -d ':' -f 3)
 while true; do
