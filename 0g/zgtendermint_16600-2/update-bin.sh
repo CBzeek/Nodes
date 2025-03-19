@@ -1,5 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="0G"
+VERSION="v0.5.1"
 
 # Logo
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
@@ -58,12 +59,9 @@ then
     fi
 
 else
-    wget https://github.com/0glabs/0g-chain/releases/download/v0.5.0/0gchaind-linux-v0.5.0
-    sudo chmod +x ./0gchaind-linux-v0.5.0
-    sudo mv ./0gchaind-linux-v0.5.0 $(which 0gchaind)
-#    wget https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gchaind-linux-v0.4.0
-#    sudo chmod +x ./0gchaind-linux-v0.4.0
-#    sudo mv ./0gchaind-linux-v0.4.0 $(which 0gchaind)
+    wget https://github.com/0glabs/0g-chain/releases/download/$VERSION/0gchaind-linux-$VERSION
+    sudo chmod +x ./0gchaind-linux-$VERSION
+    sudo mv ./0gchaind-linux-$VERSION $(which 0gchaind)
 fi
 
 #check Version
