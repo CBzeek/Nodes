@@ -1,6 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="0G"
-VERSION="v0.5.0"
+VERSION="v0.5.1"
 
 # Logo
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
