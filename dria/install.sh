@@ -73,7 +73,7 @@ while true; do
   echo "3. Check Node point"
   echo "4. Working with referrals"
   echo "5. Update Node"  
-  echo "5. Exit"
+  echo "6. Exit"
   
   echo -e "${B_YELLOW}"
   read -p "Choose an option: " choice
@@ -85,7 +85,7 @@ while true; do
     3) node_points ;;
     4) node_referrals ;;
     5) node_update ;;
-    e) break ;;
+    6) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
 done
