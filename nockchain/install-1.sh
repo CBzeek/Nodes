@@ -52,7 +52,7 @@ node_wallet_keygen() {
 }
 
 ### Menu - Update Pubkey
-node_update_pubkey {
+node_update_pubkey() {
   print_header "Updating $PROJECT_NAME update Public key..."
   read -p "Enter you public key: " PUBKEY
   cd $HOME/nockchain
