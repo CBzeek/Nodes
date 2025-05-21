@@ -40,6 +40,11 @@ install_node() {
   ## Install Nockchain
   make install-nockchain
 
+  ## Open ports: 3005, 3006
+  sudo ufw allow 3005/tcp
+  sudo ufw allow 3006/tcp
+
+  ## Update path
   echo 'export PATH="$PATH:$HOME/nockchain/target/release"' >> ~/.bashrc
   source ~/.bashrc
 }
