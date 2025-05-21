@@ -69,7 +69,7 @@ node_update_pubkey() {
   print_header "Updating $PROJECT_NAME update Public key..."
   read -p "Enter you public key: " PUBKEY
   cd $HOME/nockchain
-  sed -i "s|^MINING_PUBKEY:=*$|MINING_PUBKEY=$PUBKEY|" .env
+  sed -i "s|^MINING_PUBKEY:=*|MINING_PUBKEY=$PUBKEY|" .env
 }
 
 ### Menu - Leader node start
