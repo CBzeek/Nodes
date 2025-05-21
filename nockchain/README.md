@@ -1,4 +1,26 @@
-#  Nockchain Node
+#  Nockchain Mainnet Node
+
+## Screen
+```
+sudo apt install screen -y && screen -Rd nockchain
+```
+
+## Install
+```
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/nockchain/mainnet/install.sh')
+```
+
+## Screen Follower
+```
+sudo apt install screen -y && screen -Rd follower
+```
+
+
+
+
+#################################
+
+#  Nockchain Testnet Node
 
 ## Screen
 ```
