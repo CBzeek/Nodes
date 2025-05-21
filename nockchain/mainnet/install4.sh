@@ -70,6 +70,10 @@ node_update_pubkey() {
   read -p "Enter you public key: " PUBKEY
   cd $HOME/nockchain
   sed -i "s|^MINING_PUBKEY=.*$|MINING_PUBKEY=$PUBKEY|" .env
+
+  print_header "Public key succesfully updated..."
+  cat .env | grep MINING_PUBKEY
+  
 }
 
 ### Menu - Leader node start
