@@ -77,17 +77,26 @@ node_update_pubkey() {
 }
 
 
-### Menu - Backup Pubkey
-node_backup_pubkey() {
-  print_header "Backup $PROJECT_NAME Public key..."
+### Menu - Backup Keys
+node_backup_keys() {
+  print_header "Backup $PROJECT_NAME Keys..."
   cd $HOME/nockchain
   nockchain-wallet export-keys
-  print_header "Succesfully backup Public key..."
+  print_header "Succesfully backup Keys..."
 }
 
 
-### Menu - Follower node start
-node_start_follower() {
+### Menu - Import Keys
+node_import_keys() {
+  print_header "Importing $PROJECT_NAME Keys..."
+  cd $HOME/nockchain
+  nockchain-wallet import-keys --input keys.export
+  print_header "Succesfully import Keys..."
+}
+
+
+### Menu - Node start
+node_start() {
   print_header "$PROJECT_NAME node start..."
   cd $HOME/nockchain && make run-nockchain
 }
@@ -105,9 +114,10 @@ while true; do
   echo "1. Install Node"
   echo "2. Wallet Keygen"
   echo "3. Update Public Key"  
-  echo "4. Backup Public Key"
-  echo "5. Start Node"
-  echo "6. Exit"
+  echo "4. Backup Keys"
+  echo "5. Import Keys"
+  echo "6. Start Node"
+  echo "7. Exit"
   
   echo -e "${B_YELLOW}"
   read -p "Choose an option: " choice
@@ -118,8 +128,9 @@ while true; do
     2) node_wallet_keygen ;;
     3) node_update_pubkey ;;
     4) node_backup_pubkey ;;
-    5) node_start ;;
-    6) break ;;
+    5) node_import_keys ;;
+    6) node_start ;;
+    7) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
 done
