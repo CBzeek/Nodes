@@ -64,6 +64,7 @@ node_wallet_keygen() {
   cd $HOME/nockchain && nockchain-wallet keygen
 }
 
+
 ### Menu - Update Pubkey
 node_update_pubkey() {
   print_header "Updating $PROJECT_NAME update Public key..."
@@ -73,19 +74,22 @@ node_update_pubkey() {
 
   print_header "Public key succesfully updated..."
   cat .env | grep MINING_PUBKEY
-  
 }
 
-### Menu - Leader node start
-node_start_leader() {
-  print_header "$PROJECT_NAME leader node start..."
-  cd $HOME/nockchain && make run-nockchain-leader
+
+### Menu - Backup Pubkey
+node_backup_pubkey() {
+  print_header "Backup $PROJECT_NAME Public key..."
+  cd $HOME/nockchain
+  nockchain-wallet export-keys
+  print_header "Succesfully backup Public key..."
 }
+
 
 ### Menu - Follower node start
 node_start_follower() {
-  print_header "$PROJECT_NAME follower node start..."
-  cd $HOME/nockchain && make run-nockchain-follower
+  print_header "$PROJECT_NAME node start..."
+  cd $HOME/nockchain && make run-nockchain
 }
 
 
@@ -101,8 +105,8 @@ while true; do
   echo "1. Install Node"
   echo "2. Wallet Keygen"
   echo "3. Update Public Key"  
-  echo "4. Start Leader Node"
-  echo "5. Start Follower Node"
+  echo "4. Backup Public Key"
+  echo "5. Start Node"
   echo "6. Exit"
   
   echo -e "${B_YELLOW}"
@@ -113,8 +117,8 @@ while true; do
     1) install_node ;;
     2) node_wallet_keygen ;;
     3) node_update_pubkey ;;
-    4) node_start_leader ;;
-    5) node_start_follower ;;
+    4) node_backup_pubkey ;;
+    5) node_start ;;
     6) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
