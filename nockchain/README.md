@@ -2,7 +2,7 @@
 
 ## Screen
 ```
-sudo apt install screen -y && screen -Rd miner
+sudo apt install screen -y && screen -Rd nockchain
 ```
 
 ## Install
@@ -10,9 +10,9 @@ sudo apt install screen -y && screen -Rd miner
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/nockchain/mainnet/install.sh')
 ```
 
-## Screen Follower
+## Screen for Miner
 ```
-sudo apt install screen -y && screen -Rd follower
+sudo apt install screen -y && screen -Rd miner
 ```
 
 
