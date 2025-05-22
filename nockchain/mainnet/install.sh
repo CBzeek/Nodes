@@ -125,7 +125,7 @@ while true; do
   echo "5. Backup Wallet"
   echo "6. Import Wallet"
   echo "7. Start Node"
-  echo "8. Exit"
+  echo "x. Exit"
   
   echo -e "${B_YELLOW}"
   read -p "Choose an option: " choice
@@ -139,7 +139,7 @@ while true; do
     5) node_backup_keys ;;
     6) node_import_keys ;;
     7) node_start ;;
-    8) break ;;
+    x) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
 done
