@@ -2,7 +2,7 @@
 
 ## Screen
 ```
-sudo apt install screen -y && screen -Rd nockchain
+sudo apt install screen -y && screen -Rd miner
 ```
 
 ## Install
