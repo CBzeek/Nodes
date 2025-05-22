@@ -136,7 +136,7 @@ while true; do
     2) node_wallet_keygen ;;
     3) node_update_pubkey ;;
     4) node_display_pubkey ;;
-    5) node_backup_pubkey ;;
+    5) node_backup_keys ;;
     6) node_import_keys ;;
     7) node_start ;;
     8) break ;;
