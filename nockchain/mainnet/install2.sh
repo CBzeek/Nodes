@@ -9,7 +9,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
 
 ### Menu - Install Node
-install_node() {
+node_install() {
 
   # Install dependencies
   print_header "Installing dependencies..."
@@ -109,6 +109,39 @@ node_start() {
 }
 
 
+### Menu - Node Update
+node_update() {
+  print_header "$PROJECT_NAME node update..."
+
+  # backup wallet
+  node_backup_keys
+
+  # make temp dir
+  mkdir $HOME/temp-nockchain
+  
+  # move files
+  mv -f $HOME/nockchain/.env $HOME/temp-nockchain/.env
+  mv -f $HOME/nockchain/keys.store $HOME/temp-nockchain/keys.store
+  
+  # remove dirs
+  rm -f $HOME/nockchain
+  rm -f $HOME/.nockapp
+  
+  # install
+  #node_install
+  print_header "$PROJECT_NAME NODE INSTALL!!!"
+  git clone https://github.com/zorp-corp/nockchain
+  cd $HOME/nockchain
+  
+  # move files
+  mv -f $HOME/temp-nockchain/.env $HOME/nockchain/.env
+  mv -f $HOME/temp-nockchain/keys.store $HOME/nockchain/keys.store
+  
+  # erase temp dir
+  rm -f $HOME/temp-nockchain
+}
+
+
 
 ################
 ### Main #######
@@ -125,6 +158,7 @@ while true; do
   echo "5. Backup Wallet"
   echo "6. Import Wallet"
   echo "7. Start Node"
+  echo "8. Start Update"
   echo "x. Exit"
   
   echo -e "${B_YELLOW}"
@@ -132,13 +166,14 @@ while true; do
   echo -e "${NO_COLOR}"
 
   case $choice in
-    1) install_node ;;
+    1) node_install ;;
     2) node_wallet_keygen ;;
     3) node_update_pubkey ;;
     4) node_display_pubkey ;;
     5) node_backup_keys ;;
     6) node_import_keys ;;
     7) node_start ;;
+    8) node_update ;;
     x) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
