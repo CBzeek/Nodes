@@ -116,7 +116,6 @@ node_update() {
   # backup wallet
   node_backup_keys
 
-
   # make temp dir
   cd $HOME
   mkdir $HOME/temp-nockchain
@@ -131,10 +130,7 @@ node_update() {
   
   # install
   cd $HOME
-  #node_install
-  print_header "$PROJECT_NAME NODE INSTALL!!!"
-  git clone https://github.com/zorp-corp/nockchain
-  cd $HOME/nockchain
+  node_install
   
   # move files
   cp -f $HOME/temp-nockchain/.env $HOME/nockchain/.env
@@ -142,9 +138,6 @@ node_update() {
 
   # import keys
   node_import_keys
-
-  # node start
-  #node_start
 }
 
 
@@ -163,8 +156,7 @@ while true; do
   echo "4. Display Public Key"
   echo "5. Backup Wallet"
   echo "6. Import Wallet"
-  echo "7. Start Node"
-  echo "8. Update Node"
+  echo "7. Update Node"
   echo "x. Exit"
   
   echo -e "${B_YELLOW}"
@@ -178,8 +170,7 @@ while true; do
     4) node_display_pubkey ;;
     5) node_backup_keys ;;
     6) node_import_keys ;;
-    7) node_start ;;
-    8) node_update ;;
+    7) node_update ;;
     x) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
