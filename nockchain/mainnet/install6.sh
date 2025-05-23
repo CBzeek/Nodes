@@ -121,11 +121,11 @@ node_update() {
   
   # move files
   mv -f $HOME/nockchain/.env $HOME/temp-nockchain/.env
-  mv -f $HOME/nockchain/keys.store $HOME/temp-nockchain/keys.export
+  mv -f $HOME/nockchain/keys.export $HOME/temp-nockchain/keys.export
   
   # remove dirs
-  rm -f $HOME/nockchain/
-  rm -f $HOME/.nockapp/
+  rm -r $HOME/nockchain
+  rm -r $HOME/.nockapp
   
   # install
   #node_install
@@ -135,11 +135,11 @@ node_update() {
   
   # move files
   mv -f $HOME/temp-nockchain/.env $HOME/nockchain/.env
-  mv -f $HOME/temp-nockchain/keys.store $HOME/nockchain/keys.export
+  mv -f $HOME/temp-nockchain/keys.export $HOME/nockchain/keys.export
   
   # erase temp dir
   cd $HOME/nockchain
-  rm -f $HOME/temp-nockchain/
+  rm -r $HOME/temp-nockchain
 
   # node start
   #node_start
