@@ -158,7 +158,7 @@ while true; do
   echo "5. Backup Wallet"
   echo "6. Import Wallet"
   echo "7. Start Node"
-  echo "8. Start Update"
+  echo "8. Update Node"
   echo "x. Exit"
   
   echo -e "${B_YELLOW}"
