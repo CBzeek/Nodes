@@ -116,7 +116,9 @@ node_update() {
   # backup wallet
   node_backup_keys
 
+
   # make temp dir
+  cd $HOME
   mkdir $HOME/temp-nockchain
   
   # move files
@@ -128,18 +130,18 @@ node_update() {
   rm -r $HOME/.nockapp
   
   # install
+  cd $HOME
   #node_install
   print_header "$PROJECT_NAME NODE INSTALL!!!"
   git clone https://github.com/zorp-corp/nockchain
   cd $HOME/nockchain
   
   # move files
-  mv -f $HOME/temp-nockchain/.env $HOME/nockchain/.env
-  mv -f $HOME/temp-nockchain/keys.export $HOME/nockchain/keys.export
-  
-  # erase temp dir
-  cd $HOME/nockchain
-  rm -r $HOME/temp-nockchain
+  cp -f $HOME/temp-nockchain/.env $HOME/nockchain/.env
+  cp -f $HOME/temp-nockchain/keys.export $HOME/nockchain/keys.export
+
+  # import keys
+  node_import_keys
 
   # node start
   #node_start
