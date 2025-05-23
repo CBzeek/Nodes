@@ -138,7 +138,11 @@ node_update() {
   mv -f $HOME/temp-nockchain/keys.store $HOME/nockchain/keys.export
   
   # erase temp dir
+  cd $HOME/nockchain
   rm -f $HOME/temp-nockchain
+
+  # node start
+  #node_start
 }
 
 
