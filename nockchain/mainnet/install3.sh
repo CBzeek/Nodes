@@ -121,7 +121,7 @@ node_update() {
   
   # move files
   mv -f $HOME/nockchain/.env $HOME/temp-nockchain/.env
-  mv -f $HOME/nockchain/keys.store $HOME/temp-nockchain/keys.store
+  mv -f $HOME/nockchain/keys.store $HOME/temp-nockchain/keys.export
   
   # remove dirs
   rm -f $HOME/nockchain
@@ -135,7 +135,7 @@ node_update() {
   
   # move files
   mv -f $HOME/temp-nockchain/.env $HOME/nockchain/.env
-  mv -f $HOME/temp-nockchain/keys.store $HOME/nockchain/keys.store
+  mv -f $HOME/temp-nockchain/keys.store $HOME/nockchain/keys.export
   
   # erase temp dir
   rm -f $HOME/temp-nockchain
