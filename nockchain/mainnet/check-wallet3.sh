@@ -272,25 +272,3 @@ if [ $USER_BLOCKS -gt 0 ]; then
     fi
 fi
 
-echo ""
-echo -e "${CYAN}───────────────────────────────────────────────────────────────────${NC}"
-echo -e "${BLUE}Commands:${NC}"
-echo -e "  Check again: ${YELLOW}./CheckWallet${NC}"
-echo -e "  Auto-check:  ${YELLOW}./CheckWalletAuto${NC} (every 20 minutes)"
-echo -e "  Change wallet: ${YELLOW}rm $CONFIG_FILE && ./CheckWallet${NC}"
-echo ""
-
-# Create companion scripts if they don't exist
-if [ ! -f "CheckWalletAuto" ]; then
-    cat > CheckWalletAuto << 'AUTOEOF'
-#!/bin/bash
-while true; do
-    clear
-    ./CheckWallet
-    echo ""
-    echo "Next check in 20 minutes... (Press Ctrl+C to stop)"
-    sleep 1200
-done
-AUTOEOF
-    chmod +x CheckWalletAuto
-fi
