@@ -8,9 +8,12 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 # Import Colors
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
 
-### Menu - Install Node
-node_install() {
 
+#####################
+### Functions #######
+#####################
+### Server Prepare
+server_prepare() {
   # Install dependencies
   print_header "Installing dependencies..."
   source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
@@ -24,8 +27,11 @@ node_install() {
 
   # Docker
   # source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-docker.sh')
+}
 
 
+### Node Install
+node_install_main() {
   # Install Nockchain
   print_header "Installing $PROJECT_NAME node..."
 
@@ -48,13 +54,22 @@ node_install() {
   ## Install Nockchain
   make install-nockchain
 
-  ## Open ports: 3005, 3006
-#  sudo ufw allow 3005/tcp
-#  sudo ufw allow 3006/tcp
-
   ## Update path
   echo 'export PATH="$PATH:$HOME/nockchain/target/release"' >> ~/.bashrc
   source ~/.bashrc
+}
+
+
+################
+### Menu #######
+################
+### Menu - Install Node
+node_install() {
+  # Server prepare
+  server_prepare
+
+  # Node Install
+  node_install_main
 }
 
 
@@ -130,7 +145,7 @@ node_update() {
   
   # install
   cd $HOME
-  node_install
+  node_install_main
   
   # move files
   cp -f $HOME/temp-nockchain/.env $HOME/nockchain/.env
