@@ -154,7 +154,8 @@ if [ ${#WALLET_COUNTS[@]} -eq 0 ]; then
     echo -e "${BLUE}Your blocks:${NC} ${RED}0${NC}"
     echo ""
     echo -e "${YELLOW}Keep mining! 💪${NC}"
-    exit 0
+    break
+    #exit 0
 fi
 
 # Create sorted list of wallets by block count (divide by 2 as requested)
