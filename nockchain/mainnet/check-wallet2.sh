@@ -1,7 +1,8 @@
 #!/bin/bash
+source $HOME/nockchain/.env
 
 # Config file to store wallet address
-CONFIG_FILE="$HOME/.nockchain_wallet_config"
+#CONFIG_FILE="$HOME/.nockchain_wallet_config"
 
 # Socket path - search more broadly for the socket
 # First try common locations, then do a wider search if needed
@@ -52,31 +53,34 @@ else
 fi
 
 # Check if config exists, if not prompt for wallet
-if [ ! -f "$CONFIG_FILE" ]; then
-    clear
-    echo -e "${CYAN}╔══════════════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${CYAN}║                   FIRST TIME SETUP                               ║${NC}"
-    echo -e "${CYAN}╚══════════════════════════════════════════════════════════════════╝${NC}"
-    echo ""
-    echo -e "${YELLOW}Please enter your public key to monitor:${NC}"
-    echo ""
-    read -p "Public Key: " USER_WALLET
+#if [ ! -f "$CONFIG_FILE" ]; then
+#    clear
+#    echo -e "${CYAN}╔══════════════════════════════════════════════════════════════════╗${NC}"
+#    echo -e "${CYAN}║                   FIRST TIME SETUP                               ║${NC}"
+#    echo -e "${CYAN}╚══════════════════════════════════════════════════════════════════╝${NC}"
+#    echo ""
+#    echo -e "${YELLOW}Please enter your public key to monitor:${NC}"
+#    echo ""
+#    read -p "Public Key: " USER_WALLET
     
-    # Validate input
-    if [ -z "$USER_WALLET" ]; then
-        echo -e "${RED}Error: No wallet address provided!${NC}"
-        exit 1
-    fi
+#    # Validate input
+#    if [ -z "$USER_WALLET" ]; then
+#        echo -e "${RED}Error: No wallet address provided!${NC}"
+#        exit 1
+#    fi
     
-    # Save to config
-    echo "$USER_WALLET" > "$CONFIG_FILE"
-    echo ""
-    echo -e "${GREEN}✓ Wallet saved! Starting monitor...${NC}"
-    sleep 2
-else
-    # Read wallet from config
-    USER_WALLET=$(cat "$CONFIG_FILE")
-fi
+#    # Save to config
+#    echo "$USER_WALLET" > "$CONFIG_FILE"
+#    echo ""
+#    echo -e "${GREEN}✓ Wallet saved! Starting monitor...${NC}"
+#    sleep 2
+#else
+#    # Read wallet from config
+#    USER_WALLET=$(cat "$CONFIG_FILE")
+#fi
+
+# Get pubkey
+USER_WALLET=$MINING_PUBKEY
 
 # Header
 clear
