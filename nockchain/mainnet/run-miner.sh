@@ -23,6 +23,7 @@ if [ -n "$1" ]
 then
     # Run additional miner
     print_header "$PROJECT_NAME additional miner $1 start..."
+    sudo sysctl -w vm.overcommit_memory=1
     mkdir -p miner-node$1
     cd miner-node$1
     rm -f nockchain.sock
@@ -30,6 +31,7 @@ then
 else
     # Run main miner
     print_header "$PROJECT_NAME main miner start..."
+    sudo sysctl -w vm.overcommit_memory=1
     mkdir -p miner-node 
     cd miner-node 
     rm -f nockchain.sock 
