@@ -135,9 +135,11 @@ node_update() {
   cd $HOME
   mkdir $HOME/temp-nockchain
   
-  # move files
+  # backup files
   mv -f $HOME/nockchain/.env $HOME/temp-nockchain/.env
   mv -f $HOME/nockchain/keys.export $HOME/temp-nockchain/keys.export
+  cp -r $HOME/nockchain/miner-node* $HOME/temp-nockchain
+  cp -r $HOME/nockchain/assets* $HOME/temp-nockchain
   
   # remove dirs
   rm -r $HOME/nockchain
@@ -147,9 +149,11 @@ node_update() {
   cd $HOME
   node_install_main
   
-  # move files
+  # restore files
   cp -f $HOME/temp-nockchain/.env $HOME/nockchain/.env
   cp -f $HOME/temp-nockchain/keys.export $HOME/nockchain/keys.export
+  mv $HOME/temp-nockchain/miner-node* $HOME/nockchain
+  mv $HOME/temp-nockchain/assets* $HOME/nockchain
 
   # import keys
   node_import_keys
