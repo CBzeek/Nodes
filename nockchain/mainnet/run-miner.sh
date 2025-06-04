@@ -2,15 +2,19 @@
 # Variables
 PROJECT_NAME="Nockchain"
 
-# Logo
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
-
-# Import Colors
-source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
 
 
 while true
 do
+    # Logo
+    source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
+    
+    # Additional pause
+    sleep 2
+
+    # Import Colors
+    source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
+    
     source $HOME/nockchain/.env
     
     RUST_BACKTRACE=1
@@ -40,5 +44,6 @@ do
         rm -f nockchain.sock 
         nockchain --npc-socket nockchain.sock --mining-pubkey ${MINING_PUBKEY} --mine
     fi
+   
 done
 
