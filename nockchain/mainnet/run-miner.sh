@@ -25,24 +25,33 @@ do
     export RUST_BACKTRACE
     
     cd $HOME/nockchain
-    
+
+    sudo sysctl -w vm.overcommit_memory=1
+
     if [ -n "$1" ]
     then
         # Run additional miner
         print_header "$PROJECT_NAME additional miner $1 start..."
-        sudo sysctl -w vm.overcommit_memory=1
-        mkdir -p miner-node$1
+        DIR=$HOME/nockchain/miner-node$1
+        if [ ! -d $DIR ]; then
+            # Directory NOT exists."
+            echo "Directory $DIR NOT exists."
+            mkdir -p $DIR/.data.nockchain
+            cp -r $HOME/nockchain/miner-node/.data.nockchain/checkpoints* $DIR/.data.nockchain 
+        fi
+
         cd miner-node$1
         rm -f nockchain.sock
         nockchain --npc-socket nockchain.sock --mining-pubkey ${MINING_PUBKEY} --mine
+        
     else
         # Run main miner
         print_header "$PROJECT_NAME main miner start..."
-        sudo sysctl -w vm.overcommit_memory=1
         mkdir -p miner-node 
         cd miner-node 
         rm -f nockchain.sock 
         nockchain --npc-socket nockchain.sock --mining-pubkey ${MINING_PUBKEY} --mine
+        
     fi
    
 done
