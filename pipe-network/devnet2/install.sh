@@ -36,35 +36,35 @@ install_node() {
 
   read -p "Enter the amount of max-disk, in GB: " DISK
 
-  # Create systemd service file
-  sudo tee /etc/systemd/system/popd.service > /dev/null << EOF
-  [Unit]
-  Description=Pipe Network Node Service
-  After=network.target
-  Wants=network-online.target
-  
-  [Service]
-  AmbientCapabilities=CAP_NET_BIND_SERVICE
-  CapabilityBoundingSet=CAP_NET_BIND_SERVICE
-  User=$USER
-  ExecStart=$HOME/.pipe/pop \
-      --ram $RAM \
-      --pubKey $SOLANA_ADDRESS \
-      --max-disk $DISK \
-      --cache-dir $HOME/.pipe/download_cache \
-      --no-prompt
-  Restart=always
-  RestartSec=5
-  LimitNOFILE=65536
-  LimitNPROC=4096
-  StandardOutput=journal
-  StandardError=journal
-  SyslogIdentifier=pop-node
-  WorkingDirectory=$HOME/.pipe
-  
-  [Install]
-  WantedBy=multi-user.target
-  EOF
+# Create systemd service file
+sudo tee /etc/systemd/system/popd.service > /dev/null << EOF
+[Unit]
+Description=Pipe Network Node Service
+After=network.target
+Wants=network-online.target
+
+[Service]
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+User=$USER
+ExecStart=$HOME/.pipe/pop \
+    --ram $RAM \
+    --pubKey $SOLANA_ADDRESS \
+    --max-disk $DISK \
+    --cache-dir $HOME/.pipe/download_cache \
+    --no-prompt
+Restart=always
+RestartSec=5
+LimitNOFILE=65536
+LimitNPROC=4096
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pop-node
+WorkingDirectory=$HOME/.pipe
+
+[Install]
+WantedBy=multi-user.target
+EOF
 
   # Open ports
   sudo ufw allow 22
