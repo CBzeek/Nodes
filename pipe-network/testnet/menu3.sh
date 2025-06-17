@@ -39,7 +39,8 @@ EOL'
   sudo ufw allow 22
   sudo ufw allow 443/tcp
   sudo ufw allow 80/tcp
-  sudo ufw enable
+  echo y | sudo ufw enable
+  #sudo ufw enable
   
   sudo ufw status
 
