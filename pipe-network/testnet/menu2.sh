@@ -18,19 +18,19 @@ install_node_1() {
 
   print_header "Installing $PROJECT_NAME node..."
 
-  # Network perfomance
-  sudo bash -c 'cat > /etc/sysctl.d/99-pipe.conf << EOL
-  net.ipv4.ip_local_port_range = 1024 65535
-  net.core.somaxconn = 65535
-  net.ipv4.tcp_low_latency = 1
-  net.ipv4.tcp_fastopen = 3
-  net.ipv4.tcp_slow_start_after_idle = 0
-  net.ipv4.tcp_window_scaling = 1
-  net.ipv4.tcp_wmem = 4096 65536 16777216
-  net.ipv4.tcp_rmem = 4096 87380 16777216
-  net.core.wmem_max = 16777216
-  net.core.rmem_max = 16777216
-  EOL'
+# Network perfomance
+sudo bash -c 'cat > /etc/sysctl.d/99-pipe.conf << EOL
+net.ipv4.ip_local_port_range = 1024 65535
+net.core.somaxconn = 65535
+net.ipv4.tcp_low_latency = 1
+net.ipv4.tcp_fastopen = 3
+net.ipv4.tcp_slow_start_after_idle = 0
+net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_wmem = 4096 65536 16777216
+net.ipv4.tcp_rmem = 4096 87380 16777216
+net.core.wmem_max = 16777216
+net.core.rmem_max = 16777216
+EOL'
   
   # Apply settings
   sudo sysctl -p /etc/sysctl.d/99-pipe.conf
