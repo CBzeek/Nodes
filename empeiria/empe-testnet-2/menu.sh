@@ -141,7 +141,7 @@ validator_create() {
   print_header "Create $PROJECT_NAME node validator..."
   emped tx staking create-validator \
   --amount 1000000uempe \
-  --from $WALLET_NAME \
+  --from "$WALLET_NAME" \
   --commission-rate 0.1 \
   --commission-max-rate 0.2 \
   --commission-max-change-rate 0.01 \
