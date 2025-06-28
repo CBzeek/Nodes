@@ -12,5 +12,5 @@ sudo apt update && sudo apt upgrade -y
 
 #Install software
 print_header "Installing dependencies to server..."
-sudo apt install curl mc git jq screen lz4 build-essential htop zip unzip wget rsync ufw snapd -y
+sudo apt install curl mc git jq screen lz4 build-essential htop zip unzip wget rsync ufw snapd make gcc tmux -y
 sudo snap install yq
