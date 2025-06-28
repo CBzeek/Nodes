@@ -3,7 +3,7 @@
 PROJECT_NAME="Empeiria"
 VERSION="v0.4.0"
 CHAIN_ID="empe-testnet-2"
-WORK_DIR="empeiria"
+WORK_DIR=".empe-chain"
 
 # Logo
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/logo.sh')
@@ -45,12 +45,17 @@ node_install() {
   cd $HOME
   source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/server-go.sh') 1.22.3
 
+  # Install wasm library
+  curl -L https://github.com/CosmWasm/wasmvm/releases/download/v1.5.0/libwasmvm.x86_64.so > libwasmvm.x86_64.so
+  sudo mv -f libwasmvm.x86_64.so /usr/lib/libwasmvm.x86_64.so
+
   # Install binary 
   mkdir $WORK_DIR
   cd $HOME/$WORK_DIR
-  wget -O https://github.com/empe-io/empe-chain-releases/raw/master/$VERSION/emped_$VERSION_linux_amd64.tar.gz
-  tar -xvf emped_$VERSION_linux_amd64.tar.gz
+  curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/${VERSION}/emped_${VERSION}_linux_amd64.tar.gz
+  tar -xvf emped_${VERSION}_linux_amd64.tar.gz
   chmod +x $HOME/$WORK_DIR/emped
+  rm -f emped_${VERSION}_linux_amd64.tar.gz
   emped version
 
   # Config node
@@ -62,10 +67,10 @@ node_install() {
   emped init $MONIKER --chain-id $CHAIN_ID
 
   # Get genesis
-  wget -O $HOME/$WORK_DIR/config/genesis.json https://raw.githubusercontent.com/empe-io/empe-chains/refs/heads/master/testnet-2/genesis.json
-  
+  wget -O $HOME/.empe-chain/config/genesis.json https://server-5.itrocket.net/testnet/empeiria/genesis.json
+ 
   # Get addrbook
-  wget -O $HOME/$WORK_DIR/config/genesis.json https://server-5.itrocket.net/testnet/empeiria/addrbook.json
+  wget -O $HOME/.empe-chain/config/addrbook.json https://server-5.itrocket.net/testnet/empeiria/addrbook.json
   
 
   # Set peers, seeds
