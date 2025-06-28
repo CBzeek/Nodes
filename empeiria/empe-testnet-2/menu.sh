@@ -18,11 +18,7 @@ node_install() {
 
   # Check variables
   if [ ! $MONIKER ]; then
-      echo ""
-      echo -e "${B_GREEN}"
-      echo -e "###########################################################################################"
-      echo -e "### Setting $PROJECT_NAME node moniker..."
-      echo -e "${NO_COLOR}" && sleep 1
+      print_header "Setting $PROJECT_NAME node moniker..."
       read -p "Enter node moniker: " MONIKER
       echo "" && sleep 1
       echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
