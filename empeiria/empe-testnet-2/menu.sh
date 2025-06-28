@@ -125,7 +125,7 @@ EOF
 ### Menu - Create Wallet
 wallet_create() {
   print_header "Create $PROJECT_NAME node wallet..."
-  emped keys add $WALLET
+  emped keys add $WALLET_NAME
 }
 
 ### Menu - Download Snapshot
@@ -159,7 +159,7 @@ validator_create() {
 ### Menu - Recovery Wallet
 wallet_create() {
   print_header "Recovery $PROJECT_NAME node wallet..."
-  emped keys add $WALLET --recover
+  emped keys add $WALLET_NAME --recover
 }
 
 
