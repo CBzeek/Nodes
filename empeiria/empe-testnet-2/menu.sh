@@ -157,7 +157,7 @@ validator_create() {
 
 
 ### Menu - Recovery Wallet
-wallet_create() {
+wallet_recovery() {
   print_header "Recovery $PROJECT_NAME node wallet..."
   emped keys add $WALLET_NAME --recover
 }
