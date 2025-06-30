@@ -130,7 +130,6 @@ wallet_create() {
 
 ### Menu - Download Snapshot
 download_snapshot() {
-  print_header "Downloading $PROJECT_NAME node snapshot..."
   source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/empeiria/empe-testnet-2/snapshot.sh')
 }
 
