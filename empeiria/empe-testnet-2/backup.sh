@@ -24,7 +24,7 @@ rm -f $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_DIR}/config/
 rm -f $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_DIR}/config/genesis.json
 rm -f $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_DIR}/config/*.toml
 
-cp $HOME/$PROJECT_DIR/data/priv_validator_state.json $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_DIR}/data/
+cp $HOME/$PROJECT_DIR/data/*.json $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_DIR}/data/
 
 cp $HOME/$PROJECT_DIR/keyring-test/* $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_DIR}/keyring-test/
 
