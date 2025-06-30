@@ -11,9 +11,10 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 # Import Colors
 source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/bash-colors.sh')
 
+print_header "Backup $PROJECT_NAME node configuration files..."
+
 sudo apt install zip -y
 
-print_header "Backup $PROJECT_NAME node configuration files..."
 cd $HOME
 mkdir -p $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_DIR}/config/
 mkdir -p $HOME/$BACKUP_DIR/${PROJECT_DIR}-${CHAIN_ID}-backup/${PROJECT_DIR}/data/
