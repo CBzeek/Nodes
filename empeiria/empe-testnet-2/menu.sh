@@ -135,6 +135,8 @@ download_snapshot() {
 
 
 
+
+
 ### Menu - Create Validator
 validator_create() {
   print_header "Create $PROJECT_NAME node validator..."
@@ -159,6 +161,12 @@ validator_create() {
 wallet_recovery() {
   print_header "Recovery $PROJECT_NAME node wallet..."
   emped keys add $WALLET_NAME --recover
+}
+
+### Menu - Backup Keys
+node_backup_keys() {
+  print_header "Backup $PROJECT_NAME node keys..."
+  source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/empeiria/empe-testnet-2/backup.sh')
 }
 
 
@@ -205,6 +213,7 @@ while true; do
   echo "3. Download Snapshot"
   echo "4. Create Validator"
   echo "5. Recovery Wallet"
+  echo "6. Backup Keys"
   echo "x. Exit"
   
   echo -e "${B_YELLOW}"
@@ -217,6 +226,7 @@ while true; do
     3) download_snapshot ;;
     4) validator_create ;;
     5) wallet_recovery ;;
+    6) node_backup_keys ;;
     x) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
