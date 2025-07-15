@@ -25,7 +25,7 @@ node_install() {
   fi
   
   if [ ! $CHAIN_ID ]; then
-      echo 'export CHAIN_ID=$CHAIN_ID' >> ~/.bash_profile
+      echo 'export CHAIN_ID='\"${CHAIN_ID}\" >> ~/.bash_profile
   fi
   
   if [ ! $WALLET_NAME ]; then
