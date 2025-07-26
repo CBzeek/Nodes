@@ -34,8 +34,6 @@ node_install() {
   cd $HOME 
   bash -i <(curl -s https://install.aztec.network)
 
-  source .bash_profile
-
   # Firewall
   ufw allow 22
   ufw allow ssh
