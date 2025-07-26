@@ -34,6 +34,17 @@ node_install() {
   cd $HOME 
   bash -i <(curl -s https://install.aztec.network)
 
+  source .bash_profile
+
+  # Firewall
+  ufw allow 22
+  ufw allow ssh
+  ufw enable
+  
+  # Sequencer
+  ufw allow 40400
+  ufw allow 8080
+
   # Get RPC
   read -p "Enter RPC url: " RPC
   
@@ -50,7 +61,7 @@ node_install() {
   NODE_IP=$(curl -s ipv4.icanhazip.com)
   
   # Create node start file
-sudo tee $HOME/$WORK_DIR/test.sh > /dev/null <<EOF
+sudo tee $HOME/$WORK_DIR/aztec_run.sh > /dev/null <<EOF
 #!/bin/bash
 
 ETHEREUM_HOSTS="${RPC}"
@@ -60,7 +71,6 @@ COINBASE="${ADDRESS}"
 P2P_IP="${NODE_IP}"
 
 $HOME/.aztec/bin/aztec start --node --archiver --sequencer --network alpha-testnet --l1-rpc-urls \${ETHEREUM_HOSTS} --l1-consensus-host-urls \${L1_CONSENSUS_HOST_URLS} --sequencer.validatorPrivateKeys \${VALIDATOR_PRIVATE_KEYS} --sequencer.coinbase \${COINBASE} --p2p.p2pIp \${P2P_IP} --p2p.maxTxPoolSize 1000000000
-
 EOF
 
   chmod +x $HOME/$WORK_DIR/aztec_run.sh
