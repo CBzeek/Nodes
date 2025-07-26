@@ -34,6 +34,13 @@ node_install() {
   cd $HOME 
   bash -i <(curl -s https://install.aztec.network)
 
+}
+
+
+### Menu - Node Config
+node_config() {
+  print_header "Configuring $PROJECT_NAME node..."
+
   # Firewall
   ufw allow 22
   ufw allow ssh
@@ -146,8 +153,9 @@ while true; do
   echo -e "### ${B_YELLOW}$PROJECT_NAME Node Menu: ${B_GREEN}###"
   echo -e "${B_GREEN}###############################${NO_COLOR}"
   echo "1. Install Node"
-  echo "2. Logs"
-  echo "3. Restart Node"
+  echo "2. Configure Node"
+  echo "3. Logs"
+  echo "4. Restart Node"
   echo "x. Exit"
   
   echo -e "${B_YELLOW}"
@@ -156,8 +164,9 @@ while true; do
 
   case $choice in
     1) node_install ;;
-    2) node_logs ;;
-    3) node_restart ;;
+    2) node_config ;;
+    3) node_logs ;;
+    4) node_restart ;;
     x) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
