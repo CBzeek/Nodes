@@ -1,3 +1,3 @@
-#  Nodes - Installation scripts for crypto project servers
+#  Nodes - Installation scripts for crypto project
 
-This repository contain install scripts for various crypto project servers
+This repository contain install scripts for various crypto project
