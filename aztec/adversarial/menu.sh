@@ -45,6 +45,9 @@ node_install() {
   ufw allow 40400
   ufw allow 8080
 
+  echo ""
+  echo ""
+
   # Get RPC
   read -p "Enter RPC url: " RPC
   
