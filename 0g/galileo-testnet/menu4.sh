@@ -2,6 +2,7 @@
 # Variables
 PROJECT_NAME="0G"
 VERSION="v2.0.2"
+OG_PORT="26"
 #CHAIN_ID=""
 WORK_DIR=".0gchaind"
 
@@ -23,7 +24,11 @@ node_install() {
       echo "" && sleep 1
       echo 'export MONIKER='\"${MONIKER}\" >> ~/.bash_profile
   fi
-  
+
+  if [ ! $OG_PORT ]; then
+      echo 'export OG_PORT='\"${OG_PORT}\" >> ~/.bash_profile
+  fi
+ 
   # if [ ! $CHAIN_ID ]; then
   #     echo 'export CHAIN_ID='\"${CHAIN_ID}\" >> ~/.bash_profile
   # fi
@@ -39,11 +44,11 @@ node_install() {
 
   # Install denepdencies
   source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-prepare.sh')
-  sudo apt install -y libssl-dev ca-certificates
 
   # Install go 1.22.0
   cd $HOME
   source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/!tools/server-go.sh') 1.22.0
+
 
   # Download and Extract Galileo
   cd $HOME
@@ -80,6 +85,25 @@ node_install() {
   # Set Node Moniker
   sed -i -e "s/^moniker *=.*/moniker = \"$MONIKER\"/" $CONFIG/config.toml
 
+  # Update geth ports
+  sed -i "s/HTTPPort = .*/HTTPPort = ${OG_PORT}545/" $HOME/$WORK_DIR/galileo/geth-config.toml
+  sed -i "s/WSPort = .*/WSPort = ${OG_PORT}546/" $HOME/$WORK_DIR/galileo/geth-config.toml
+  sed -i "s/AuthPort = .*/AuthPort = ${OG_PORT}551/" $HOME/$WORK_DIR/galileo/geth-config.toml
+  sed -i "s/ListenAddr = .*/ListenAddr = \":${OG_PORT}303\"/" $HOME/$WORK_DIR/galileo/geth-config.toml
+  sed -i "s/^# *Port = .*/# Port = ${OG_PORT}901/" $HOME/$WORK_DIR/galileo/geth-config.toml
+  sed -i "s/^# *InfluxDBEndpoint = .*/# InfluxDBEndpoint = \"http:\/\/localhost:${OG_PORT}086\"/" $HOME/$WORK_DIR/galileo/geth-config.toml
+
+  # Update config.toml
+  sed -i "s/laddr = \"tcp:\/\/0\.0\.0\.0:26656\"/laddr = \"tcp:\/\/0\.0\.0\.0:${OG_PORT}656\"/" $CONFIG/config.toml
+  sed -i "s/laddr = \"tcp:\/\/127\.0\.0\.1:26657\"/laddr = \"tcp:\/\/127\.0\.0\.1:${OG_PORT}657\"/" $CONFIG/config.toml
+  sed -i "s/^proxy_app = .*/proxy_app = \"tcp:\/\/127\.0\.0\.1:${OG_PORT}658\"/" $CONFIG/config.toml
+  sed -i "s/^pprof_laddr = .*/pprof_laddr = \"0.0.0.0:${OG_PORT}060\"/" $CONFIG/config.toml
+  sed -i "s/prometheus_listen_addr = \".*\"/prometheus_listen_addr = \"0.0.0.0:${OG_PORT}660\"/" $CONFIG/config.toml
+
+  # Update app.toml
+  sed -i "s/address = \".*:3500\"/address = \"127.0.0.1:${OG_PORT}500\"/" $CONFIG/app.toml
+  sed -i "s/^rpc-dial-url *=.*/rpc-dial-url = \"http:\/\/localhost:${OG_PORT}551\"/" $CONFIG/app.toml
+
   # Disable Indexer
   sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $CONFIG/config.toml
 
@@ -88,18 +112,17 @@ node_install() {
   sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $CONFIG/app.toml
   sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"19\"/" $CONFIG/app.toml
 
-  # JSON-RPC Host (Geth / EVM Layer of 0G)
+  # JSON-RPC Host (Geth / EVM Layer of 0G) - Private
   sed -i 's/HTTPHost = .*/HTTPHost = "127.0.0.1"/' $HOME/$WORK_DIR/galileo/geth-config.toml
 
-  # Cosmos RPC (Tendermint Layer)
-  sed -i "s|laddr = \"tcp://127.0.0.1:26657\"|laddr = \"tcp://127.0.0.1:26657\"|" $CONFIG/config.toml
+  # JSON-RPC Host (Geth / EVM Layer of 0G) - Public
+  # sed -i 's/HTTPHost = .*/HTTPHost = "0.0.0.0"/'$HOME/$WORK_DIR/galileo/geth-config.toml
 
+  # Cosmos RPC (Tendermint Layer) - Private
+  sed -i "s|laddr = \"tcp://127.0.0.1:${OG_PORT}657\"|laddr = \"tcp://127.0.0.1:${OG_PORT}657\"|" $CONFIG/config.toml
 
-  # Set peers, seeds
-  # SEEDS="20ca5fc4882e6f975ad02d106da8af9c4a5ac6de@empeiria-testnet-seed.itrocket.net:28656"
-  # PEERS="03aa072f917ed1b79a14ea2cc660bc3bac787e82@empeiria-testnet-peer.itrocket.net:28656,e058f20874c7ddf7d8dc8a6200ff6c7ee66098ba@65.109.93.124:29056,4c055c7272b26141c26c82334d07cc65558e79aa@134.255.182.245:14656,78f766310a83b6670023169b93f01d140566db79@65.109.83.40:29056,0f87465704e95ea92f6906f47a99a5d91aff0e1c@195.201.86.60:43656,e62b549646fee135cf010bc10641f728aba7fbd0@65.108.234.158:26626,2db322b41d26559476f929fda51bce06c3db8ba4@65.109.24.155:11256,080d9cc12e08fb64dd0f4528d0da4a84d5d9428e@37.27.83.234:26656,810e21adee3b8f337bab0df70ba75d38afde2348@152.53.0.11:29656,5fc98f2ec4b2a6001aa5655c9852d259e83a8e74@65.108.226.44:11256,45bdc8628385d34afc271206ac629b07675cd614@65.21.202.124:25656"
-  # sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
-  #        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.empe-chain/config/config.toml
+  # Cosmos RPC (Tendermint Layer) - Public
+  # sed -i "s|laddr = \"tcp://127.0.0.1:${OG_PORT}657\"|laddr = \"tcp://0.0.0.0:${OG_PORT}657\"|" $CONFIG/config.toml
 
   # Create 0gchaind service file
   print_header "Setting $PROJECT_NAME node service..."
@@ -115,20 +138,14 @@ User=$USER
 Environment=CHAIN_SPEC=devnet
 WorkingDirectory=$HOME/$WORK_DIR/galileo
 ExecStart=/usr/local/bin/0gchaind start \
-    --chaincfg.chain-spec devnet \
-    --chaincfg.restaking.enabled \
-    --chaincfg.restaking.symbiotic-rpc-dial-url https://ethereum-holesky-rpc.publicnode.com \
-    --chaincfg.restaking.symbiotic-get-logs-block-range 256 \
-    --chaincfg.kzg.trusted-setup-path=$HOME/$WORK_DIR/galileo/kzg-trusted-setup.json \
-    --chaincfg.engine.jwt-secret-path=$HOME/$WORK_DIR/galileo/jwt-secret.hex \
-    --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \
-    --chaincfg.block-store-service.enabled \
-    --chaincfg.node-api.enabled \
-    --chaincfg.node-api.logging \
-    --chaincfg.node-api.address 0.0.0.0:3500 \
-    --home $HOME/$WORK_DIR/galileo/0g-home/0gchaind-home \
-    --p2p.seeds 85a9b9a1b7fa0969704db2bc37f7c100855a75d9@8.218.88.60:26656 \
-    --p2p.external_address=$(curl -4 -s ifconfig.me):26656
+  --chaincfg.chain-spec devnet \
+  --chaincfg.kzg.trusted-setup-path=$HOME/$WORK_DIR/galileo/kzg-trusted-setup.json \
+  --chaincfg.engine.jwt-secret-path=$HOME/$WORK_DIR/galileo/jwt-secret.hex \
+  --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \
+  --chaincfg.engine.rpc-dial-url=http://localhost:${OG_PORT}551 \
+  --home $HOME/$WORK_DIR/galileo/0g-home/0gchaind-home \
+  --p2p.seeds 85a9b9a1b7fa0969704db2bc37f7c100855a75d9@8.218.88.60:26656 \
+  --p2p.external_address=$(curl -4 -s ifconfig.me):${OG_PORT}656
 Restart=always
 RestartSec=3
 LimitNOFILE=65535
@@ -149,8 +166,12 @@ User=$USER
 WorkingDirectory=$HOME/$WORK_DIR/galileo
 ExecStart=/usr/local/bin/geth \
   --config $HOME/$WORK_DIR/galileo/geth-config.toml \
-  --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
   --datadir $HOME/$WORK_DIR/galileo/0g-home/geth-home \
+  --http.port ${OG_PORT}545 \
+  --ws.port ${OG_PORT}546 \
+  --authrpc.port ${OG_PORT}551 \
+  --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
+  --port ${OG_PORT}303 \
   --networkid 16601
 Restart=always
 RestartSec=3
@@ -159,6 +180,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+
 
   # 
   sudo systemctl daemon-reload
