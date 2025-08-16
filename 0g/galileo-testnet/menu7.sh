@@ -113,18 +113,18 @@ After=network-online.target
 User=$USER
 Environment=CHAIN_SPEC=devnet
 WorkingDirectory=$HOME/$WORK_DIR/galileo
-ExecStart=/usr/local/bin/0gchaind start \
-  --chaincfg.chain-spec devnet \
-  --home $HOME/$WORK_DIR/galileo/0g-home/0gchaind-home \
-  --chaincfg.kzg.trusted-setup-path=$HOME/$WORK_DIR/galileo/kzg-trusted-setup.json \
-  --chaincfg.engine.jwt-secret-path=$HOME/$WORK_DIR/galileo/jwt-secret.hex \
-  --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \
-  --chaincfg.engine.rpc-dial-url=http://localhost:8551 \
-  --chaincfg.restaking.enabled \
-  --chaincfg.restaking.symbiotic-rpc-dial-url https://ethereum-holesky-rpc.publicnode.com \
-  --chaincfg.restaking.symbiotic-get-logs-block-range 256 \
-  --home=$HOME/$WORK_DIR/galileo/0g-home/0gchaind-home \
-  --p2p.seeds 85a9b9a1b7fa0969704db2bc37f7c100855a75d9@8.218.88.60:26656 \
+ExecStart=/usr/local/bin/0gchaind start \\
+  --chaincfg.chain-spec devnet \\
+  --home $HOME/$WORK_DIR/galileo/0g-home/0gchaind-home \\
+  --chaincfg.kzg.trusted-setup-path=$HOME/$WORK_DIR/galileo/kzg-trusted-setup.json \\
+  --chaincfg.engine.jwt-secret-path=$HOME/$WORK_DIR/galileo/jwt-secret.hex \\
+  --chaincfg.kzg.implementation=crate-crypto/go-kzg-4844 \\
+  --chaincfg.engine.rpc-dial-url=http://localhost:8551 \\
+  --chaincfg.restaking.enabled \\
+  --chaincfg.restaking.symbiotic-rpc-dial-url https://endpoints.omniatech.io/v1/eth/holesky/public \\
+  --chaincfg.restaking.symbiotic-get-logs-block-range 256 \\
+  --home=$HOME/$WORK_DIR/galileo/0g-home/0gchaind-home \\
+  --p2p.seeds 85a9b9a1b7fa0969704db2bc37f7c100855a75d9@8.218.88.60:26656 \\
   --p2p.external_address=$(curl -4 -s ifconfig.me):26656
 Restart=always
 RestartSec=3
