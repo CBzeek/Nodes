@@ -8,7 +8,7 @@ source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/ma
 # Variables
 PROJECT_NAME="0G"
 PROJECT_DIR=".0gchaind/galileo/0g-home/0gchaind-home"
-RPC_URL="https://0g-testnet-rpc.astrostake.xyz"
+RPC_URL="https://og-testnet-rpc.itrocket.net"
 
 print_header "$PROJECT_NAME node height checker..."
 
