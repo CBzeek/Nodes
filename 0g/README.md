@@ -16,7 +16,7 @@ source <(wget -qO- '')
 
 ## Height Checker
 ```
-source <(wget -qO- '')
+source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/0g/galileo-testnet/height-checker.sh')
 ```
 
 ## Snapshot
