@@ -13,12 +13,7 @@ else
 fi
 
 # Install go
-echo ""
-echo -e "${B_GREEN}"
-echo -e "###########################################################################################"
-echo -e "### Install Go language version $VER to server..."
-echo -e "${NO_COLOR}"
-echo "" && sleep 1
+print_header "Installing Go language version $VER to server..."
 
 wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
