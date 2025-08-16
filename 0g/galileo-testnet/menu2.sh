@@ -179,19 +179,15 @@ EOF
 
 
 ### Menu - Create Wallet
-wallet_create() {
-  print_header "Create $PROJECT_NAME node wallet..."
-#  emped keys add $WALLET_NAME
-}
+# wallet_create() {
+#   print_header "Create $PROJECT_NAME node wallet..."
+#   emped keys add $WALLET_NAME
+# }
 
 ### Menu - Download Snapshot
-download_snapshot() {
-#  source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/empeiria/empe-testnet-2/snapshot.sh')
-}
-
-
-
-
+# download_snapshot() {
+# #  source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/empeiria/empe-testnet-2/snapshot.sh')
+# }
 
 ### Menu - Create Validator
 # validator_create() {
@@ -210,49 +206,49 @@ download_snapshot() {
 #   --chain-id "$CHAIN_ID" \
 #   --gas auto --gas-adjustment 1.5 --fees 30uempe \
 #   -y
-}
+# }
 
 
 ### Menu - Recovery Wallet
-wallet_recovery() {
-  print_header "Recovery $PROJECT_NAME node wallet..."
-  # emped keys add $WALLET_NAME --recover
-}
+# wallet_recovery() {
+#   print_header "Recovery $PROJECT_NAME node wallet..."
+#   emped keys add $WALLET_NAME --recover
+# }
 
 ### Menu - Backup Keys
-node_backup_keys() {
-  print_header "Backup $PROJECT_NAME node keys..."
-  # source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/empeiria/empe-testnet-2/backup.sh')
-}
+# node_backup_keys() {
+#   print_header "Backup $PROJECT_NAME node keys..."
+#   source <(wget -qO- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/empeiria/empe-testnet-2/backup.sh')
+# }
 
 
 ### Menu - Start Node
-node_start() {
-  print_header "Starting $PROJECT_NAME node..."
-  # sudo systemctl start emped
-}
+# node_start() {
+#   print_header "Starting $PROJECT_NAME node..."
+#   sudo systemctl start emped
+# }
 
 
 ### Menu - Update Node
-node_update() {
-  node_stop
+# node_update() {
+#   node_stop
 
-  node_restart
-}
+#   node_restart
+# }
 
 
 ### Menu - Restart Node
-node_restart() {
-  print_header "Restarting $PROJECT_NAME node..."
-  # sudo systemctl restart emped
-}
+# node_restart() {
+#   print_header "Restarting $PROJECT_NAME node..."
+#   sudo systemctl restart emped
+# }
 
 
 ### Menu - Stop Node
-node_stop() {
-  print_header "Stopping $PROJECT_NAME node..."
-  # sudo systemctl stop emped
-}
+# node_stop() {
+#   print_header "Stopping $PROJECT_NAME node..."
+#   sudo systemctl stop emped
+# }
 
 
 
