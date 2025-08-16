@@ -115,7 +115,6 @@ User=$USER
 Environment=CHAIN_SPEC=devnet
 WorkingDirectory=$HOME/$WORK_DIR/galileo
 ExecStart=/usr/local/bin/0gchaind start \
-#   --rpc.laddr tcp://0.0.0.0:26657 \
     --chaincfg.chain-spec devnet \
     --chaincfg.restaking.enabled \
     --chaincfg.restaking.symbiotic-rpc-dial-url https://ethereum-holesky-rpc.publicnode.com \
@@ -127,8 +126,6 @@ ExecStart=/usr/local/bin/0gchaind start \
     --chaincfg.node-api.enabled \
     --chaincfg.node-api.logging \
     --chaincfg.node-api.address 0.0.0.0:3500 \
-#    --pruning=nothing \
-#    --chaincfg.engine.rpc-dial-url=http://localhost:${OG_PORT}551 \
     --home $HOME/$WORK_DIR/galileo/0g-home/0gchaind-home \
     --p2p.seeds 85a9b9a1b7fa0969704db2bc37f7c100855a75d9@8.218.88.60:26656 \
     --p2p.external_address=$(curl -4 -s ifconfig.me):26656
@@ -152,13 +149,8 @@ User=$USER
 WorkingDirectory=$HOME/$WORK_DIR/galileo
 ExecStart=/usr/local/bin/geth \
   --config $HOME/$WORK_DIR/galileo/geth-config.toml \
-#  --nat extip:$(curl -4 -s ifconfig.me) \
   --bootnodes enode://de7b86d8ac452b1413983049c20eafa2ea0851a3219c2cc12649b971c1677bd83fe24c5331e078471e52a94d95e8cde84cb9d866574fec957124e57ac6056699@8.218.88.60:30303 \
   --datadir $HOME/$WORK_DIR/galileo/0g-home/geth-home \
-#  --http.port ${OG_PORT}545 \
-#  --ws.port ${OG_PORT}546 \
-#  --authrpc.port ${OG_PORT}551 \
-#  --port ${OG_PORT}303 \
   --networkid 16601
 Restart=always
 RestartSec=3
