@@ -78,7 +78,7 @@ VALIDATOR_PRIVATE_KEYS="${PRIV_KEY}"
 COINBASE="${ADDRESS}"
 P2P_IP="${NODE_IP}"
 
-$HOME/.aztec/bin/aztec start --node --archiver --sequencer --network alpha-testnet --l1-rpc-urls \${ETHEREUM_HOSTS} --l1-consensus-host-urls \${L1_CONSENSUS_HOST_URLS} --sequencer.validatorPrivateKeys \${VALIDATOR_PRIVATE_KEYS} --sequencer.coinbase \${COINBASE} --p2p.p2pIp \${P2P_IP} --p2p.maxTxPoolSize 1000000000
+$HOME/.aztec/bin/aztec start --node --archiver --sequencer --network testnet --l1-rpc-urls \${ETHEREUM_HOSTS} --l1-consensus-host-urls \${L1_CONSENSUS_HOST_URLS} --sequencer.validatorPrivateKeys \${VALIDATOR_PRIVATE_KEYS} --sequencer.coinbase \${COINBASE} --p2p.p2pIp \${P2P_IP} --p2p.maxTxPoolSize 1000000000
 EOF
 
   chmod +x $HOME/$WORK_DIR/aztec_run.sh
