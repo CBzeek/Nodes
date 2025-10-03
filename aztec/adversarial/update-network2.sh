@@ -19,7 +19,7 @@ cd $HOME
 sudo systemctl stop aztecd
 
 # Change network name
-sed -i "s/alpha-testnet/testnet/" $HOME/.aztec/aztec_run.sh
+sed -i "s/network alpha-testnet/network testnet/" $HOME/.aztec/aztec_run.sh
 
 # Remove old bin
 rm -rf $HOME/.aztec/bin
