@@ -116,9 +116,7 @@ node_start() {
 
 ### Menu - Update Node
 node_update() {
-  node_stop
-
-  node_restart
+  source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/refs/heads/main/aztec/adversarial/update.sh')
 }
 
 
@@ -156,6 +154,7 @@ while true; do
   echo "2. Configure Node"
   echo "3. Logs"
   echo "4. Restart Node"
+  echo "5. Update Node"
   echo "x. Exit"
   
   echo -e "${B_YELLOW}"
@@ -167,6 +166,7 @@ while true; do
     2) node_config ;;
     3) node_logs ;;
     4) node_restart ;;
+    5) node_update ;;
     x) break ;;
     *) echo -e "${B_RED}Invalid option. Try again.${NO_COLOR}" ;;
   esac
