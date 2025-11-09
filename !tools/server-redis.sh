@@ -24,5 +24,10 @@ sudo apt install redis-server -y
 
 #Change PASSWORD in /etc/redis/redis.conf
 
+# Restart
+#sudo systemctl restart redis
+#sudo systemctl status redis
+
 #Test Connection
 #redis-cli -h $IP_ADDRESS -p 6379 -a $PASSWORD
+
