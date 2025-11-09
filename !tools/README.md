@@ -10,6 +10,11 @@ source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/se
 source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-docker.sh')
 ```
 
+## Install Redis to server
+```
+source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-redis.sh')
+```
+
 ## UnInstall Docker from server
 ```
 source <(wget -O- 'https://raw.githubusercontent.com/CBzeek/Nodes/main/!tools/server-docker-remove.sh')
