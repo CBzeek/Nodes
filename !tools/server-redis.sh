@@ -23,6 +23,7 @@ sudo apt install mc redis-server -y
 #bind 127.0.0.1 -::1
 
 #Change PASSWORD in /etc/redis/redis.conf
+#requirepass $PASSWORD
 
 # Restart
 #sudo systemctl restart redis
