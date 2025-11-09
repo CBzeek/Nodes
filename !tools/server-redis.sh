@@ -11,7 +11,7 @@ sudo apt update
 
 #Install Redis
 print_header "Install Redis to server..."
-sudo apt install redis-server -y
+sudo apt install mc redis-server -y
 
 #Get IP
 #read -p "Enter IP address: " IP_ADDRESS
